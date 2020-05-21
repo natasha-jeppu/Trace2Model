@@ -9,6 +9,7 @@ import statistics as stat
 import argparse
 
 from os.path import abspath
+from termcolor import colored
 
 def pre_process(trace):
 
@@ -29,11 +30,11 @@ def pre_process(trace):
 		trace_set[trace[j+1][0]].append(temp1)
 
 	input_dict = {'trace_set': trace_set}
-	# print(input_dict['trace_set'])
+
 	return input_dict
 
 def simplify(expression,data_type):
-	print("initial expr: ")
+	print("\nInitial expr: ")
 	print(expression)
 
 	expr_split = expression.split(' and ')
@@ -81,9 +82,10 @@ def simplify(expression,data_type):
 			f.close()
 
 			try:
-				output = str(subprocess.check_output('fastsynth ' + full_path + 'aux_files/simplify_event.sl',shell=True,timeout=10)).split('\\n')
+				p = subprocess.run('fastsynth ' + full_path + 'aux_files/simplify_event.sl', shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10)
+				output = str(p.stdout).split('\\n')
 			except subprocess.CalledProcessError:
-				print("FAILED")
+				print(colored("[WARNING] FAILED",'magenta'))
 				temp_expr_simple = ' and '.join(list_cond)
 
 				if(expr_simple == ''):
@@ -92,7 +94,7 @@ def simplify(expression,data_type):
 					expr_simple = expr_simple + ' and ' + temp_expr_simple
 				continue
 			except subprocess.TimeoutExpired:
-				print("TIMEOUT")
+				print(colored("[WARNING] TIMEOUT",'magenta'))
 				temp_expr_simple = ' and '.join(list_cond)
 
 				if(expr_simple == ''):
@@ -211,8 +213,8 @@ def post_process(output,next_event,data_type,trace_dict):
 
 		for i in range(len(temp)):
 			temp[i] = simplify(temp[i],data_type)
-			print('final expr: ')
-			print(temp[i])
+			print(colored('\nFinal expr: ','green'))
+			print(colored(temp[i],'green'))
 
 		syn_event[event_keys[j]] = '(' + temp[0] + ')'
 		for i in range(1,len(temp)):
@@ -238,8 +240,7 @@ def gen_syn(input_dict,trace_dict):
 		last_ind = len(temp[0]) - 1
 		value = [1,2]
 
-		print("---------------------")
-		print(i)
+		print('---------------' + i + '----------------')
 		print(event_types[i])
 
 		next_event = np.unique([event_keys.index(x[last_ind]) for x in temp if x[last_ind] != '-'])
@@ -347,9 +348,10 @@ def gen_syn(input_dict,trace_dict):
 			f.close()
 
 			try:
-				output = str(subprocess.check_output('cvc4 '+ full_path + 'aux_files/gen_event.sl --lang sygus',shell=True,timeout = 5))
+				p = subprocess.run('cvc4 '+ full_path + 'aux_files/gen_event.sl --lang sygus',shell=True, check=True, stdout=subprocess.PIPE, timeout=5)
+				output = str(p.stdout)
 			except subprocess.TimeoutExpired:
-				print("TIMEOUT")
+				print(colored("[WARNING] TIMEOUT",'magenta'))
 				event = 0
 				continue
 
@@ -368,18 +370,18 @@ def gen_syn(input_dict,trace_dict):
 
 			op_reg = op_reg + ') Int '
 			output = output.replace(op_reg,'').replace(')\\n','')
-			print(output)
 			event = post_process(output,next_event,data_type,trace_dict)
-			print(event)
 
 		trace_events[i] = event
+		print(colored(event,'green'))
 
 	return trace_events
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME',
+    required_parse = parser.add_argument_group('required arguments')
+    required_parse.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME', required = True,
             help='Input trace file for data update predicate generation')
     parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
             help='Variables that affect update variable behaviour')
@@ -416,7 +418,17 @@ def main():
 		temp = [events_split[ind][1:] for ind in range(type_id[0]+1,trace_id[0]) if events_split[ind][0] == i]
 		event_types[i] = temp
 
-	print(event_types)
+	for x in var_list:
+		if(x[0] != '[all]' and any(True for y in x[1:] if y not in event_types[x[0]][0])):
+			print(colored("\nWrong dependent variable option",'red'))
+			print(colored("[HELP]",'green') + " Possible options:")
+			print(event_types)
+			exit()
+
+	if(['help'] in var_list):
+		print(colored("[HELP]",'green') + " Possible options:")
+		print(event_types)
+		exit()
 
 	if(var_list):
 		if(var_list[0][0] == '[all]'):
@@ -483,7 +495,7 @@ def main():
 
 		input_dict = pre_process(temp)
 		trace_events = gen_syn(input_dict,trace_dict)
-		print(trace_events)
+		print(colored(trace_events,'green'))
 
 		if(i == 0):
 			f.write("start\n")
@@ -498,6 +510,9 @@ def main():
 		f.write("start\n") 
 		f.close()
 
-full_path = abspath(__file__).replace('syn_event.py','')
+full_path = abspath(__file__).replace('syn_next_event.py','')
 if __name__ == '__main__':
-    main()
+	start_time = time.time()
+	main()
+	end_time = time.time()
+	print('\n\nTime taken: ' + str(end_time - start_time))

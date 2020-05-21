@@ -1,15 +1,15 @@
 (set-logic LIA)
-(synth-fun next ((water Int) ) Int
+(synth-fun next ((methane Int) ) Int
 	((Start Int (
 				 2
 			 (ite StartBool Start Start)))
 
 	(Var Int (
-				 0
 				 1
 				 2
-				 29
-				 water
+				 7
+				 559
+				 methane
 				 (+ Var Var)						
 				 (- Var Var)						
 				 (* Var Var)))
@@ -21,21 +21,21 @@
 					 (or  StartBool StartBool)				
 					 (not StartBool)))))
 
-(declare-var water Int)
+(declare-var methane Int)
 
 
-(constraint (= (next 29 ) 2))
-(constraint (= (next 29 ) 2))
-(constraint (= (next 29 ) 2))
-(constraint (= (next 29 ) 2))
-(constraint (= (next 30 ) 2))
-(constraint (= (next 29 ) 2))
-(constraint (= (next 29 ) 2))
-(constraint (= (next 30 ) 2))
-(constraint (= (next 29 ) 2))
-(constraint (= (next 29 ) 2))
-(constraint (= (next 29 ) 2))
-(constraint (= (next 29 ) 2))
-(constraint (= (next 29 ) 2))
+(constraint (= (next 551 ) 2))
+(constraint (= (next 551 ) 2))
+(constraint (= (next 562 ) 2))
+(constraint (= (next 562 ) 2))
+(constraint (= (next 571 ) 2))
+(constraint (= (next 566 ) 2))
+(constraint (= (next 554 ) 2))
+(constraint (= (next 564 ) 2))
+(constraint (= (next 565 ) 2))
+(constraint (= (next 560 ) 2))
+(constraint (= (next 548 ) 2))
+(constraint (= (next 553 ) 2))
+(constraint (= (next 565 ) 2))
 
 (check-synth)

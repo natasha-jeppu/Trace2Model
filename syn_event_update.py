@@ -9,6 +9,7 @@ import statistics as stat
 import argparse
 
 from os.path import abspath
+from termcolor import colored
 
 def pre_process(trace,trace_dict):
 
@@ -253,13 +254,17 @@ def gen_syn(input_dict,trace_dict):
 
 			try:
 				if(synth_tool == 'cvc4'):
-					output = str(subprocess.check_output('cvc4 ' + full_path + 'aux_files/gen_event_update.sl --lang sygus',shell=True,timeout = 5))
+					p = subprocess.run('cvc4 ' + full_path + 'aux_files/gen_event_update.sl --lang sygus', shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout = 5)
+					output = str(p.stdout)
 				elif(synth_tool == 'fastsynth'):
-					output = str(subprocess.check_output('fastsynth ' + full_path + 'aux_files/gen_event_update.sl',shell=True,timeout = 5)).split('\\n')
+					p = subprocess.run('fastsynth ' + full_path + 'aux_files/gen_event_update.sl', shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout = 5)
+					output = str(p.stdout).split('\\n')
 			except subprocess.TimeoutExpired:
+				print(colored("[WARNING] TIMEOUT",'magenta'))
 				event.append('')
 				continue
 			except subprocess.CalledProcessError:
+				print(colored("[WARNING] FAILED",'magenta'))
 				event.append('')
 				continue
 
@@ -296,6 +301,7 @@ def gen_syn(input_dict,trace_dict):
 				event.append(data_type[update_ind][0] + '\' = ' + temp_expr_simple)
 
 		trace_events[i] = event
+		print(colored(event,'green'))
 
 	return trace_events
 
@@ -304,13 +310,14 @@ def gen_syn(input_dict,trace_dict):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME',
+    required_parse = parser.add_argument_group('required arguments')
+    required_parse.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME', required=True,
             help='Input trace file for data update predicate generation')
-    parser.add_argument('-v', '--var', metavar = 'UPDATE_VAR',
+    required_parse.add_argument('-v', '--var', metavar = 'UPDATE_VAR', required=True,
             help='Variable for data update predicate synthesis')
     parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
             help='Variables that affect update variable behaviour')
-    parser.add_argument('-s','--synth_tool', metavar = 'SYNTHESIS_TOOL', default='fastsynth',
+    parser.add_argument('-s','--synth_tool', metavar = 'SYNTHESIS_TOOL', default='fastsynth', choices = ['cvc4','fastsynth'],
             help='Synthesis tool for predicate generation: fastsynth or cvc4')
     parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], type=int, nargs='+',
             help='Constants to be added to grammar for SyGus CVC4')
@@ -352,6 +359,25 @@ def main():
 		temp = [events_split[ind][1:] for ind in range(type_id[0]+1,trace_id[0]) if events_split[ind][0] == i]
 		event_types[i] = temp
 
+
+	for x in event_types:
+		if(update_var not in event_types[x][0]):
+			print(colored("\nWrong update variable option",'red'))
+			print(colored("[HELP]",'green') + " Possible options:")
+			print(event_types)
+			exit()
+
+	for x in var_list:
+		if(x[0] != '[all]' and any(True for y in x[1:] if y not in event_types[x[0]][0])):
+			print(colored("\nWrong dependent variable option",'red'))
+			print(colored("[HELP]",'green') + " Possible options:")
+			print(event_types)
+			exit()
+
+	if(['help'] in var_list or 'help' in update_var):
+		print(colored("[HELP]",'green') + " Possible options:")
+		print(event_types)
+		exit()
 
 	if(var_list):
 		if(var_list[0][0] == '[all]'):
@@ -419,7 +445,7 @@ def main():
 
 			input_dict = pre_process(temp,trace_dict)
 			trace_events = gen_syn(input_dict,trace_dict)
-			print(trace_events)
+			print(colored(trace_events,'green'))
 
 			if(i == 0):
 				f.write("start\n")
@@ -449,7 +475,7 @@ def main():
 
 			input_dict = pre_process(temp,trace_dict)
 			trace_events = gen_syn(input_dict,trace_dict)
-			print(trace_events)
+			print(colored(trace_events,'green'))
 
 			if(i == 0):
 				f.write("start\n")
@@ -465,6 +491,9 @@ def main():
 
 full_path = abspath(__file__).replace('syn_event_update.py','')
 if __name__ == '__main__':
-    main()
+	start_time = time.time()
+	main()
+	end_time = time.time()
+	print('\n\nTime taken: ' + str(end_time - start_time))
 
 
