@@ -39,6 +39,7 @@ def text_preprocess(hyperparams):
 		seq_input.append(event_id[ind:ind+len_seq])
 
 	seq_input_uniq,u_ind = np.unique(seq_input,return_index=True,axis=0)
+	seq_input_uniq = seq_input_uniq[np.argsort(u_ind)]
 	
 	print('Input size for segmented:')
 	print(len(seq_input_uniq)*len_seq)
