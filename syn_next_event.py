@@ -83,10 +83,14 @@ def simplify(expression,data_type):
 			f.write('(check-synth)')
 			f.close()
 
+			p = subprocess.Popen('fastsynth ' + full_path + 'aux_files/simplify_event.sl', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+
 			try:
-				p = subprocess.run('fastsynth ' + full_path + 'aux_files/simplify_event.sl', shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10)
-				output = str(p.stdout).split('\\n')
+				output, o_err = p.communicate(timeout=10)
+				output = str(output).split('\\n')
+				p.kill()
 			except subprocess.CalledProcessError:
+				p.kill()
 				print(colored("[WARNING] FAILED",'magenta'))
 				temp_expr_simple = ' and '.join(list_cond)
 
@@ -96,6 +100,7 @@ def simplify(expression,data_type):
 					expr_simple = expr_simple + ' and ' + temp_expr_simple
 				continue
 			except subprocess.TimeoutExpired:
+				p.kill()
 				print(colored("[WARNING] TIMEOUT",'magenta'))
 				temp_expr_simple = ' and '.join(list_cond)
 
@@ -350,10 +355,12 @@ def gen_syn(input_dict,trace_dict):
 
 			f.close()
 
+			p = subprocess.Popen('cvc4 '+ full_path + 'aux_files/gen_event.sl --lang sygus', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 			try:
-				p = subprocess.run('cvc4 '+ full_path + 'aux_files/gen_event.sl --lang sygus',shell=True, check=True, stdout=subprocess.PIPE, timeout=5)
-				output = str(p.stdout)
+				output,o_err = p.communicate(timeout=5)
+				p.kill()
 			except subprocess.TimeoutExpired:
+				p.kill()
 				print(colored("[WARNING] TIMEOUT",'magenta'))
 				event = 0
 				continue

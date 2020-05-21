@@ -1,38 +1,24 @@
 (set-logic LIA)
-(synth-fun next ((pump Bool) ) Bool
-	((Start Bool (
-				 true
-				 false
-			 	 pump
-				 (>= Start_Int Start_Int)						
-				 (<= Start_Int Start_Int)						
-				 (and Start Start)			
-				 (or  Start Start)				
-				 (not Start)))
+(synth-fun next ((x Int) ) Int
+	((Start Int (
+				 (+ Start Start)						
+				 (- Start Start)						
+				 (* Start Start)
+				 x
+				 0
+				 1
+				 (ite StartBool Start Start)))
 
-	 (Start_Int Int (
-					(+ Start_Int Start_Int)						
-					(- Start_Int Start_Int)						
-					(* Start_Int Start_Int)
-					0
-					1
-					(ite Start Start_Int Start_Int)))))
+	 (StartBool Bool (
+					 (>= Start Start)						
+					 (<= Start Start)						
+					 (and StartBool StartBool)			
+					 (or  StartBool StartBool)				
+					 (not StartBool)))))
 
-(declare-var pump Bool)
+(declare-var x Int)
 
 
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
-(constraint (= (next true ) true))
+(constraint (= (next 0 ) 0))
 
 (check-synth)

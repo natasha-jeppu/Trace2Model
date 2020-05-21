@@ -3,6 +3,8 @@ op' = (+ ip op)
 op' = (+ ip op)
 op' = (+ ip op)
 op' = (+ ip op)
+op' = (ite (>= op 5) 5 (+ ip op))
+op' = 5
 op' = op
 op' = op
 start
@@ -10,6 +12,8 @@ op' = (+ ip op)
 op' = (+ ip op)
 op' = (+ ip op)
 op' = (+ ip op)
+op' = (ite (>= -5 op) -5 (+ ip op))
+op' = -5
 op' = op
 op' = op
 start
@@ -34,6 +38,8 @@ start
 op' = (+ ip op)
 op' = (+ ip op)
 op' = (+ ip op)
+op' = (ite (>= op 5) 5 (+ ip op))
+op' = (ite (>= ip 0) 5 (+ ip op))
 op' = (ite (>= ip 0) op (+ ip op))
 op' = (+ ip op)
 op' = (+ ip op)
@@ -43,6 +49,8 @@ op' = (+ ip op)
 op' = (+ ip op)
 op' = (+ ip op)
 op' = (+ ip op)
+op' = (ite (>= -5 op) -5 (+ ip op))
+op' = (ite (>= ip 0) (+ ip op) -5)
 op' = (ite (>= ip 0) (+ ip op) op)
 op' = (+ ip op)
 op' = (+ ip op)

@@ -252,18 +252,24 @@ def gen_syn(input_dict,trace_dict):
 				syn_bool_file(input_syn,j)
 				j=j+1
 
+			if(synth_tool == 'cvc4'):
+				p = subprocess.Popen('cvc4 ' + full_path + 'aux_files/gen_event_update.sl --lang sygus', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+			elif(synth_tool == 'fastsynth'):
+				p = subprocess.Popen('fastsynth ' + full_path + 'aux_files/gen_event_update.sl', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+
 			try:
-				if(synth_tool == 'cvc4'):
-					p = subprocess.run('cvc4 ' + full_path + 'aux_files/gen_event_update.sl --lang sygus', shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout = 5)
-					output = str(p.stdout)
-				elif(synth_tool == 'fastsynth'):
-					p = subprocess.run('fastsynth ' + full_path + 'aux_files/gen_event_update.sl', shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout = 5)
-					output = str(p.stdout).split('\\n')
+				output, o_err = p.communicate(timeout = 5)
+				if(synth_tool == 'fastsynth'):
+					output = str(output).split('\\n')
+				p.kill()
 			except subprocess.TimeoutExpired:
+				p.kill()
 				print(colored("[WARNING] TIMEOUT",'magenta'))
 				event.append('')
 				continue
 			except subprocess.CalledProcessError:
+				p.kill()
 				print(colored("[WARNING] FAILED",'magenta'))
 				event.append('')
 				continue
