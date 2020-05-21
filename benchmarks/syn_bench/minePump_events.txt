@@ -1,2923 +1,2923 @@
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-highwater, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+highwater
+((< water 32)) or ((>= water 35)): switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+critical
+(!(>= 35 water) and !(>= 604 methane) and !pump) or ((>= 604 methane) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((< water 32)) or ((>= water 35)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((< water 32)) or ((>= water 35)): switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+((>= 35 water) and !(>= 604 methane) and !pump): highwater
+(!(>= 35 (+ (+ 2 water)  2)) and !(>= water 35)): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((< water 32)) or ((>= water 35)): switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+critical
+(!(>= 35 water) and !(>= 604 methane) and !pump) or ((>= 604 methane) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((< water 32)) or ((>= water 35)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((< water 32)) or ((>= water 35)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((< water 32)) or ((>= water 35)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((< water 32)) or ((>= water 35)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((< water 32)) or ((>= water 35)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+((>= water 31) and (> methane 583)): not_critical
+(!(>= 45 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((= water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= water 31) and (> methane 583) and (>= methane (+ 565 water))): critical
+(!pump): not_critical
+((>= 45 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((= water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= water 31) and (> methane 583) and (>= methane (+ 565 water))): critical
+(!pump): not_critical
+((>= 45 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((< water 30) and (> methane 583) and !(>= methane (+ 565 water))) or (!(>= methane (+ 19 565)) and (>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane (+ 8 565)) and (>= methane 565)) or (!(>= methane 565)): highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+critical
+(!(>= (+ 16 605)  methane)): highwater
+(!(>= 37 water)): critical
+((> water 66) and (>= (+ 2 methane)  605) and (>= (+ 16 605)  methane) and !pump) or ((= water 49) and (>= (+ 16 605)  methane) and !pump) or (!(>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): critical
+((> water 66) and (>= (+ 2 methane)  605) and (>= (+ 16 605)  methane) and !pump) or ((= water 49) and (>= (+ 16 605)  methane) and !pump) or (!(>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): critical
+((> water 66) and (>= (+ 2 methane)  605) and (>= (+ 16 605)  methane) and !pump) or ((= water 49) and (>= (+ 16 605)  methane) and !pump) or (!(>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): critical
+((> water 66) and (>= (+ 2 methane)  605) and (>= (+ 16 605)  methane) and !pump) or ((= water 49) and (>= (+ 16 605)  methane) and !pump) or (!(>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): critical
+((> water 66) and (< methane 603) and !pump) or (!(>= water (+ 16 51)) and (>= water 51) and (>= (+ 1 water)  51) and (>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or ((= water 50) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+critical
+((> water 66) and (< methane 603) and !pump) or (!(>= water (+ 16 51)) and (>= water 51) and (>= (+ 1 water)  51) and (>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or ((= water 50) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+critical
+((> water 66) and (< methane 603) and !pump) or (!(>= water (+ 16 51)) and (>= water 51) and (>= (+ 1 water)  51) and (>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or ((= water 50) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+critical
+((> water 66) and (>= (+ 2 methane)  605) and (>= (+ 16 605)  methane) and !pump) or ((= water 49) and (>= (+ 16 605)  methane) and !pump) or (!(>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): critical
+((> water 66) and (< methane 603) and !pump) or (!(>= water (+ 16 51)) and (>= water 51) and (>= (+ 1 water)  51) and (>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or ((= water 50) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+critical
+((> water 66) and (< methane 603) and !pump) or (!(>= water (+ 16 51)) and (>= water 51) and (>= (+ 1 water)  51) and (>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or ((= water 50) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+critical
+((> water 66) and (>= (+ 2 methane)  605) and (>= (+ 16 605)  methane) and !pump) or ((= water 49) and (>= (+ 16 605)  methane) and !pump) or (!(>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): critical
+((> water 66) and (< methane 603) and !pump) or (!(>= water (+ 16 51)) and (>= water 51) and (>= (+ 1 water)  51) and (>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or ((= water 50) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+critical
+((> water 66) and (< methane 603) and !pump) or (!(>= water (+ 16 51)) and (>= water 51) and (>= (+ 1 water)  51) and (>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or ((= water 50) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 37 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 37 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 37 water)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+((> water 66) and (< methane 603) and !pump) or (!(>= water (+ 16 51)) and (>= water 51) and (>= (+ 1 water)  51) and (>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or ((= water 50) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): not_critical
+((< water 45) and !(>= 596 (+ 2 methane)) and (>= 596 methane)): highwater
+((>= 37 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+((> water 66) and (< methane 603) and !pump) or (!(>= water (+ 16 51)) and (>= water 51) and (>= (+ 1 water)  51) and (>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or ((= water 50) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (* 7 7)) and (>= (+ 7 water)  51) and (>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump) or (!(>= water (+ 16 16)) and (>= (+ 16 605)  methane) and !pump): not_critical
+((< water 45) and !(>= 596 (+ 2 methane)) and (>= 596 methane)): highwater
+((>= 37 water)): switch_pump_on
+turn_on
+critical
+((>= (+ 16 605)  methane) and pump): switch_pump_off
+turn_off
+not_critical
+((< water 45) and (< methane 595)) or ((= water 45) and (>= 596 methane)) or (!(>= water 46) and !(>= 596 methane)) or ((>= water 46)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 37 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+critical
+highwater
+(!(>= 32 water)): critical
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+((>= (+ 2 water)  35) and !(>= 602 (+ 1 methane))) or ((>= 602 (+ 1 methane))): not_critical
+(!(>= 40 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+(!(>= (+ 2 water)  35) and !(>= 602 (+ 1 methane)) and pump): switch_pump_off
+turn_off
+critical
+(!(>= (+ 2 water)  35) and !(>= methane (+ 2 602)) and !(>= 602 (+ 1 methane)) and !pump): critical
+((>= (+ 2 water)  35) and !(>= 602 (+ 1 methane))) or ((>= 602 (+ 1 methane))): not_critical
+((>= 40 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+(!(>= (+ 2 water)  35) and (> methane 603) and !pump): highwater
+critical
+(!(>= (+ 2 water)  35) and !(>= methane (+ 2 602)) and !(>= 602 (+ 1 methane)) and !pump): critical
+((>= (+ 2 water)  35) and !(>= 602 (+ 1 methane))) or ((>= 602 (+ 1 methane))): not_critical
+((>= 40 water)): switch_pump_on
+turn_on
+critical
+(!(>= (+ 2 water)  35) and !(>= 602 (+ 1 methane)) and pump): switch_pump_off
+turn_off
+not_critical
+((>= 40 water)): switch_pump_on
+turn_on
+critical
+(!(>= (+ 2 water)  35) and !(>= 602 (+ 1 methane)) and pump): switch_pump_off
+turn_off
+not_critical
+((>= 40 water)): switch_pump_on
+turn_on
+critical
+(!(>= (+ 2 water)  35) and !(>= 602 (+ 1 methane)) and pump): switch_pump_off
+turn_off
+not_critical
+((>= 40 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+critical
+highwater
+(!(>= 32 water)): critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+(!(>= 31 water)): critical
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+critical
+((>= water 65)): highwater
+(!(>= 45 water)): not_critical
+switch_pump_on
+turn_on
+((>= water (+ 17 50))): critical
+(!(>= water 65) and pump): switch_pump_off
+turn_off
+(!(>= 37 water)): critical
+((< water 63) and !pump): critical
+(!(>= 65 (+ 3 water)) and !(>= water 65) and !pump): not_critical
+switch_pump_on
+turn_on
+(!(>= water (+ 17 50))): low_water
+switch_pump_off
+turn_off
+((>= 37 water)): highwater
+((>= 45 water)): switch_pump_on
+turn_on
+(!(>= water (+ 17 50))): low_water
+switch_pump_off
+turn_off
+((>= 37 water)): highwater
+((>= 45 water)): switch_pump_on
+turn_on
+(!(>= water (+ 17 50))): low_water
+switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
+critical
+highwater
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+((>= 70 water)): critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+(!(>= 70 water)): not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+(!(>= 70 water)): not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+(!(>= 70 water)): not_critical
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+critical
+(!pump): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+highwater
+(!(>= 54 water)): critical
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+(!(>= 597 (* 18 water))): switch_pump_on
+turn_on
+(!(>= 56 (+ 17 water))): critical
+switch_pump_off
+turn_off
+((>= methane 601)): not_critical
+(!(>= 597 (* 18 water))): switch_pump_on
+turn_on
+(!(>= 56 (+ 17 water))): critical
+switch_pump_off
+turn_off
+((>= methane 601)): not_critical
+(!(>= 597 (* 18 water))): switch_pump_on
+turn_on
+(!(>= 56 (+ 17 water))): critical
+switch_pump_off
+turn_off
+((>= methane 601)): not_critical
+(!(>= 597 (* 18 water))): switch_pump_on
+turn_on
+(!(>= 56 (+ 17 water))): critical
+switch_pump_off
+turn_off
+((>= methane 601)): not_critical
+(!(>= 597 (* 18 water))): switch_pump_on
+turn_on
+(!(>= 56 (+ 17 water))): critical
+switch_pump_off
+turn_off
+((>= methane 601)): not_critical
+(!(>= 597 (* 18 water))): switch_pump_on
+turn_on
+((>= 56 (+ 17 water))): low_water
+switch_pump_off
+turn_off
+(!(>= methane 601)): critical
+not_critical
+((>= 597 (* 18 water))): highwater
+((>= 54 water)): switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = false
-highwater, pump' = false
-critical, pump' = false
-critical, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 29 water) and (>= 587 methane)) or (!(>= 29 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 29 water) and (>= 587 methane)) or (!(>= 29 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 29 water) and (>= 587 methane)) or (!(>= 29 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 29 water) and (>= 587 methane)) or (!(>= 29 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 29 water) and (>= 587 methane)) or (!(>= 29 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 29 water) and !(>= 587 methane)): critical
+((>= 32 water) and !(>= 604 methane)): highwater
+critical
+((>= 32 water) and (>= 604 methane)): critical
+(!(>= 32 water)): not_critical
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+highwater
+switch_pump_on
+turn_on
+((>= water (+ 36 36))): critical
+(pump): switch_pump_off
+turn_off
+critical
+((>= water 70) and !pump): not_critical
+switch_pump_on
+turn_on
+((>= water (+ 36 36))): critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+((>= water (+ 36 36))): critical
+(pump): switch_pump_off
+turn_off
+critical
+(!(>= water 70) and !pump): critical
+((>= water 70) and !pump): not_critical
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+(!(>= water (+ 36 36))): low_water
+switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+highwater
+(!(>= 32 water)): critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+(!(>= water (+ 15 37)) and (>= water (+ 15 27)) and (>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)) or ((> water 36) and (> methane 603)): critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+((> water 51) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)) or (!(>= water (+ 15 27)) and (>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)): not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+((> water 51) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)) or (!(>= water (+ 15 27)) and (>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)): not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+((> water 51) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)) or (!(>= water (+ 15 27)) and (>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)): not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+((> water 51) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)) or (!(>= water (+ 15 27)) and (>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)): not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+((> water 51) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)) or (!(>= water (+ 15 27)) and (>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)): not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+((> water 51) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)) or (!(>= water (+ 15 27)) and (>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)): not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+(!(>= water (+ 15 37)) and (>= water (+ 15 27)) and (>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)) or ((> water 36) and (> methane 603)): critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+((> water 51) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)) or (!(>= water (+ 15 27)) and (>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)): not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+((> water 51) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)) or (!(>= water (+ 15 27)) and (>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and !(>= methane (+ 37 567)) and (>= methane (+ 1 567)) and (>= methane 567)): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 37) and (>= water (+ 15 15)) and (>= water (+ 2 27)) and (> methane 567)) or ((> water 29) and (= methane 567)) or ((> water 29) and !(>= methane 567)) or ((= water 29)) or (!(>= water (+ 2 27))): highwater
+((>= 32 water)): switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+(!(>= 31 water)): critical
+(!pump): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 31 water)): highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
+highwater
+switch_pump_on
+turn_on
+critical
+((> water 53) and (>= (+ 2 methane)  604) and pump) or (!(>= water 54) and (>= (+ 6 water)  54)) or (!(>= (+ 6 water)  54)): switch_pump_off
+turn_off
+(!(>= 50 water)): critical
+((> water 53) and (>= (+ 2 methane)  604) and !pump): critical
+((> water 53) and (>= (+ 2 methane)  604) and !pump): critical
+((> water 53) and !(>= (+ 2 methane)  604)): not_critical
+switch_pump_on
+turn_on
+critical
+((> water 53) and (>= (+ 2 methane)  604) and pump) or (!(>= water 54) and (>= (+ 6 water)  54)) or (!(>= (+ 6 water)  54)): switch_pump_off
+turn_off
+((>= 50 water)): not_critical
+switch_pump_on
+turn_on
+critical
+((> water 53) and (>= (+ 2 methane)  604) and pump) or (!(>= water 54) and (>= (+ 6 water)  54)) or (!(>= (+ 6 water)  54)): switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+((>= methane (+ 20 605))): highwater
+(!(>= 33 water)): critical
+((> water 55) and !(>= 605 methane) and (>= methane 605) and (>= (+ 2 methane)  605) and !(>= methane (+ 20 605)) and !pump) or ((> water 55) and !(>= methane 605) and (>= (+ 2 methane)  605) and !(>= methane (+ 20 605)) and !pump): critical
+((> water 55) and !(>= 605 methane) and (>= methane 605) and (>= (+ 2 methane)  605) and !(>= methane (+ 20 605)) and !pump) or ((> water 55) and !(>= methane 605) and (>= (+ 2 methane)  605) and !(>= methane (+ 20 605)) and !pump): critical
+((> water 55) and !(>= 605 methane) and (>= methane 605) and (>= (+ 2 methane)  605) and !(>= methane (+ 20 605)) and !pump) or ((> water 55) and !(>= methane 605) and (>= (+ 2 methane)  605) and !(>= methane (+ 20 605)) and !pump): critical
+((> water 55) and !(>= 605 methane) and (>= methane 605) and (>= (+ 2 methane)  605) and !(>= methane (+ 20 605)) and !pump) or ((> water 55) and !(>= methane 605) and (>= (+ 2 methane)  605) and !(>= methane (+ 20 605)) and !pump): critical
+((> water 55) and !(>= 605 methane) and (>= methane 605) and (>= (+ 2 methane)  605) and !(>= methane (+ 20 605)) and !pump) or ((> water 55) and !(>= methane 605) and (>= (+ 2 methane)  605) and !(>= methane (+ 20 605)) and !pump): critical
+((> water 55) and (= methane 605) and !pump) or ((> water 55) and (< methane 603) and !pump) or (!(>= water 56) and (>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump) or (!(>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+critical
+((> water 55) and (= methane 605) and !pump) or ((> water 55) and (< methane 603) and !pump) or (!(>= water 56) and (>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump) or (!(>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+critical
+((> water 55) and (= methane 605) and !pump) or ((> water 55) and (< methane 603) and !pump) or (!(>= water 56) and (>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump) or (!(>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+critical
+((> water 55) and (= methane 605) and !pump) or ((> water 55) and (< methane 603) and !pump) or (!(>= water 56) and (>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump) or (!(>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+critical
+((> water 55) and (= methane 605) and !pump) or ((> water 55) and (< methane 603) and !pump) or (!(>= water 56) and (>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump) or (!(>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+critical
+((> water 55) and (= methane 605) and !pump) or ((> water 55) and (< methane 603) and !pump) or (!(>= water 56) and (>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump) or (!(>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(!(>= methane (+ 20 605)) and pump): switch_pump_off
+turn_off
+critical
+((> water 55) and (= methane 605) and !pump) or ((> water 55) and (< methane 603) and !pump) or (!(>= water 56) and (>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump) or (!(>= water (+ 20 20)) and !(>= methane (+ 20 605)) and !pump): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 33 water)): switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+((< water 77) and (>= methane 613) and !pump): highwater
+(!(>= 42 water)): critical
+(!(>= 613 (+ 4 methane)) and !(>= methane 613) and !pump) or (!(>= 80 (+ 4 water)) and !(>= water 80) and (>= methane 613) and !pump) or ((>= water 80) and (>= methane 613) and !pump): critical
+(!(>= 613 (+ 4 methane)) and !(>= methane 613) and !pump) or (!(>= 80 (+ 4 water)) and !(>= water 80) and (>= methane 613) and !pump) or ((>= water 80) and (>= methane 613) and !pump): critical
+(!(>= 613 (+ 4 methane)) and !(>= methane 613) and !pump) or (!(>= 80 (+ 4 water)) and !(>= water 80) and (>= methane 613) and !pump) or ((>= water 80) and (>= methane 613) and !pump): critical
+(!(>= 613 (+ 4 methane)) and !(>= methane 613) and !pump) or (!(>= 80 (+ 4 water)) and !(>= water 80) and (>= methane 613) and !pump) or ((>= water 80) and (>= methane 613) and !pump): critical
+(!(>= 613 (+ 4 methane)) and !(>= methane 613) and !pump) or (!(>= 80 (+ 4 water)) and !(>= water 80) and (>= methane 613) and !pump) or ((>= water 80) and (>= methane 613) and !pump): critical
+((< methane 610) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+critical
+((< methane 610) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 42 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 42 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+((>= 42 water)): switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+(!(>= 46 water)): critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+(!(>= 46 water)): critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+(!(>= 46 water)): critical
+(pump): switch_pump_off
+turn_off
+critical
+(!pump): not_critical
+switch_pump_on
+turn_on
+(!(>= 46 water)): critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+(!(>= 46 water)): critical
+(pump): switch_pump_off
+turn_off
+critical
+(!pump): not_critical
+switch_pump_on
+turn_on
+((>= 46 water)): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+((>= 46 water)): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+((>= 46 water)): low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
+critical
+((>= 64 water) and (>= 605 methane) and !pump) or (!(>= 64 water)): not_critical
+(!(>= 70 water)): highwater
+switch_pump_on
+turn_on
+critical
+((>= 64 water) and pump): switch_pump_off
+turn_off
+critical
+((>= 64 water) and !(>= 605 methane) and !pump): critical
+((>= 64 water) and !(>= 605 methane) and !pump): critical
+((>= 64 water) and (>= 605 methane) and !pump) or (!(>= 64 water)): not_critical
+((>= 70 water)): switch_pump_on
+turn_on
+critical
+((>= 64 water) and pump): switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+((>= water 69) and (>= methane (+ 2 606)) and !pump): highwater
+(!(>= 52 water)): critical
+(!(>= 69 (+ 5 water)) and !(>= water 69) and !pump) or ((>= water 69) and !(>= methane (+ 2 606)) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+((>= water 31) and !(>= methane (+ 19 589))): not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+((>= water 31) and !(>= methane (+ 19 589))): not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+((>= water 31) and (>= methane (+ 19 589))): critical
+((< water 65) and !pump): critical
+(!(>= 69 (+ 5 water)) and !(>= water 69) and !pump) or ((>= water 69) and !(>= methane (+ 2 606)) and !pump): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+(!(>= water 31)): highwater
+((>= 52 water)): switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+((>= water 52) and (>= methane 603) and !pump): highwater
+(!(>= 45 water)): critical
+(!(>= water 52) and (>= 603 (+ 2 methane)) and !pump) or ((>= water 52) and !(>= methane 603) and !pump): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and (>= (+ 2 601)  methane)) or (!(>= water 47) and (>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or (!(>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or ((> water 54)): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and (>= (+ 2 601)  methane)) or (!(>= water 47) and (>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or (!(>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or ((> water 54)): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and (>= (+ 2 601)  methane)) or (!(>= water 47) and (>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or (!(>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or ((> water 54)): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and (>= (+ 2 601)  methane)) or (!(>= water 47) and (>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or (!(>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or ((> water 54)): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and (>= (+ 2 601)  methane)) or (!(>= water 47) and (>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or (!(>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or ((> water 54)): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and !(>= (+ 2 601)  methane)) or ((= water 48)) or ((= water 47)): critical
+(!(>= water 52) and (>= 603 (+ 2 methane)) and !pump) or ((>= water 52) and !(>= methane 603) and !pump): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and !(>= (+ 2 601)  methane)) or ((= water 48)) or ((= water 47)): critical
+(!(>= water 52) and (>= 603 (+ 2 methane)) and !pump) or ((>= water 52) and !(>= methane 603) and !pump): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and (>= (+ 2 601)  methane)) or (!(>= water 47) and (>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or (!(>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or ((> water 54)): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and (>= (+ 2 601)  methane)) or (!(>= water 47) and (>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or (!(>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or ((> water 54)): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and !(>= (+ 2 601)  methane)) or ((= water 48)) or ((= water 47)): critical
+(!(>= water 52) and (>= 603 (+ 2 methane)) and !pump) or ((>= water 52) and !(>= methane 603) and !pump): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and !(>= (+ 2 601)  methane)) or ((= water 48)) or ((= water 47)): critical
+(!(>= water 52) and !(>= 603 (+ 2 methane)) and !pump): critical
+(!(>= water 52) and (>= 603 (+ 2 methane)) and !pump) or ((>= water 52) and !(>= methane 603) and !pump): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and (>= (+ 2 601)  methane)) or (!(>= water 47) and (>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or (!(>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or ((> water 54)): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and (>= (+ 2 601)  methane)) or (!(>= water 47) and (>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or (!(>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or ((> water 54)): not_critical
+switch_pump_on
+turn_on
+((< water 49) and !(>= methane (+ 2 594)) and !(>= 594 (+ 5 methane))) or ((= water 49)) or ((>= water 50)): critical
+(pump): switch_pump_off
+turn_off
+((= water 49) and (>= (+ 2 601)  methane)) or (!(>= water 47) and (>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or (!(>= (+ 2 47)  water) and !(>= water (+ 8 47)) and (>= (+ 11 water)  47)) or ((> water 54)): not_critical
+switch_pump_on
+turn_on
+((< water 49) and (> methane 595)) or ((< water 49) and (>= 594 (+ 5 methane))): low_water
+switch_pump_off
+turn_off
+(!(>= (+ 11 water)  47)): highwater
+((>= 45 water)): switch_pump_on
+turn_on
+((< water 49) and (> methane 595)) or ((< water 49) and (>= 594 (+ 5 methane))): low_water
+switch_pump_off
+turn_off
+(!(>= (+ 11 water)  47)): highwater
+((>= 45 water)): switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+critical
+((>= 75 water) and (>= methane 609) and !pump): highwater
+(!(>= 34 water)): critical
+((= methane 608) and !pump) or (!(>= 75 water) and (>= methane 609) and !pump): critical
+((= methane 608) and !pump) or (!(>= 75 water) and (>= methane 609) and !pump): critical
+((< methane 608) and !pump): not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+(!(>= 35 water)): not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+(!(>= 35 water)): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+((>= 35 water)): highwater
+((>= 34 water)): switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start

@@ -42,6 +42,7 @@ def simplify(expression,data_type):
 	expr_simple = ''
 	list_mult_cond = []
 	for x in data_type:
+
 		temp_expr_simple = ''
 		list_cond = [y for y in expr_split if x[0] in y and not (any(z[0] in y for z in data_type if z!=x))]
 
@@ -50,6 +51,7 @@ def simplify(expression,data_type):
 				list_mult_cond.append(y)
 
 		if(len(list_cond) > 1):
+			print("Variable: " + x[0])
 			f = open(full_path + 'aux_files/simplify_event.sl','w')
 			f.write('(set-logic LIA)\n')
 			f.write('(synth-fun inv ((' + x[0])
@@ -107,6 +109,7 @@ def simplify(expression,data_type):
 			temp_expr_simple = expr.replace('SMT: synth_fun::inv -> ','').replace('|synth::parameter0|',x[0])
 		else:
 			if(list_cond):
+				print("Variable: " + x[0])
 				temp_expr_simple = list_cond[0]
 
 		if('(ite' in temp_expr_simple):
@@ -422,12 +425,12 @@ def main():
 		if(x[0] == '[all]'):
 			for y in event_types:
 				if(any(True for z in x[1:] if z not in event_types[y][0])):
-					print(colored("\nWrong dependent variable option",'red'))
+					print(colored("\n[ERROR] Wrong dependent variable option",'red'))
 					print(colored("[HELP]",'green') + " Possible options:")
 					print(event_types)
 					exit()
 		elif(any(True for y in x[1:] if y not in event_types[x[0]][0])):
-			print(colored("\nWrong dependent variable option",'red'))
+			print(colored("\n[ERROR] Wrong dependent variable option",'red'))
 			print(colored("[HELP]",'green') + " Possible options:")
 			print(event_types)
 			exit()

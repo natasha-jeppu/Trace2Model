@@ -3,6 +3,6 @@
 
 (declare-var methane Int)
 
-(constraint (= (inv methane) (and (>= 31 (* (- methane 589)  2)) (>= methane 589))))
+(constraint (= (inv methane) (and (>= 609 (+ 2 methane))(not (>= methane 609)))))
 
 (check-synth)
