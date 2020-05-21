@@ -1,11 +1,6 @@
-import os
-import sys
 import numpy as np
 import subprocess
 import time
-import re
-
-import statistics as stat
 import argparse
 
 from os.path import abspath
@@ -315,23 +310,23 @@ def gen_syn(input_dict,trace_dict):
 
 
 def parse_args():
-    parser = argparse.ArgumentParser()
-    required_parse = parser.add_argument_group('required arguments')
-    required_parse.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME', required=True,
+	parser = argparse.ArgumentParser()
+	required_parse = parser.add_argument_group('required arguments')
+	required_parse.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME', required=True,
             help='Input trace file for data update predicate generation')
-    required_parse.add_argument('-v', '--var', metavar = 'UPDATE_VAR', required=True,
+	required_parse.add_argument('-v', '--var', metavar = 'UPDATE_VAR', required=True,
             help='Variable for data update predicate synthesis')
-    parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
+	parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
             help='Variables that affect update variable behaviour')
-    parser.add_argument('-s','--synth_tool', metavar = 'SYNTHESIS_TOOL', default='fastsynth', choices = ['cvc4','fastsynth'],
+	parser.add_argument('-s','--synth_tool', metavar = 'SYNTHESIS_TOOL', default='fastsynth', choices = ['cvc4','fastsynth'],
             help='Synthesis tool for predicate generation: fastsynth or cvc4')
-    parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], type=int, nargs='+',
+	parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], type=int, nargs='+',
             help='Constants to be added to grammar for SyGus CVC4')
-    parser.add_argument('-w','--window', metavar = 'SLIDING_WINDOW_SIZE', default=3, type=int,
+	parser.add_argument('-w','--window', metavar = 'SLIDING_WINDOW_SIZE', default=3, type=int,
             help='Sliding window size for predicate synthesis')
 
-    hyperparams = parser.parse_args()
-    return hyperparams
+	hyperparams = parser.parse_args()
+	return hyperparams
 
 
 

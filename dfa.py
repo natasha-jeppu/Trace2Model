@@ -1,6 +1,3 @@
-#### for LCRL where transitions cannot loop back to start_state, with check at the end
-
-
 import sys
 import re
 import random
@@ -10,18 +7,20 @@ import json
 import time
 import itertools
 
-# for displaying model
 from transitions import *
 from transitions.extensions import GraphMachine
 from pygraphviz import *
 
-def text_preprocess():
-	# process trace events into list of indices - stored into dictionary input_dict
-	# input_dict = {'event_id': sequence of events 
-	#				'len_seq': length of sliding window
-	#				'seq_input_uniq': event sequence blocks of length = size of sliding window, input to CBMC
-	#				'event_uniq': unique events in trace}
+from os.path import abspath
+from termcolor import colored
 
+import argparse
+
+def text_preprocess(hyperparams):
+
+	trace_filename = hyperparams.input_file
+	len_seq = hyperparams.window
+	
 	f = open(trace_filename,'r')
 	events_raw = f.readlines()
 	events = [x.replace('\n','') for x in events_raw]
@@ -36,31 +35,39 @@ def text_preprocess():
 
 	seq_input = [];
 	for i in range(len(events)-len_seq+1):
-		# random windows instead of a sliding window
-		# ind = random.randint(0,len(events)-3) 
 		ind = i
 		seq_input.append(event_id[ind:ind+len_seq])
 
 	seq_input_uniq,u_ind = np.unique(seq_input,return_index=True,axis=0)
+	
+	print('Input size for segmented:')
 	print(len(seq_input_uniq)*len_seq)
+	print('\nInput size for non segmented:')
+	print(len(event_id))
 
 	if(len(seq_input_uniq)*len_seq < len(event_id)):
+		print(colored('[WARNING] Using segmented','magenta'))
 		seq_input_uniq = seq_input_uniq[np.argsort(u_ind)]
 	else:
+		print(colored('[WARNING] Using non segmented','magenta'))
 		seq_input_uniq = [event_id]
 
-	print(len(event_id))
-	print(event_uniq)
 	
-	#print(seq_input_uniq)
+	print('\nUnique events:')
+	print(event_uniq)
+	print('\n')
 
 	input_dict = {'event_id':event_id, 'seq_input_uniq':seq_input_uniq, 'event_uniq':event_uniq}
 	f.close()
 	return input_dict
 
 
-def gen_c_model(trace_input,constraint,num_states):
-	# Generating C code used to generate behavior model
+def gen_c_model(trace_input,constraint,num_states,var):
+
+	incr = var['incr']
+	change = var['change']
+	no_change = var['no_change']
+	init_model = var['init_model']
 
 	seq_input_uniq = trace_input['seq_input_uniq']
 	event_uniq = trace_input['event_uniq']
@@ -108,8 +115,8 @@ def gen_c_model(trace_input,constraint,num_states):
 			else:
 				f.write("},")
 		f.write("};\n")
-		f.write("for(uint8_t i=0;i<" + str(len(init_model)) + ";i++)											\n\
-			t[t_gen[i][0]-1][t_gen[i][1]-1] = t_gen[i][2];\n")
+		f.write("	for(uint8_t i=0;i<" + str(len(init_model)) + ";i++)											\n\
+		t[t_gen[i][0]-1][t_gen[i][1]-1] = t_gen[i][2];\n\n")
 
 	f.write("	bool wrong_transition = false;\n")
 	if not change:
@@ -147,7 +154,7 @@ def gen_c_model(trace_input,constraint,num_states):
 	}\n")
 
 	else:
-		f.write("uint8_t temp;															\n\
+		f.write("	uint8_t temp;															\n\
 	uint8_t c = 0;																		\n\
 	uint8_t count = " + str(no_change) + ";																	\n\
 																						\n\
@@ -160,7 +167,7 @@ def gen_c_model(trace_input,constraint,num_states):
 																					\n\
 		for (uint8_t j=0;j<event_seq_length;j++)									\n\
 		{																			\n\
-		bool p;																		\n\
+			bool p;																	\n\
 																					\n\
 			if(i==0 && j==0)														\n\
 				printf(\"%d\\n\",1);												\n\
@@ -200,23 +207,23 @@ def gen_c_model(trace_input,constraint,num_states):
 		}																			\n\
 																					\n\
 	}\n\n\
-		bool t1[num_states];														\n\
-		for (uint8_t i=0;i<num_states;i++)												\n\
-			t1[i] = false;																\n\
+	bool t1[num_states];														\n\
+	for (uint8_t i=0;i<num_states;i++)												\n\
+		t1[i] = false;																\n\
 																				\n\
-		for (uint8_t i=0;i<num_states;i++)								\n\
-			for (uint8_t j=0;j<" + str(len(event_uniq)) + ";j++)									\n\
-			{															\n\
-				if(t[i][j] > 0 && t[i][j] != i+1)											\n\
-					t1[t[i][j] - 1] = true;								\n\
-		}\n\
+	for (uint8_t i=0;i<num_states;i++)								\n\
+		for (uint8_t j=0;j<" + str(len(event_uniq)) + ";j++)									\n\
+		{															\n\
+			if(t[i][j] > 0 && t[i][j] != i+1)											\n\
+				t1[t[i][j] - 1] = true;								\n\
+	}\n\
 																		\n\
-		for (uint8_t i=1;i<num_states;i++)								\n\
-			wrong_transition = wrong_transition | !t1[i];\n")
+	for (uint8_t i=1;i<num_states;i++)								\n\
+		wrong_transition = wrong_transition | !t1[i];\n\n")
 
 	f.write("	for (uint8_t i=0;i<num_states;i++)								\n\
 		for (uint8_t j=0;j<" + str(len(event_uniq)) + ";j++)												\n\
-			printf(\"%d\",t[i][j]);\n")				
+			printf(\"%d\",t[i][j]);\n\n")				
 
 
 	if not constraint:
@@ -246,8 +253,8 @@ def gen_c_model(trace_input,constraint,num_states):
 	f.write('}')
 	f.close()
 
-def get_model():
-	# Process CBMC output to extract generated model
+def get_model(input_dict):
+
 	found = 0
 	f = open(C_gen_model_output,'r')
 	out_cbmc = json.load(f)
@@ -280,7 +287,6 @@ def get_model():
 					data = [val['data'] for val in element['values']]
 					if(start_state==0):
 						start_state = int(data[0])
-						# print(start_state)
 						continue
 
 					if(data and data[0] != '0'):
@@ -294,37 +300,35 @@ def get_model():
 				ind2 = 1
 
 	f.close()
-	return (found,t,start_state)
+	return (found,t)
 
-def get_ce(trace_input):
+def get_ce(trace_input,hyperparams):
+
+	len_ce = hyperparams.len_ce
 
 	event_id = trace_input['event_id']
 	event_uniq = trace_input['event_uniq']
 
-	len_ce = l
-
 	seq_input = [];
 	for i in range(len(event_id)-len_ce+1):
-		# random windows instead of a sliding window
-		# ind = random.randint(0,len(events)-3) 
 		ind = i
 		seq_input.append(event_id[ind:ind+len_ce])
 
 	seq_input_uniq = [list(i) for i in (np.unique(seq_input,axis=0))]
-	print(seq_input_uniq)
 
 	b = [list(i) for i in (itertools.product(range(1,len(event_uniq)+1), repeat = len_ce))]
 
 	not_in_seq = [b[i] for i in range(len(b)) if b[i] not in seq_input_uniq]
-	#not_in_seq = seq_input_uniq
 	found = 1
 	if not not_in_seq:
 		found = 0
 
 	return (found,not_in_seq)
 
-def plot_model(model,trace_input,start_state):
-	# Save generated model as figure: my_state_diagram.png
+def plot_model(model,trace_input,num_states,hyperparams):
+
+	trace_filename = hyperparams.input_file
+	target_model_path = hyperparams.target
 	
 	class vis_trace(object):
 		def show_graph(self, **kwargs):
@@ -336,7 +340,7 @@ def plot_model(model,trace_input,start_state):
 
 	t = np.unique(model,axis=0)
 	first_event = [ind for ind in range(len(model)) if model[ind][1] == event_id[0]]
-	#start_state = str(model[first_event[0]][0])
+
 	states = []
 	for i in range(num_states):
 		states.append(str(i+1))
@@ -346,12 +350,11 @@ def plot_model(model,trace_input,start_state):
 		temp_trans = [event_uniq[t[i][1]-1],states[t[i][0]-1] ,states[t[i][2]-1]]
 		transitions.append(temp_trans)
 
-	print(start_state)
 	model = vis_trace()
 	machine = GraphMachine(model=model, 
                        states=states, 
                        transitions=transitions,
-                       initial = str(start_state),
+                       initial = '1',
                        show_auto_transitions=False, # default value is False
                        title="trace_learn",
                        show_conditions=True)
@@ -364,8 +367,9 @@ def dfa_traverse(model,trace):
 			state = 1
 		found = [x[2] for x in model if x[0] == state and x[1] == trace[i]]
 		if not found:
-			print("Missing behavior")
-			print(trace[0:i+1])
+			print(colored("\n[ERROR] Missing behavior",'red'))
+			print(colored(trace[0:i+1],'red'))
+			print('\n')
 			return (0,trace[0:i+1])
 		else:
 			state = found[0]
@@ -374,118 +378,123 @@ def dfa_traverse(model,trace):
 
 
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+    required_parse = parser.add_argument_group('required arguments')
+    required_parse.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME', required = True,
+            help='Input trace file for data update predicate generation')
+    parser.add_argument('-w', '--window', metavar = 'SLIDING_WINDOW', default=3, type=int,
+            help='Sliding window size')
+    parser.add_argument('-n','--num_states', metavar = 'NUM_STATES', default=2, type=int,
+            help='Number of states')
+    parser.add_argument('-t','--target', metavar = 'TARGET_PATH', default='./models',
+            help='Target model path')
+    parser.add_argument('-l','--len_ce', metavar = 'CE_LENGTH', default=2, type=int,
+            help='CE length')
 
-start_time = time.time()
+    hyperparams = parser.parse_args()
+    return hyperparams
 
-trace_filename = sys.argv[1]
-num_states = int(sys.argv[2])
-len_seq = int(sys.argv[3])
-l = int(sys.argv[4])
-target_model_path = sys.argv[5]
+def main():
+	hyperparams = parse_args()
+	# print(hyperparams)
 
-incr = 0
-change = 0
-no_change = 0
+	trace_filename = hyperparams.input_file
+	num_states = hyperparams.num_states
+	len_seq = hyperparams.window
+	len_ce = hyperparams.len_ce
+	target_model_path = hyperparams.target
 
-C_gen_model = './auxiliary_files/gen_model.c'
-C_gen_model_output = './auxiliary_files/cbmc_output_gen_model.json'
+	var = {'incr': 0 , 'change': 0, 'no_change': 0, 'init_model': 0}
 
-input_dict = text_preprocess()
+	input_dict = text_preprocess(hyperparams)
 
-ce_global = []
-found_ce = 0
+	ce_global = []
+	found_ce = 0
 
-print("Checking model against traces")
-(found_ce,ce_global) = get_ce(input_dict)
+	print("Finding CE")
+	(found_ce,ce_global) = get_ce(input_dict,hyperparams)
 	
-if found_ce:
-	print("CE found :")
-	print(list(ce_global))
-else:
-	print("No CE found, generating new model")
+	if found_ce:
+		print("CE found :")
+		print(list(ce_global))
+	else:
+		print("No CE found, generating new model")
 
-if not ce_global:
-	print("Model:")
-	print(temp_model)
-else:
 	while(True):
-		failed_out = []
 		found_model = 0
-		final_model = 1
-		gen_c_model(input_dict,ce_global,num_states)
+
+		gen_c_model(input_dict,ce_global,num_states,var)
+
 		print("Running CBMC...............")
 		os.system("cbmc " + C_gen_model + " --trace --json-ui > " + C_gen_model_output)
 
-		(found_model,temp_model,start_state) = get_model()
+		(found_model,temp_model) = get_model(input_dict)
 
 		if found_model:
-			print("Generated model")
-			print(temp_model)
-
-			if(final_model):
-				print("Final Generated model")
-				print(temp_model)
-				final_model_gen = temp_model
-				break;
+			print(colored("Final Generated model",'green'))
+			print(colored(temp_model,'green'))
+			final_model_gen = temp_model
+			break;
 		else:
 			num_states = num_states + 1
 			print("No model, increasing number of states to %d" %(num_states))
 
 
-##Display model
-plot_model(final_model_gen,input_dict,start_state)
+	##Display model
+	plot_model(final_model_gen,input_dict,num_states,hyperparams)
 
 
-# Verifying
+	print(colored("\n\n\n------------- Verifying: ----------------------------",'magenta'))
 
-print("\n\n\n------------- Verifying: ----------------------------")
+	while(True):
+		(done,trace) = dfa_traverse(final_model_gen,input_dict['event_id'])
+		if (done):
+			print(colored("\nAll behaviors present",'green'))
+			print(colored("Number of states: " + str(num_states),'green'))
+			break
+		else:
+			var['init_model'] = final_model_gen
+			var['incr'] = 1
+			o_num_states = num_states
+			input_dict['seq_input_uniq'] = [trace]
 
-while(True):
-	(f,beh) = dfa_traverse(final_model_gen,input_dict['event_id'])
-	if (f):
-		print("All behaviors present\n")
-		print("Number of states: " + str(num_states))
-		break
-	else:
-		init_model = final_model_gen
-		incr = 1
-		o_num_states = num_states
-		input_dict['seq_input_uniq'] = [beh]
+			while(True):
+				found_model = 0
 
-		while(True):
-			failed_out = []
-			found_model = 0
-			final_model = 1
-			if change:
-				num_states = o_num_states
-			gen_c_model(input_dict,ce_global,num_states)
-			print("Running CBMC...............")
-			os.system("cbmc " + C_gen_model + " --trace --json-ui > " + C_gen_model_output)
+				gen_c_model(input_dict,ce_global,num_states,var)
+				print("Running CBMC...............")
+				os.system("cbmc " + C_gen_model + " --trace --json-ui > " + C_gen_model_output)
 
-			(found_model,temp_model,start_state) = get_model()
+				(found_model,temp_model) = get_model(input_dict)
 
-			if found_model:
-				print("Generated model")
-				print(temp_model)
-
-				if(final_model):
-					print("Final Generated model")
-					print(temp_model)
+				if found_model:
+					print(colored("Final Generated model",'green'))
+					print(colored(temp_model,'green'))
 					final_model_gen = temp_model
+					var['change'] = 0
+					var['no_change'] = 0
 					break;
-			else:
-				if((num_states > o_num_states) and (num_states - o_num_states) % 5 == 0):
-					print("No model, exceeded #states, changing existing transition")
-					change = 1
-					no_change = 1
-					continue
-				num_states = num_states + 1
-				print("No model, increasing number of states to %d" %(num_states))
+				else:
+					if((num_states > o_num_states) and (num_states - o_num_states) % 5 == 0):
+						print("No model, exceeded #states, changing existing transition")
+						var['change'] = 1
+						var['no_change'] = 1
+						num_states = o_num_states
+						continue
+					num_states = num_states + 1
+					print("No model, increasing number of states to %d" %(num_states))
 
-##Display model
-plot_model(final_model_gen,input_dict,start_state)
 
-end_time = time.time()
-print("Time taken: " )
-print(end_time-start_time)
+	plot_model(final_model_gen,input_dict,num_states,hyperparams)
+
+full_path = abspath(__file__).replace('dfa.py','')
+C_gen_model = full_path + 'aux_files/gen_model.c'
+C_gen_model_output = full_path + 'aux_files/cbmc_output_gen_model.json'
+
+if __name__ == '__main__':
+	start_time = time.time()
+	main()
+	end_time = time.time()
+	print('\n\nTime taken: ' + str(end_time - start_time))
 

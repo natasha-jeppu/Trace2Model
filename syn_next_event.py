@@ -1,4 +1,3 @@
-import os
 import sys
 import numpy as np
 import subprocess
@@ -14,7 +13,8 @@ from termcolor import colored
 def pre_process(trace):
 
 	trace_set = dict.fromkeys([i[0] for i in trace],0)
-	
+
+	j = 0
 	for j in range(len(trace)-1):
 		temp1 = trace[j][1:]
 		temp1.append(trace[j+1][0])
@@ -42,15 +42,13 @@ def simplify(expression,data_type):
 	expr_simple = ''
 	list_mult_cond = []
 	for x in data_type:
-
-		temp_expr_simple = ''
 		list_cond = [y for y in expr_split if x[0] in y and not (any(z[0] in y for z in data_type if z!=x))]
 
 		for y in expr_split:
 			if(x[0] in y and y not in list_cond and y not in list_mult_cond):
 				list_mult_cond.append(y)
 
-		if(len(list_cond) > 1):
+		if(list_cond):
 			print("Variable: " + x[0])
 			f = open(full_path + 'aux_files/simplify_event.sl','w')
 			f.write('(set-logic LIA)\n')
@@ -67,18 +65,27 @@ def simplify(expression,data_type):
 				f.write(' Bool)\n')
 
 			f.write('\n(constraint (= (inv ' + x[0] +') ')
-			for i in range(len(list_cond)-1):
-				if('!' in list_cond[i]):
-					f.write('(and (not ' + list_cond[i].replace('!','') + ')')
+			if (len(list_cond) == 1):
+				i = 0
+				if ('!' in list_cond[i]):
+					f.write('(not ' + list_cond[i].replace('!', '') + ')))')
 				else:
-					f.write('(and ' + list_cond[i])
-			i = i + 1
-			if('!' in list_cond[i]):
-				f.write('(not ' + list_cond[i].replace('!','') + ')')
+					f.write(list_cond[i] + '))')
 			else:
-				f.write(' ' + list_cond[i])
-			for j in range(i+2):
-				f.write(')')
+				i = 0
+				for i in range(len(list_cond)-1):
+					if('!' in list_cond[i]):
+						f.write('(and (not ' + list_cond[i].replace('!','') + ')')
+					else:
+						f.write('(and ' + list_cond[i])
+
+				i = i + 1
+				if('!' in list_cond[i]):
+					f.write('(not ' + list_cond[i].replace('!','') + ')')
+				else:
+					f.write(' ' + list_cond[i])
+				for j in range(i+2):
+					f.write(')')
 			f.write('\n\n')
 			f.write('(check-synth)')
 			f.close()
@@ -112,24 +119,20 @@ def simplify(expression,data_type):
 
 			expr = [i for i in output if('SMT: synth_fun::inv -> ' in i)][0]
 			temp_expr_simple = expr.replace('SMT: synth_fun::inv -> ','').replace('|synth::parameter0|',x[0])
-		else:
-			if(list_cond):
-				print("Variable: " + x[0])
-				temp_expr_simple = list_cond[0]
 
-		if('(ite' in temp_expr_simple):
-			temp_expr_simple = ' and '.join(list_cond)
+			if('(ite' in temp_expr_simple):
+				temp_expr_simple = ' and '.join(list_cond)
 
-		if(expr_simple == ''):
-			expr_simple = temp_expr_simple
-		elif(temp_expr_simple != ''):
-			expr_simple = expr_simple + ' and ' + temp_expr_simple
+			if(expr_simple == ''):
+				expr_simple = temp_expr_simple
+			elif(temp_expr_simple != ''):
+				expr_simple = expr_simple + ' and ' + temp_expr_simple
 
 	for x in list_mult_cond:
 		expr_simple = expr_simple + ' and ' + x
-	
+
 	return(expr_simple)
-			
+
 
 
 def post_process(output,next_event,data_type,trace_dict):
@@ -185,12 +188,12 @@ def post_process(output,next_event,data_type,trace_dict):
 				arg1_temp = arg1_temp.replace(x,'')
 				arg2_temp = arg2_temp.replace(x,'')
 
-			if ('(ite' in arg1_temp):	
+			if ('(ite' in arg1_temp):
 				c1 = any((' ' + x + ' ') in arg1_temp for x in char_list)
 			else:
 				c1 = any(x in arg1_temp for x in char_list)
 
-			if ('(ite' in arg2_temp):	
+			if ('(ite' in arg2_temp):
 				c2 = any((' ' + x + ' ') in arg2_temp for x in char_list)
 			else:
 				c2 = any(x in arg2_temp for x in char_list)
@@ -221,17 +224,17 @@ def post_process(output,next_event,data_type,trace_dict):
 
 		for i in range(len(temp)):
 			temp[i] = simplify(temp[i],data_type)
-			print(colored('\nFinal expr: ','green'))
+			print(colored('Final expr: ','green'))
 			print(colored(temp[i],'green'))
 
 		syn_event[event_keys[j]] = '(' + temp[0] + ')'
 		for i in range(1,len(temp)):
-			syn_event[event_keys[j]] = syn_event[event_keys[j]] + ' or (' + temp[i] + ')'			
+			syn_event[event_keys[j]] = syn_event[event_keys[j]] + ' or (' + temp[i] + ')'
 
 
 	return syn_event
 
-	
+
 
 def gen_syn(input_dict,trace_dict):
 
@@ -243,6 +246,7 @@ def gen_syn(input_dict,trace_dict):
 	trace_events = dict.fromkeys(event_types.keys(),0)
 
 	for i in trace_set.keys():
+		event = 0
 		temp = trace_set[i]
 
 		last_ind = len(temp[0]) - 1
@@ -264,12 +268,12 @@ def gen_syn(input_dict,trace_dict):
 					if(len(data) > 1):
 						value.append(int(round(stat.stdev([round(float(y[x])) for y in temp]))))
 					value.append(int(round(np.mean([round(float(y[x])) for y in temp]))))
-		
+
 		value = np.unique(value)
 
 		if(len(next_event) == 0):
 			continue
-		
+
 		j=0
 		while(j < len(temp)):
 			f = open(full_path + 'aux_files/gen_event.sl','w')
@@ -287,21 +291,21 @@ def gen_syn(input_dict,trace_dict):
 			f.write("	((Start Int (\n")
 			for k in range(len(next_event)):
 				f.write("				 " + str(next_event[k]) + "\n")
-			f.write("			 (ite StartBool Start Start)")
+			f.write("				 (ite StartBool Start Start)")
 			f.write("))\n\n")
 
 			f.write("	(Var Int (\n")
 			for x in value:
-				f.write("				 " + str(x) + "\n")
+				f.write("			 " + str(x) + "\n")
 
 			num_data = [x for x in data_type if x[1] == 'N']
 			for k in range(len(num_data)):
-				f.write("				 " + num_data[k][0] + "\n")
+				f.write("			 " + num_data[k][0] + "\n")
 
 			f.write("\
-				 (+ Var Var)						\n\
-				 (- Var Var)						\n\
-				 (* Var Var)")
+			 (+ Var Var)						\n\
+			 (- Var Var)						\n\
+			 (* Var Var)")
 			f.write("))\n\n")
 
 
@@ -320,7 +324,7 @@ def gen_syn(input_dict,trace_dict):
 			f.write("))))\n\n")
 
 
-			
+
 			for x in data_type:
 				if(x[1] == 'N'):
 					f.write("(declare-var " + x[0] + " Int)\n")
@@ -350,7 +354,7 @@ def gen_syn(input_dict,trace_dict):
 
 				count = count + 1
 
-			j=j+count			 
+			j=j+count
 			f.write("\n(check-synth)\n")
 
 			f.close()
@@ -389,17 +393,17 @@ def gen_syn(input_dict,trace_dict):
 
 
 def parse_args():
-    parser = argparse.ArgumentParser()
-    required_parse = parser.add_argument_group('required arguments')
-    required_parse.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME', required = True,
+	parser = argparse.ArgumentParser()
+	required_parse = parser.add_argument_group('required arguments')
+	required_parse.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME', required = True,
             help='Input trace file for data update predicate generation')
-    parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
+	parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
             help='Variables that affect update variable behaviour')
-    parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], type=int, nargs='+',
+	parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], type=int, nargs='+',
             help='Constants to be added to grammar for SyGus CVC4')
 
-    hyperparams = parser.parse_args()
-    return hyperparams
+	hyperparams = parser.parse_args()
+	return hyperparams
 
 def main():
 
@@ -478,7 +482,7 @@ def main():
 					temp.append([x[ind] for ind in var_list_ind[x[0]]])
 			else:
 				temp.append([x[0]])
-		
+
 		events_split = temp
 
 		trace_id = [ind for ind in range(len(events_split)) if events_split[ind][0] == 'trace']
@@ -491,7 +495,7 @@ def main():
 			temp = []
 			temp = [events_split[ind][1:] for ind in range(type_id[0]+1,trace_id[0]) if events_split[ind][0] == i]
 			event_types[i] = temp
-	
+
 	trace_dict = {'trace_id':trace_id, 'type_id':type_id, 'event_keys':event_keys, 'event_types':event_types, 'const_grammar':const_grammar}
 
 	f = open(trace_filename.replace('.txt','') + '_events.txt','w')
@@ -524,7 +528,7 @@ def main():
 				f.write(temp[j][0] + '\n')
 			else:
 				f.write(trace_events[temp[j-1][0]][temp[j][0]] + ': ' + temp[j][0] + '\n')
-		f.write("start\n") 
+		f.write("start\n")
 		f.close()
 
 full_path = abspath(__file__).replace('syn_next_event.py','')

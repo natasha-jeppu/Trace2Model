@@ -1,2923 +1,2923 @@
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-highwater, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+highwater
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+((= pump false)): not_critical
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+((= pump false)): not_critical
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+critical
+highwater
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+not_critical
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+not_critical
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+critical
+highwater
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+not_critical
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+highwater
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+critical
+highwater
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+critical
+highwater
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
+critical
+highwater
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+critical
+((= pump false)): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+highwater
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+not_critical
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = false
-highwater, pump' = false
-critical, pump' = false
-critical, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+highwater
+critical
+critical
+not_critical
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+highwater
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+critical
+((= pump false)): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+highwater
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+highwater
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+highwater
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+critical
+((= pump false)): not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+(pump): switch_pump_off
+turn_off
+critical
+((= pump false)): not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-not_critical, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
+critical
+not_critical
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
 turn_off
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+highwater
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
+critical
+highwater
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-critical, pump' = pump
-highwater, pump' = false
-critical, pump' = pump
-critical, pump' = pump
-critical, pump' = pump
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-critical, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-not_critical, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
-turn_off, pump' = false
-highwater, pump' = false
-switch_pump_on, pump' = false
-turn_on, pump' = true
-low_water, pump' = pump
-switch_pump_off, pump' = pump
+critical
+highwater
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start

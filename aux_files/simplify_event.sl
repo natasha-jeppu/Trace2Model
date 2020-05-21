@@ -1,8 +1,8 @@
 (set-logic LIA)
-(synth-fun inv ((methane Int)) Bool)
+(synth-fun inv ((pump Bool)) Bool)
 
-(declare-var methane Int)
+(declare-var pump Bool)
 
-(constraint (= (inv methane) (and (>= 609 (+ 2 methane))(not (>= methane 609)))))
+(constraint (= (inv pump) (not pump)))
 
 (check-synth)

@@ -1,5 +1,3 @@
-# fully automated non deterministic - using array of transitions with incoming and outgoing arrays
-
 import sys
 import re
 import random
@@ -15,11 +13,6 @@ from transitions.extensions import GraphMachine
 from pygraphviz import *
 
 def text_preprocess(start_index):
-	# process trace events into list of indices - stored into dictionary input_dict
-	# input_dict = {'event_id': sequence of events 
-	#				'len_seq': length of sliding window
-	#				'seq_input_uniq': event sequence blocks of length = size of sliding window, input to CBMC
-	#				'event_uniq': unique events in trace}
 
 	events = events_tup_to_list[start_index]
 	event_uniq = list(set(events))
@@ -53,10 +46,7 @@ def text_preprocess(start_index):
 		seq_input_uniq = [event_id]
 
 	print("\n\n\n******************************************** Iteration:" + str(start_index))
-	# print(events)
-	# print(event_id)
-	#print(event_uniq)
-	print(seq_input_uniq)
+	print(events)
 
 	input_dict = {'event_id':event_id, 'seq_input_uniq':seq_input_uniq, 'event_uniq':event_uniq, 'len_seq':len_seq, 'seq_input_uniq_ce':[], 'trace':event_id}
 	return input_dict
@@ -188,7 +178,6 @@ def gen_c_model(trace_input,constraint,num_states):
 	f.close()
 
 def get_model():
-	# Process CBMC output to extract generated model
 	found = 0
 	f = open(C_gen_model_output,'r')
 	out_cbmc = json.load(f)
@@ -288,7 +277,6 @@ def get_ce(trace_input):
 	return (found,not_in_seq)
 
 def plot_model(model,trace_input):
-	# Save generated model as figure: my_state_diagram.png
 	
 	class vis_trace(object):
 		def show_graph(self, **kwargs):
@@ -311,14 +299,12 @@ def plot_model(model,trace_input):
 		temp_trans = [event_uniq[t[i][1]-1],states[t[i][0]-1] ,states[t[i][2]-1]]
 		transitions.append(temp_trans)
 
-	#print(transitions)
-
 	model = vis_trace()
 	machine = GraphMachine(model=model, 
                        states=states, 
                        transitions=transitions,
                        initial = '1',
-                       show_auto_transitions=False, # default value is False
+                       show_auto_transitions=False,
                        title="trace_learn",
                        show_conditions=True)
 	model.show_graph()
@@ -327,7 +313,6 @@ def nfa_traverse(model,trace):
 	state = [1]
 	for i in range(len(trace)):
 		found = [x[2] for x in model if x[0] in state and x[1] == trace[i]]
-		# print(found)
 		if not found:
 			return 0
 		else:
@@ -335,15 +320,24 @@ def nfa_traverse(model,trace):
 
 	return 1
 
-def check_nfa(model):
-	for i in range(1,num_states):
-		found = [x for x in model if x[2] == i and x[0]!= i and x[2]!=0]
-		# print("i value:" + str(i))
-		# print(found)
-		if not found:
-			return 1
 
-	return 0
+def parse_args():
+    parser = argparse.ArgumentParser()
+    required_parse = parser.add_argument_group('required arguments')
+    required_parse.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME', required = True,
+            help='Input trace file for data update predicate generation')
+    parser.add_argument('-w', '--window', metavar = 'SLIDING_WINDOW', default=3, type=int,
+            help='Sliding window size')
+    parser.add_argument('-n','--num_states', metavar = 'NUM_STATES', default=2, type=int,
+            help='Number of states')
+    parser.add_argument('-t','--target', metavar = 'TARGET_PATH', default='./models',
+            help='Target model path')
+
+    hyperparams = parser.parse_args()
+    return hyperparams
+
+
+
 
 
 start_time = time.time()
@@ -372,7 +366,6 @@ f = open(trace_filename,'r')
 events_raw = f.readlines()
 full_events = [x.replace('\n','') for x in events_raw]
 start_id = [i for i in range(len(full_events)) if full_events[i]=='start']
-#print(start_id)
 f.close()
 
 events_list = []

@@ -13,11 +13,12 @@ from os.path import isfile, join
 # 	# os.system("python3 merged_v9.py " + mypath + f + " 2 3 " + target_model_path)
 # 	print("\n\n")
 
-mypath = './benchmarks/'
+mypath = './benchmarks/old_bench/'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f != '.DS_Store']
 
-target_model_path = os.getcwd() + '/models/'
+target_model_path = ''
 for f in onlyfiles:
 	print("\nRunning example: " + f)
-	os.system("python3 merged_v9.py " + mypath + f + " 2 3 " + target_model_path)
+	# os.system("python3 merged_v9.py " + mypath + f + " 2 3 " + target_model_path)
+	os.system("python3 dfa.py -i " + mypath + f + " -t .")
 	print("\n\n")
