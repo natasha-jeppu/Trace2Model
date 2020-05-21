@@ -368,7 +368,14 @@ def main():
 			exit()
 
 	for x in var_list:
-		if(x[0] != '[all]' and any(True for y in x[1:] if y not in event_types[x[0]][0])):
+		if(x[0] == '[all]'):
+			for y in event_types:
+				if(any(True for z in x[1:] if z not in event_types[y][0])):
+					print(colored("\nWrong dependent variable option",'red'))
+					print(colored("[HELP]",'green') + " Possible options:")
+					print(event_types)
+					exit()
+		elif(any(True for y in x[1:] if y not in event_types[x[0]][0])):
 			print(colored("\nWrong dependent variable option",'red'))
 			print(colored("[HELP]",'green') + " Possible options:")
 			print(event_types)

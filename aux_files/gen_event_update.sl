@@ -1,5 +1,5 @@
 (set-logic LIA)
-(synth-fun next ((water Int) (pump Bool) ) Bool
+(synth-fun next ((pump Bool) ) Bool
 	((Start Bool (
 				 true
 				 false
@@ -14,27 +14,25 @@
 					(+ Start_Int Start_Int)						
 					(- Start_Int Start_Int)						
 					(* Start_Int Start_Int)
-					water
 					0
 					1
 					(ite Start Start_Int Start_Int)))))
 
-(declare-var water Int)
 (declare-var pump Bool)
 
 
-(constraint (= (next 29 true ) true))
-(constraint (= (next 29 true ) true))
-(constraint (= (next 29 true ) true))
-(constraint (= (next 29 true ) true))
-(constraint (= (next 30 true ) true))
-(constraint (= (next 29 true ) true))
-(constraint (= (next 29 true ) true))
-(constraint (= (next 30 true ) true))
-(constraint (= (next 29 true ) true))
-(constraint (= (next 29 true ) true))
-(constraint (= (next 29 true ) true))
-(constraint (= (next 29 true ) true))
-(constraint (= (next 29 true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
+(constraint (= (next true ) true))
 
 (check-synth)
