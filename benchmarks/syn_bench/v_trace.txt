@@ -1,0 +1,32 @@
+types
+v=false ssm:N fresh:S count_v:N
+v=true ssm:N fresh:S count_v:N
+trace
+v=false 1 false 0
+v=false 1 true 1
+v=false 2 false 1
+v=false 1 true 1
+v=false 2 false 1
+v=false 1 true 1
+v=false 1 true 2
+v=false 1 true 3
+v=false 1 true 4
+v=true 1 true 0
+trace
+v=false 1 false 0
+v=false 1 true 1
+v=false 1 true 2
+v=false 1 true 3
+v=false 1 true 4
+v=true 1 true 0
+v=true 1 false 1
+v=true 1 false 2
+v=true 2 false 3
+v=false 2 true 0
+trace
+v=false 1 false 0
+v=false 2 false 0
+v=false 1 true 1
+v=false 1 true 2
+v=false 1 false 1
+trace

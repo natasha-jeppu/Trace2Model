@@ -1,0 +1,126 @@
+start
+reset, x' = 0
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+read, x' = (+ x -1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+read, x' = (+ x -1)
+reset, x' = 0
+read
+start
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+reset, x' = 0
+write, x' = (+ x 1)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+reset, x' = 0
+reset, x' = 0
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = 0
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+reset, x' = 0
+reset, x' = 0
+write, x' = (+ x 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+reset, x' = 0
+write, x' = (+ x 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = 0
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+reset, x' = 0
+reset, x' = 0
+reset, x' = 0
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+write, x' = (+ x 1)
+reset, x' = 0
+write, x' = (+ x 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = 0
+write, x' = (+ x 1)
+reset, x' = 0
+write, x' = (+ x 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = 0
+reset, x' = 0
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (+ x 1)
+reset, x' = 0
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset
+start
+write, x' = (ite (>= x 1) (+ x x) 1)
+write, x' = (ite (>= x 1) (+ x x) 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write, x' = (ite (>= x 1) (+ x x) 1)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+reset, x' = x
+read, x' = (ite (>= x 1) (+ x -1) 0)
+read, x' = (ite (>= x 1) (+ x -1) 0)
+write
+start

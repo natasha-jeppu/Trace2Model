@@ -1,0 +1,49 @@
+start
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = op
+op' = op
+start
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = op
+op' = op
+start
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+start
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (ite (>= ip 0) op (+ ip op))
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (+ ip op)
+op' = (ite (>= ip 0) (+ ip op) op)
+op' = (+ ip op)
+op' = (+ ip op)
+start

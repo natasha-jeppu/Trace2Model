@@ -1,0 +1,45 @@
+types
+nil f:S ssm:N fresh:S valid:S count_f:N
+trace
+nil false 1 false false 0
+nil false 1 true false 0
+nil false 1 false false 1
+nil false 2 false false 2
+nil false 2 false false 3
+nil false 1 false false 4
+nil false 2 false false 5
+nil false 1 false false 6
+nil false 2 false false 7
+nil true 2 false false 0
+trace
+nil false 1 false false 0
+nil false 1 true false 0
+nil false 2 false false 1
+nil false 2 false false 2
+nil false 2 false false 3
+nil false 2 false false 4
+nil false 2 true false 5
+nil false 2 true false 6
+nil false 2 false false 7
+nil true 1 false false 0
+nil true 2 true false 0
+nil true 1 false false 1
+nil true 1 true false 2
+nil true 2 true false 0
+nil true 1 true false 1
+nil true 1 true false 2
+nil true 1 true false 3
+nil true 1 true false 4
+nil false 1 true true 4
+trace
+nil false 1 false false 0
+nil false 2 true false 1
+nil false 1 false false 2
+nil false 1 true false 2
+nil false 2 false false 1
+trace
+nil false 2 false false 0
+nil false 1 false false 1
+nil false 1 true false 1
+nil false 2 true false 1
+trace

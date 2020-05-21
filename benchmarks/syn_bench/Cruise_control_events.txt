@@ -1,0 +1,58 @@
+start
+init, distance' = distance
+on, distance' = distance
+engineOff, distance' = distance
+engineOn, distance' = distance
+accelerator, distance' = distance
+on, distance' = distance
+resume, distance' = distance
+engineOff, distance' = distance
+engineOn, distance' = distance
+off
+start
+init, distance' = distance
+engineOn
+accelerator, distance' = distance
+off
+off
+off
+on, distance' = distance
+off
+off
+engineOn
+engineOff, distance' = distance
+accelerator, distance' = distance
+engineOn
+brake, distance' = distance
+on, distance' = distance
+accelerator, distance' = distance
+on, distance' = distance
+resume
+on, distance' = distance
+engineOff, distance' = distance
+engineOn
+engineOn
+accelerator, distance' = distance
+off
+engineOn
+resume
+on, distance' = distance
+resume
+resume
+resume
+engineOn
+off
+accelerator, distance' = distance
+brake, distance' = distance
+engineOn
+brake, distance' = distance
+on, distance' = distance
+accelerator, distance' = distance
+off
+engineOn
+engineOn
+resume
+off
+accelerator, distance' = distance
+off
+start
