@@ -75,13 +75,15 @@ def gen_c_model(trace_input,constraint,num_states,var):
 
 	data_type = {'seq' : 'uint16_t' if len(seq_input_uniq[0]) > 255 else 'uint8_t',
 				 'num_seq' : 'uint16_t' if len(seq_input_uniq) > 255 else 'uint8_t',
-				 'e_uniq' : 'uint16_t' if len(event_uniq) > 255 else 'uint8_t'}
+				 'e_uniq' : 'uint16_t' if len(event_uniq) > 255 else 'uint8_t',
+				 'num_states' : 'uint16_t' if num_states > 255 else 'uint8_t',
+				 'init_model' : 'uint16_t' if len(init_model) > 255 else 'uint8_t'}
 
 	f.write("#include<stdio.h>\n#include<stdbool.h>\n#include<stdint.h>\nvoid main()\n{\n\
-	uint8_t event_seq_length = " + str(len(seq_input_uniq[0])) + ";\n")
+	" + data_type['seq'] + " event_seq_length = " + str(len(seq_input_uniq[0])) + ";\n")
 
-	f.write("	uint8_t num_input = " + str(len(seq_input_uniq)) + ";\n")
-	f.write("	uint8_t event_seq[" + str(len(seq_input_uniq)) + "][" + str(len(seq_input_uniq[0])) + "] = ")
+	f.write("	" + data_type['num_seq'] + " num_input = " + str(len(seq_input_uniq)) + ";\n")
+	f.write("	" + data_type['e_uniq'] + " event_seq[" + str(len(seq_input_uniq)) + "][" + str(len(seq_input_uniq[0])) + "] = ")
 	f.write("{")
 
 	for i in range(len(seq_input_uniq)):
@@ -96,16 +98,15 @@ def gen_c_model(trace_input,constraint,num_states,var):
 			f.write("},")
 	f.write("};\n")
 
-	f.write("	uint8_t length = sizeof(event_seq)/sizeof(event_seq[0][0]);\n");
-	f.write("	uint8_t num_states = " + str(num_states) + ";\n")
-	f.write("	uint8_t t[num_states][" + str(len(event_uniq)) + "];\n");
+	f.write("	" + data_type['num_states'] + " num_states = " + str(num_states) + ";\n")
+	f.write("	" + data_type['num_states'] + " t[num_states][" + str(len(event_uniq)) + "];\n");
 
-	f.write("	for (uint8_t i=0;i<num_states;i++)								\n\
-		for (uint8_t j=0;j<" + str(len(event_uniq)) + ";j++)												\n\
+	f.write("	for (" + data_type['num_states'] + " i=0;i<num_states;i++)								\n\
+		for (" + data_type['e_uniq'] + " j=0;j<" + str(len(event_uniq)) + ";j++)												\n\
 			t[i][j] = 0;\n\n")
 
 	if incr:
-		f.write("	uint8_t t_gen[" + str(len(init_model)) + "][3] = ");
+		f.write("	" + data_type['num_states'] if num_states > len(event_uniq) else data_type['e_uniq'] + " t_gen[" + str(len(init_model)) + "][3] = ");
 		f.write("{")
 
 		for i in range(len(init_model)):
@@ -119,27 +120,27 @@ def gen_c_model(trace_input,constraint,num_states,var):
 			else:
 				f.write("},")
 		f.write("};\n")
-		f.write("	for(uint8_t i=0;i<" + str(len(init_model)) + ";i++)											\n\
+		f.write("	for(" + data_type['init_model'] + " i=0;i<" + str(len(init_model)) + ";i++)											\n\
 		t[t_gen[i][0]-1][t_gen[i][1]-1] = t_gen[i][2];\n\n")
 
 	f.write("	bool wrong_transition = false;\n")
 	if not change:
 		f.write(" 																		\n\
-	uint8_t temp;																	\n\
+	" + data_type['num_states'] + " temp;																	\n\
 																					\n\
-	for (uint8_t i=0;i<num_input;i++)												\n\
+	for (" + data_type['num_seq'] + " i=0;i<num_input;i++)												\n\
 	{																				\n\
 																					\n\
-		uint8_t state1; 															\n\
+		" + data_type['num_states'] + " state1; 															\n\
 		__CPROVER_assume(state1 <= num_states && state1 > 1);						\n\
 		temp = state1;																\n\
 																					\n\
-		for (uint8_t j=0;j<event_seq_length;j++)									\n\
+		for (" + data_type['seq'] + " j=0;j<event_seq_length;j++)									\n\
 		{																			\n\
 			if(i==0 && j==0)														\n\
 				printf(\"%d\\n\",1);												\n\
 																						\n\
-			uint8_t state2;														\n\
+			" + data_type['num_states'] + " state2;														\n\
 			__CPROVER_assume(state2 <= num_states && state2 > 1);					\n\
 																					\n\
 			if(event_seq[i][j]==1)					\n\
@@ -158,25 +159,25 @@ def gen_c_model(trace_input,constraint,num_states,var):
 	}\n")
 
 	else:
-		f.write("	uint8_t temp;															\n\
+		f.write("	" + data_type['num_states'] + " temp;															\n\
 	uint8_t c = 0;																		\n\
 	uint8_t count = " + str(no_change) + ";																	\n\
 																						\n\
-	for (uint8_t i=0;i<num_input;i++)												\n\
+	for (" + data_type['num_seq'] + " i=0;i<num_input;i++)												\n\
 	{																				\n\
 																					\n\
-		uint8_t state1; 															\n\
+		" + data_type['num_states'] + " state1; 															\n\
 		__CPROVER_assume(state1 <= num_states && state1 > 1);						\n\
 		temp = state1;																\n\
 																					\n\
-		for (uint8_t j=0;j<event_seq_length;j++)									\n\
+		for (" + data_type['seq'] + " j=0;j<event_seq_length;j++)									\n\
 		{																			\n\
 			bool p;																	\n\
 																					\n\
 			if(i==0 && j==0)														\n\
 				printf(\"%d\\n\",1);												\n\
 																					\n\
-			uint8_t state2;															\n\
+			" + data_type['num_states'] + " state2;															\n\
 			__CPROVER_assume(state2 <= num_states && state2 > 1);					\n\
 																					\n\
 			if(event_seq[i][j]==1)													\n\
@@ -212,28 +213,28 @@ def gen_c_model(trace_input,constraint,num_states,var):
 																					\n\
 	}\n\n\
 	bool t1[num_states];														\n\
-	for (uint8_t i=0;i<num_states;i++)												\n\
+	for (" + data_type['num_states'] + " i=0;i<num_states;i++)												\n\
 		t1[i] = false;																\n\
 																				\n\
-	for (uint8_t i=0;i<num_states;i++)								\n\
-		for (uint8_t j=0;j<" + str(len(event_uniq)) + ";j++)									\n\
+	for (" + data_type['num_states'] + " i=0;i<num_states;i++)								\n\
+		for (" + data_type['e_uniq'] + " j=0;j<" + str(len(event_uniq)) + ";j++)									\n\
 		{															\n\
 			if(t[i][j] > 0 && t[i][j] != i+1)											\n\
 				t1[t[i][j] - 1] = true;								\n\
 	}\n\
 																		\n\
-	for (uint8_t i=1;i<num_states;i++)								\n\
+	for (" + data_type['num_states'] + " i=1;i<num_states;i++)								\n\
 		wrong_transition = wrong_transition | !t1[i];\n\n")
 
-	f.write("	for (uint8_t i=0;i<num_states;i++)								\n\
-		for (uint8_t j=0;j<" + str(len(event_uniq)) + ";j++)												\n\
+	f.write("	for (" + data_type['num_states'] + " i=0;i<num_states;i++)								\n\
+		for (" + data_type['e_uniq'] + " j=0;j<" + str(len(event_uniq)) + ";j++)												\n\
 			printf(\"%d\",t[i][j]);\n\n")				
 
 
 	if not constraint:
 		f.write("")
 	else:
-		f.write("	for (uint8_t i=0; i<num_states;i++)							\n\
+		f.write("	for (" + data_type['num_states'] + " i=0; i<num_states;i++)							\n\
 	{\n")
 		len_ce = len(constraint[0])
 		for i in range(len(constraint)):
@@ -409,7 +410,7 @@ def main():
 	len_ce = hyperparams.len_ce
 	target_model_path = hyperparams.target
 
-	var = {'incr': 0 , 'change': 0, 'no_change': 0, 'init_model': 0}
+	var = {'incr': 0 , 'change': 0, 'no_change': 0, 'init_model': []}
 
 	input_dict = text_preprocess(hyperparams)
 
