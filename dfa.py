@@ -98,15 +98,16 @@ def gen_c_model(trace_input,constraint,num_states,var):
 			f.write("},")
 	f.write("};\n")
 
+	f.write("	uint8_t length = sizeof(event_seq)/sizeof(event_seq[0][0]);\n")
 	f.write("	" + data_type['num_states'] + " num_states = " + str(num_states) + ";\n")
-	f.write("	" + data_type['num_states'] + " t[num_states][" + str(len(event_uniq)) + "];\n");
+	f.write("	" + data_type['num_states'] + " t[num_states][" + str(len(event_uniq)) + "];\n")
 
 	f.write("	for (" + data_type['num_states'] + " i=0;i<num_states;i++)								\n\
 		for (" + data_type['e_uniq'] + " j=0;j<" + str(len(event_uniq)) + ";j++)												\n\
 			t[i][j] = 0;\n\n")
 
 	if incr:
-		f.write("	" + data_type['num_states'] if num_states > len(event_uniq) else data_type['e_uniq'] + " t_gen[" + str(len(init_model)) + "][3] = ");
+		f.write("	" + (data_type['num_states'] if num_states > len(event_uniq) else data_type['e_uniq']) + " t_gen[" + str(len(init_model)) + "][3] = ");
 		f.write("{")
 
 		for i in range(len(init_model)):
@@ -462,7 +463,28 @@ def main():
 			var['init_model'] = final_model_gen
 			var['incr'] = 1
 			o_num_states = num_states
-			input_dict['seq_input_uniq'] = [trace]
+
+			len_seq = len_seq + 1
+			seq_input = [];
+			for i in range(len(trace)-len_seq+1):
+				ind = i
+				seq_input.append(trace[ind:ind+len_seq])
+
+			seq_input_uniq,u_ind = np.unique(seq_input,return_index=True,axis=0)
+			seq_input_uniq = seq_input_uniq[np.argsort(u_ind)]
+
+			print('Input size for segmented:')
+			print(len(seq_input_uniq)*len_seq)
+			print('\nInput size for non segmented:')
+			print(len(trace))
+
+			if(len(seq_input_uniq)*len_seq < len(trace)):
+				print(colored('[WARNING] Using segmented','magenta'))
+			else:
+				print(colored('[WARNING] Using non segmented','magenta'))
+				seq_input_uniq = [trace]
+
+			input_dict['seq_input_uniq'] = seq_input_uniq
 
 			while(True):
 				found_model = 0
@@ -481,7 +503,7 @@ def main():
 					var['no_change'] = 0
 					break;
 				else:
-					if((num_states > o_num_states) and (num_states - o_num_states) % 5 == 0):
+					if((num_states > o_num_states) and (num_states - o_num_states) % 1 == 0):
 						print("No model, exceeded #states, changing existing transition")
 						var['change'] = 1
 						var['no_change'] = 1

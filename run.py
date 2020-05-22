@@ -15,7 +15,7 @@ import time
 # 	print("\n\n")
 
 mypath = './benchmarks/old_bench/'
-mypath = './benchmarks/shahar_bench/'
+# mypath = './benchmarks/shahar_bench/'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f != '.DS_Store']
 
 result = []
@@ -23,8 +23,8 @@ target_model_path = ''
 for f in onlyfiles:
 	print("\nRunning example: " + f)
 	start_time = time.time()
-	os.system("python3 incr.py -i " + mypath + f + " -o stb")
-	# os.system("python3 dfa.py -i " + mypath + f + " -t .")
+	# os.system("python3 incr.py -i " + mypath + f + " -o stb")
+	os.system("python3 dfa.py -i " + mypath + f + " -t .")
 	end_time = time.time()
 	temp = [f,end_time-start_time]
 	result.append(temp)
