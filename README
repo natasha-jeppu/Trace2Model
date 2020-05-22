@@ -1,18 +1,16 @@
-install dependencies:
-yum install cbmc
-yum install python3
-yum install cvc4
-yum install git
-dnf install gcc gcc-c++ flex bison perl-libwww-perl patch
-
-
 yum groupinstall "Development Tools"
 yum install kernel-devel kernel-headers
+dnf install gcc gcc-c++ flex bison perl-libwww-perl patch git
 
+install dependencies:
+yum install python3
+yum install cvc4
+yum install z3
 
 building fastsynth:
 git clone https://github.com/kroening/fastsynth.git
 cd fastsynth
+git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
 git submodule init
 git submodule update
 
@@ -20,7 +18,11 @@ cd lib/cbmc
 make -C src minisat2-download
 make -C src
 
-cd ../src
+cd ../../src
 make
+
+python modules:
+yum install graphviz graphviz-devel pkg-config python3-devel redhat-rpm-config
+pip3 install numpy pygraphviz transitions termcolor
 
 

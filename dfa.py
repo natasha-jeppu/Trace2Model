@@ -393,7 +393,7 @@ def parse_args():
             help='Sliding window size')
     parser.add_argument('-n','--num_states', metavar = 'NUM_STATES', default=2, type=int,
             help='Number of states')
-    parser.add_argument('-t','--target', metavar = 'TARGET_PATH', default='./models',
+    parser.add_argument('-t','--target', metavar = 'TARGET_PATH', default=full_path + 'models',
             help='Target model path')
     parser.add_argument('-l','--len_ce', metavar = 'CE_LENGTH', default=2, type=int,
             help='CE length')
@@ -464,27 +464,28 @@ def main():
 			var['incr'] = 1
 			o_num_states = num_states
 
-			len_seq = len_seq + 1
-			seq_input = [];
-			for i in range(len(trace)-len_seq+1):
-				ind = i
-				seq_input.append(trace[ind:ind+len_seq])
+			# len_seq = len_seq + 1
+			# seq_input = [];
+			# for i in range(len(trace)-len_seq+1):
+			# 	ind = i
+			# 	seq_input.append(trace[ind:ind+len_seq])
 
-			seq_input_uniq,u_ind = np.unique(seq_input,return_index=True,axis=0)
-			seq_input_uniq = seq_input_uniq[np.argsort(u_ind)]
+			# seq_input_uniq,u_ind = np.unique(seq_input,return_index=True,axis=0)
+			# seq_input_uniq = seq_input_uniq[np.argsort(u_ind)]
 
-			print('Input size for segmented:')
-			print(len(seq_input_uniq)*len_seq)
-			print('\nInput size for non segmented:')
-			print(len(trace))
+			# print('Input size for segmented:')
+			# print(len(seq_input_uniq)*len_seq)
+			# print('\nInput size for non segmented:')
+			# print(len(trace))
 
-			if(len(seq_input_uniq)*len_seq < len(trace)):
-				print(colored('[WARNING] Using segmented','magenta'))
-			else:
-				print(colored('[WARNING] Using non segmented','magenta'))
-				seq_input_uniq = [trace]
+			# if(len(seq_input_uniq)*len_seq < len(trace)):
+			# 	print(colored('[WARNING] Using segmented','magenta'))
+			# else:
+			# 	print(colored('[WARNING] Using non segmented','magenta'))
+			# 	seq_input_uniq = [trace]
 
-			input_dict['seq_input_uniq'] = seq_input_uniq
+			# input_dict['seq_input_uniq'] = seq_input_uniq
+			input_dict['seq_input_uniq'] = [trace]
 
 			while(True):
 				found_model = 0
@@ -503,7 +504,7 @@ def main():
 					var['no_change'] = 0
 					break;
 				else:
-					if((num_states > o_num_states) and (num_states - o_num_states) % 1 == 0):
+					if((num_states > o_num_states) and (num_states - o_num_states) % 5 == 0):
 						print("No model, exceeded #states, changing existing transition")
 						var['change'] = 1
 						var['no_change'] = 1

@@ -21,6 +21,8 @@ onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f != '.DS
 result = []
 target_model_path = ''
 for f in onlyfiles:
+	if(f == 'linux.txt'):
+		continue
 	print("\nRunning example: " + f)
 	start_time = time.time()
 	# os.system("python3 incr.py -i " + mypath + f + " -o stb")

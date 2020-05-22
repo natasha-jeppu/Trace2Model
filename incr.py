@@ -348,7 +348,7 @@ def parse_args():
             help='Sliding window size')
     parser.add_argument('-n','--num_states', metavar = 'NUM_STATES', default=2, type=int,
             help='Number of states')
-    parser.add_argument('-t','--target', metavar = 'TARGET_PATH', default='./models',
+    parser.add_argument('-t','--target', metavar = 'TARGET_PATH', default=full_path + 'models',
             help='Target model path')
     parser.add_argument('-o','--order', metavar = 'TRACE_ORDER', default='same', choices=['bts','stb','random','same'],
             help='Trace order')
