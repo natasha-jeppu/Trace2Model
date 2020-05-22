@@ -1,0 +1,26 @@
+install dependencies:
+yum install cbmc
+yum install python3
+yum install cvc4
+yum install git
+dnf install gcc gcc-c++ flex bison perl-libwww-perl patch
+
+
+yum groupinstall "Development Tools"
+yum install kernel-devel kernel-headers
+
+
+building fastsynth:
+git clone https://github.com/kroening/fastsynth.git
+cd fastsynth
+git submodule init
+git submodule update
+
+cd lib/cbmc
+make -C src minisat2-download
+make -C src
+
+cd ../src
+make
+
+
