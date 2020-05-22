@@ -48,7 +48,6 @@ def text_preprocess(hyperparams):
 
 	if(len(seq_input_uniq)*len_seq < len(event_id)):
 		print(colored('[WARNING] Using segmented','magenta'))
-		seq_input_uniq = seq_input_uniq[np.argsort(u_ind)]
 	else:
 		print(colored('[WARNING] Using non segmented','magenta'))
 		seq_input_uniq = [event_id]
@@ -73,6 +72,10 @@ def gen_c_model(trace_input,constraint,num_states,var):
 	seq_input_uniq = trace_input['seq_input_uniq']
 	event_uniq = trace_input['event_uniq']
 	f = open(C_gen_model,'w')
+
+	data_type = {'seq' : 'uint16_t' if len(seq_input_uniq[0]) > 255 else 'uint8_t',
+				 'num_seq' : 'uint16_t' if len(seq_input_uniq) > 255 else 'uint8_t',
+				 'e_uniq' : 'uint16_t' if len(event_uniq) > 255 else 'uint8_t'}
 
 	f.write("#include<stdio.h>\n#include<stdbool.h>\n#include<stdint.h>\nvoid main()\n{\n\
 	uint8_t event_seq_length = " + str(len(seq_input_uniq[0])) + ";\n")

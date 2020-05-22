@@ -12,7 +12,17 @@ from transitions import *
 from transitions.extensions import GraphMachine
 from pygraphviz import *
 
-def text_preprocess(start_index):
+from os.path import abspath
+from termcolor import colored
+
+import argparse
+
+def text_preprocess(start_index,hyperparams,var):
+
+	events_tup_to_list = var['events_tup_to_list']
+	o_event_uniq = var['o_event_uniq']
+
+	len_seq = hyperparams.window
 
 	events = events_tup_to_list[start_index]
 	event_uniq = list(set(events))
@@ -34,45 +44,51 @@ def text_preprocess(start_index):
 	if(len(events) < len_seq):
 		seq_input = [event_id]
 	for i in range(len(events)-len_seq+1):
-		# random windows instead of a sliding window
-		# ind = random.randint(0,len(events)-3) 
 		ind = i
 		seq_input.append(event_id[ind:ind+len_seq])
 
 	seq_input_uniq,u_ind = np.unique(seq_input,return_index=True,axis=0)
 	seq_input_uniq = seq_input_uniq[np.argsort(u_ind)]
 
-	if ((len(seq_input_uniq)*len_seq) > len(event_id)):
-		seq_input_uniq = [event_id]
-
+	
 	print("\n\n\n******************************************** Iteration:" + str(start_index))
 	print(events)
 
-	input_dict = {'event_id':event_id, 'seq_input_uniq':seq_input_uniq, 'event_uniq':event_uniq, 'len_seq':len_seq, 'seq_input_uniq_ce':[], 'trace':event_id}
+	if ((len(seq_input_uniq)*len_seq) > len(event_id)):
+		print(colored('[WARNING] Using non segmented','magenta'))
+		seq_input_uniq = [event_id]
+	else:
+		print(colored('[WARNING] Using segmented','magenta'))
+
+	
+
+	input_dict = {'event_id':event_id, 'seq_input_uniq':seq_input_uniq, 'event_uniq':event_uniq, 'len_seq':len_seq, 'seq_input_uniq_ce':[]}
 	return input_dict
 
 
-def gen_c_model(trace_input,constraint,num_states):
-	# Generating C code used to generate behavior model
+def gen_c_model(trace_input,constraint,num_states,start_index,init_model,var):
+
 	seq_input_uniq = trace_input['seq_input_uniq']
 	event_uniq = trace_input['event_uniq']
+	incr = var['incr']
+
 	f = open(C_gen_model,'w')
 
 	f.write("// ******************************************** Iteration:" + str(start_index) + "\n\n")
 	f.write("#include<stdio.h>\n#include<stdbool.h>\n#include<stdint.h>\nvoid main()\n{\n\
-	uint8_t event_seq_length = " + str(len(trace_input['seq_input_uniq'][0])) + ";\n")
+	" + ('uint16_t' if len(seq_input_uniq[0]) > 255 else 'uint8_t') + " event_seq_length = " + str(len(seq_input_uniq[0])) + ";\n")
 
-	f.write("	uint8_t num_input = " + str(len(trace_input['seq_input_uniq'])) + ";\n")
-	f.write("	uint8_t event_seq[" + str(len(trace_input['seq_input_uniq'])) + "][" + str(len(trace_input['seq_input_uniq'][0])) + "] = ")
+	f.write("	uint8_t num_input = " + str(len(seq_input_uniq)) + ";\n")
+	f.write("	uint8_t event_seq[" + str(len(seq_input_uniq)) + "][" + str(len(seq_input_uniq[0])) + "] = ")
 	f.write("{")
 
-	for i in range(len(trace_input['seq_input_uniq'])):
+	for i in range(len(seq_input_uniq)):
 		f.write("{")
-		for j in range(len(trace_input['seq_input_uniq'][0])-1):
+		for j in range(len(seq_input_uniq[0])-1):
 			f.write("%d," %seq_input_uniq[i][j])
 		j = j + 1
 		f.write(str(seq_input_uniq[i][j]))
-		if (i == len(trace_input['seq_input_uniq'])-1):
+		if (i == len(seq_input_uniq)-1):
 			f.write("}")
 		else:
 			f.write("},")
@@ -80,7 +96,7 @@ def gen_c_model(trace_input,constraint,num_states):
 
 	
 	f.write("	uint8_t num_states = " + str(num_states) + ";\n")
-	f.write("	uint8_t t[" + str(len(trace_input['seq_input_uniq'][0])*len(trace_input['seq_input_uniq'])+len(init_model)) + "][3];\n")
+	f.write("	uint8_t t[" + str(len(seq_input_uniq[0])*len(seq_input_uniq)+len(init_model)) + "][3];\n")
 
 	f.write("	uint8_t count=0;\n")
 	if incr:
@@ -177,7 +193,8 @@ def gen_c_model(trace_input,constraint,num_states):
 	f.write('}')
 	f.close()
 
-def get_model():
+def get_model(input_dict,init_model):
+
 	found = 0
 	f = open(C_gen_model_output,'r')
 	out_cbmc = json.load(f)
@@ -216,12 +233,13 @@ def get_model():
 	return (found,t)
 
 
-def get_ce(trace_input):
+def get_ce(trace_input,var,init_model):
+
+	events_tup_to_list = var['events_tup_to_list']
 
 	events_uniq_full = [j for i in events_tup_to_list for j in i]
 	event_uniq = list(set(events_uniq_full))
 	event_uniq.sort(key=events_uniq_full.index)
-	#print(event_uniq)
 
 	event_id = []
 
@@ -232,8 +250,6 @@ def get_ce(trace_input):
 
 	seq_input = [];
 	for i in range(len(event_id)-len_seq+1):
-		# random windows instead of a sliding window
-		# ind = random.randint(0,len(events)-3) 
 		ind = i
 		seq_input.append(event_id[ind:ind+len_seq])
 
@@ -247,28 +263,17 @@ def get_ce(trace_input):
 	for i in range(len(trace_input['event_uniq'])):
 		event_uniq_current_trace.append(event_uniq.index(trace_input['event_uniq'][i])+1)
 
-
-	# print("Current trace")
-	# print(event_uniq_current_trace)
 	a = [x[1] for x in init_model]
 	a_uniq = list(set(a))
-
-	# print("In model")
-	# print(a_uniq)
 
 	for i in range(len(a_uniq)):
 		event_uniq_current_trace.append(a_uniq[i]+1)
 
 	event_uniq_current_trace = np.unique(event_uniq_current_trace)
-	# print("In model")
-	# print(event_uniq_current_trace)
 
 	b = [list(i) for i in (itertools.product(range(1,len(event_uniq_current_trace)+1), repeat = len_seq))]
 	
-
-	#not_in_seq = [b[i] for i in range(len(b)) if (b[i] not in seq_input_uniq) and (b[i][0]<=5 or b[i][1]<=5)]
 	not_in_seq = [b[i] for i in range(len(b)) if (b[i] not in seq_input_uniq)]
-	#print(not_in_seq)
 
 	found = 1
 	if not not_in_seq:
@@ -276,12 +281,17 @@ def get_ce(trace_input):
 
 	return (found,not_in_seq)
 
-def plot_model(model,trace_input):
+def plot_model(model,trace_input,num_states,hyperparams):
 	
+	trace_filename = hyperparams.input_file
+	target_model_path = hyperparams.target
+	order = hyperparams.order
+
 	class vis_trace(object):
 		def show_graph(self, **kwargs):
-			self.get_graph().draw(trace_filename + '_v9_stb.png', prog='dot')
-			os.system('mv ' + trace_filename + '_v9_stb.png ' + target_model_path)
+			name = trace_filename.replace('.txt','') + '_incr_' + order + '.png'
+			self.get_graph().draw(name, prog='dot')
+			os.system('mv ' + name + ' ' + target_model_path)
         	
 
 	event_uniq = trace_input['event_uniq']
@@ -314,11 +324,11 @@ def nfa_traverse(model,trace):
 	for i in range(len(trace)):
 		found = [x[2] for x in model if x[0] in state and x[1] == trace[i]]
 		if not found:
-			return 0
+			return (0,trace[0:i+1])
 		else:
 			state = found
 
-	return 1
+	return (1,[])
 
 
 def parse_args():
@@ -332,222 +342,215 @@ def parse_args():
             help='Number of states')
     parser.add_argument('-t','--target', metavar = 'TARGET_PATH', default='./models',
             help='Target model path')
+    parser.add_argument('-o','--order', metavar = 'TRACE_ORDER', default='same', choices=['bts','stb','random','same'],
+            help='Trace order')
 
     hyperparams = parser.parse_args()
     return hyperparams
 
 
+def main():
+	hyperparams = parse_args()
+	# print(hyperparams)
+
+	trace_filename = hyperparams.input_file
+	num_states = hyperparams.num_states
+	len_seq = hyperparams.window
+	target_model_path = hyperparams.target
+	order = hyperparams.order
+
+	o_event_uniq = []
+	o_event_id = []
+	init_model = []
+	start_state = 1
 
 
+	f = open(trace_filename,'r')
+	events_raw = f.readlines()
+	full_events = [x.replace('\n','') for x in events_raw]
+	start_id = [i for i in range(len(full_events)) if full_events[i]=='start']
+	f.close()
 
-start_time = time.time()
-
-trace_filename = sys.argv[1]
-num_states = int(sys.argv[2])
-len_seq = int(sys.argv[3])
-target_model_path = sys.argv[4]
-
-####################
-#Initialising
-####################
-incr = 0
-
-o_event_uniq = []
-o_event_id = []
-init_model = []
-
-start_state = 1
-
-#################### 
-#Reading text file
-####################
-
-f = open(trace_filename,'r')
-events_raw = f.readlines()
-full_events = [x.replace('\n','') for x in events_raw]
-start_id = [i for i in range(len(full_events)) if full_events[i]=='start']
-f.close()
-
-events_list = []
-for i in range(len(start_id)-1):
-	events_list.append(full_events[start_id[i]:start_id[i+1]])
+	events_list = []
+	for i in range(len(start_id)-1):
+		events_list.append(full_events[start_id[i]:start_id[i+1]])
 
 
-events_tuple = list(set(tuple(x) for x in events_list))
-events_tup_to_list = [list(x) for x in events_tuple]
-# events_tup_to_list.sort(key=events_list.index)
-# events_tup_to_list.sort(key=len,reverse=True)
-events_tup_to_list.sort(key=len)
-# random.shuffle(events_tup_to_list)
-print(len(events_tup_to_list))
+	events_tuple = list(set(tuple(x) for x in events_list))
+	events_tup_to_list = [list(x) for x in events_tuple]
 
-length = [len(x) for x in events_tup_to_list]
-print("Total size:" + str(sum(length)))
-# print(events_tup_to_list)
+	if(order == 'same'):
+		events_tup_to_list.sort(key=events_list.index)
+	elif(order == 'bts'):
+		events_tup_to_list.sort(key=len,reverse=True)
+	elif(order == 'stb'):
+		events_tup_to_list.sort(key=len)
+	elif(order == 'random'):
+		random.shuffle(events_tup_to_list)
 
+	print(len(events_tup_to_list))
 
-########################
-#Generate initial model
-########################
+	length = [len(x) for x in events_tup_to_list]
+	print("Total size:" + str(sum(length)))
 
-C_gen_model = './auxiliary_files/gen_model_v9.c'
-C_gen_model_output = './auxiliary_files/cbmc_output_gen_model_v9.json'
+	#Generate initial model
 
-start_index = 0
-input_dict = text_preprocess(start_index)
+	var = {'incr': 0, 'events_tup_to_list': events_tup_to_list, 'o_event_uniq': o_event_uniq, 'o_event_id': o_event_id}
 
-print("Generating model with " + str(num_states) + " states")
-print("Running CBMC...............")
-gen_c_model(input_dict,[],num_states)
-os.system("cbmc " + C_gen_model + " --trace --json-ui > " + C_gen_model_output)
-found_model = 0
-(found_model,temp_model) = get_model()
-if found_model:
-	print("Generated model")
-	print(temp_model)
-else:
-	print("No model, try larger number of states")
+	start_index = 0
 
-ce_global = []
-found_ce = 0
+	input_dict = text_preprocess(start_index,hyperparams,var)
 
+	ce_global = []
+	found_ce = 0
 
-while (True):
-	print("Checking model against traces")
-	C_check_model = 'check_model.c'
-	(found_ce,ce_global) = get_ce(input_dict)
+	print("Finding CE")
+	(found_ce,ce_global) = get_ce(input_dict,var,init_model)
 	
 	if found_ce:
 		print("CE found :")
 		print(list(ce_global))
-		break;
 	else:
-		print("No CE found, generating new model")
-		break;
+		print("No CE found, generating model")
 
-if not ce_global:
-	print("Model:")
-	print(temp_model)
-else:
+
 	while(True):
-		failed_out = []
 		found_model = 0
-		final_model = 1
-		gen_c_model(input_dict,ce_global,num_states)
+
+		gen_c_model(input_dict,ce_global,num_states,start_index,init_model,var)
 		print("Running CBMC...............")
 		os.system("cbmc " + C_gen_model + " --trace --json-ui > " + C_gen_model_output)
 
-		(found_model,temp_model) = get_model()
+		(found_model,temp_model) = get_model(input_dict,init_model)
 
 		if found_model:
-			print("Generated model")
-			print(temp_model)
-
-			if(final_model):
-				print("Final Generated model")
-				print(temp_model)
-				final_model_gen = temp_model
-				break;
+			print(colored("Final Generated model",'green'))
+			print(colored(temp_model,'green'))
+			final_model_gen = temp_model
+			break;
 		else:
 			num_states = num_states + 1
 			print("No model, increasing number of states to %d" %(num_states))
 
 
 
-##Display model
-plot_model(final_model_gen,input_dict)
+	##Display model
+	plot_model(final_model_gen,input_dict,num_states,hyperparams)
 
-#########################
-#Increment
 
-count = 0
+	#Increment
 
-init_model = final_model_gen
-
-while(True):
-	a = [tuple(y) for y in init_model]
-	b = [tuple(y) for y in final_model_gen]
-
-	incr = 1
-		
-	o_event_uniq = input_dict['event_uniq']
-	o_event_id = input_dict['seq_input_uniq_ce']
 	init_model = final_model_gen
-	start_index = start_index + 1
-	if(start_index == len(events_tup_to_list)):
-		break
-	input_dict = text_preprocess(start_index)
 
-	if nfa_traverse(init_model,input_dict['trace']):
-		input_dict['seq_input_uniq_ce'] = o_event_id
-		continue
+	while(True):
 
-	print("Generating model with " + str(num_states) + " states")
+		var['incr'] = 1
+		
+		var['o_event_uniq'] = input_dict['event_uniq']
+		var['o_event_id'] = input_dict['seq_input_uniq_ce']
+		init_model = final_model_gen
+		start_index = start_index + 1
 
-	ce_global = []
-	found_ce = 0
+		if(start_index == len(events_tup_to_list)):
+			break
 
+		input_dict = text_preprocess(start_index,hyperparams,var)
 
-	while (True):
-		print("Checking model against traces")
-		(found_ce,ce_global) = get_ce(input_dict)
+		(f,trace) = nfa_traverse(init_model,input_dict['event_id'])
+		if(f):
+			input_dict['seq_input_uniq_ce'] = var['o_event_id']
+			continue
+
+		print("Generating model with " + str(num_states) + " states")
+
+		o_num_states = num_states
+
+		
+		print("Finding CE")
+		(found_ce,ce_global) = get_ce(input_dict,var,init_model)
 	
 		if found_ce:
 			print("CE found :")
 			print(list(ce_global))
-			break;
 		else:
-			print("No CE found, generating new model")
-			break;
+			print("No CE found, generating model")
 
-	if not ce_global:
-		print("Model:")
-		print(temp_model)
-	else:
-		o_num_states = num_states
 		while(True):
-			failed_out = []
+
 			found_model = 0
-			final_model = 1
-			gen_c_model(input_dict,ce_global,num_states)
+
+			gen_c_model(input_dict,ce_global,num_states,start_index,init_model,var)
 			print("Running CBMC...............")
 			os.system("cbmc " + C_gen_model + " --trace --json-ui > " + C_gen_model_output)
 
-			(found_model,temp_model) = get_model()
+			(found_model,temp_model) = get_model(input_dict,init_model)
 
 			if found_model:
-				print("Generated model")
-				print(temp_model)
-
-				if(final_model):
-					print("Final Generated model")
-					print(temp_model)
-					final_model_gen = temp_model
-					break;
+				print(colored("Final Generated model",'green'))
+				print(colored(temp_model,'green'))
+				final_model_gen = temp_model
+				break;
 			else:
 				num_states = num_states + 1
 				print("No model, increasing number of states to %d" %(num_states))
 
-			##Display model
-	plot_model(final_model_gen,input_dict)
+		##Display model
+		plot_model(final_model_gen,input_dict,num_states,hyperparams)
 
-print("\n\n\n------------- Verifying: ----------------------------")
+	print("\n\n\n------------- Verifying: ----------------------------")
 
-start_index = -1
+	start_index = -1
 
-while(True):
-	start_index = start_index + 1
-	if(start_index == len(events_tup_to_list)):
-		print("Number of states: " + str(num_states))
-		print("Done")
-		break
-	input_dict = text_preprocess(start_index)
-	if not nfa_traverse(init_model,input_dict['trace']):
-		print("Missing behavior")
-		break
+	while(True):
+
+		start_index = start_index + 1
+
+		if(start_index == len(events_tup_to_list)):
+			print(colored("\nAll behaviors present",'green'))
+			print(colored("Number of states: " + str(num_states),'green'))
+			break
+
+		input_dict = text_preprocess(start_index,hyperparams,var)
+
+		(f,trace) = nfa_traverse(init_model,input_dict['event_id'])
+
+		if(not f):
+			print(colored("\n[ERROR] Missing behavior",'red'))
+			print(colored(trace,'red'))
+			print('\n')
+
+			while(True):
+
+				found_model = 0
+
+				init_model = final_model_gen
+
+				input_dict['seq_input_uniq'] = [trace]
+
+				gen_c_model(input_dict,ce_global,num_states,start_index,init_model,var)
+				print("Running CBMC...............")
+				os.system("cbmc " + C_gen_model + " --trace --json-ui > " + C_gen_model_output)
+
+				(found_model,temp_model) = get_model(input_dict,init_model)
+
+				if found_model:
+					print(colored("Final Generated model",'green'))
+					print(colored(temp_model,'green'))
+					final_model_gen = temp_model
+					break;
+				else:
+					num_states = num_states + 1
+					print("No model, increasing number of states to %d" %(num_states))
+
+			start_index = start_index - 1
 	
 
-end_time = time.time()
+full_path = abspath(__file__).replace('incr.py','')
+C_gen_model = full_path + 'aux_files/gen_model_v9.c'
+C_gen_model_output = full_path + 'aux_files/cbmc_output_gen_model_v9.json'
 
-print("Time taken: " )
-print(end_time-start_time)
+if __name__ == '__main__':
+	start_time = time.time()
+	main()
+	end_time = time.time()
+	print('\n\nTime taken: ' + str(end_time - start_time))
