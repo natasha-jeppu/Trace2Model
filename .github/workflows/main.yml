@@ -95,10 +95,6 @@ jobs:
       uses: sinoru/actions-setup-xcode@v1.1.1
       with:
         xcode-version: 11.4.1
-    
-    - name: CBMC dependencies
-      run: |
-        brew install g++ gcc flex bison make git libwww-perl patch git
         
     - name: Tool dependencies
       run: |
