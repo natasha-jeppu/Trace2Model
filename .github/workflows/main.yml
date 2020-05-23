@@ -120,9 +120,11 @@ jobs:
         git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
         git submodule init
         git submodule update
-        make -C lib/src minisat2-download
-        make -C lib/src
+        cd lib/cbmc
+        make -C src minisat2-download
         make -C src
+        cd ../../src
+        make
     
     - name: Add to path
       run: |
