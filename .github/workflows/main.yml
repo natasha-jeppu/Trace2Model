@@ -29,8 +29,16 @@ jobs:
     - name: Tool dependencies
       run: |
         sudo apt-get install python3 cvc4 cbmc z3
-        
+    
+    - name: Cache fastsynth
+      id: cache-fastsynth
+      uses: actions/cache@v1.2.0
+      with:
+        path: ./fastsynth
+        key: ${{ runner.os }}-fastsynth
+      
     - name: Fastsynth Setup
+      if: steps.cache-fastsynth.outputs.cache-hit != 'true'
       run: |
         git clone https://github.com/kroening/fastsynth.git
         cd fastsynth
@@ -42,12 +50,16 @@ jobs:
         make -C src
         cd ../../src
         make
+        export PATH=$PATH:$(pwd)/fastsynth
 
     - name: Python modules
       run: |
-        sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip
+        sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
         pip3 install numpy pygraphviz transitions termcolor
         
     - name: Run benchmarks
       run: |
+        python3 run.py -syn guard -gen_o incr
+        python3 run.py -syn update -gen_o incr
         python3 run.py -gen_o incr
+        python3 run.py -gen_o dfa
