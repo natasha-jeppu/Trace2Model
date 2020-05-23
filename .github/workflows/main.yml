@@ -95,10 +95,6 @@ jobs:
       uses: sinoru/actions-setup-xcode@v1.1.1
       with:
         xcode-version: 11.4.1
-        
-    - name: Tool dependencies
-      run: |
-        xcode-select --install
     
     - name: Cache fastsynth
       id: cache-fastsynth
