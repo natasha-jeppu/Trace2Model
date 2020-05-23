@@ -51,5 +51,6 @@ make
 
 python modules
 apt-get install graphviz libgraphviz-dev pkg-config
+apt-get install python3-pip
 pip3 install numpy pygraphviz transitions termcolor
 

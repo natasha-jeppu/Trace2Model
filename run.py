@@ -37,10 +37,10 @@ def main():
 
 	if(syn != ''):
 		if(syn == 'guard'):
-			os.system('python3 syn_next_event.py -i ' + full_path + 'benchmarks/syn_bench/minePump.txt -dv [all] methane:N pump:S')
+			os.system('python3 ' + full_path + 'syn_next_event.py -i ' + full_path + 'benchmarks/syn_bench/minePump.txt -dv [all] methane:N pump:S')
 		elif(syn == 'update'):
-			os.system('python3 syn_event_update.py -i ' + full_path + 'benchmarks/syn_bench/uart.txt -v x:N')
-			os.system('python3 syn_event_update.py -i ' + full_path + 'benchmarks/syn_bench/integrator_trace.txt -v op:N')
+			os.system('python3 ' + full_path + 'syn_event_update.py -i ' + full_path + 'benchmarks/syn_bench/uart.txt -v x:N')
+			os.system('python3 ' + full_path + 'syn_event_update.py -i ' + full_path + 'benchmarks/syn_bench/integrator_trace.txt -v op:N')
 		
 
 	onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f != '.DS_Store']
