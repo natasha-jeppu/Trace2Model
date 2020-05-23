@@ -24,11 +24,11 @@ jobs:
 
     - name: CBMC dependencies
       run: |
-        apt-get install g++ gcc flex bison make git libwww-perl patch git
+        sudo apt-get install g++ gcc flex bison make git libwww-perl patch git
         
     - name: Tool dependencies
       run: |
-        apt-get install python3 cvc4 cbmc z3
+        sudo apt-get install python3 cvc4 cbmc z3
         
     - name: Fastsynth Setup
       run: |
@@ -45,7 +45,7 @@ jobs:
 
     - name: Python modules
       run: |
-        apt-get install graphviz libgraphviz-dev pkg-config
+        sudo apt-get install graphviz libgraphviz-dev pkg-config
         pip3 install numpy pygraphviz transitions termcolor
         
     - name: Run benchmarks
