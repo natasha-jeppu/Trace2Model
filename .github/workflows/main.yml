@@ -62,8 +62,7 @@ jobs:
         
     - name: Check fastsynth installation
       run: |
-        echo "::add-path::$(pwd)/aux_files"
-        fastsynth simplify.sl
+        fastsynth ./aux_files/simplify_event.sl
         
     - name: Run benchmarks
       run: |
