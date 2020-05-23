@@ -64,12 +64,19 @@ jobs:
       run: |
         fastsynth ./aux_files/simplify_event.sl
         
-    - name: Run syn benchmarks
+    - name: Run next event syn bench
       run: |
         python3 syn_next_event.py -i ./benchmarks/syn_bench/minePump.txt -dv [all] methane:N pump:S
-        python3 run.py -syn update -gen_o incr
         
-    - name: Run incr and dfa benchmarks
+    - name: Run data update syn bench
+      run: |
+        python3 syn_event_update.py -i ./benchmarks/syn_bench/uart.txt -v x:N
+        pyhton3 syn_event_update.py -i ./benchmarks/syn_bench/integrator_trace.txt -v op:N
+        
+    - name: Run incr bench
       run: |
         python3 run.py -gen_o incr
+    
+    - name: Run dfa bench
+      run: |
         python3 run.py -gen_o dfa
