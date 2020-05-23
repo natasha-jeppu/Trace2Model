@@ -101,7 +101,9 @@ jobs:
         
     - name: Tool dependencies
       run: |
-        brew install python3 cvc4 z3
+        brew install python3 z3
+        brew tap cvc4/cvc4
+        brew install cvc4/cvc4/cvc4 [--HEAD] [--with-java-bindings]
     
     - name: Install Packages
       run: |
