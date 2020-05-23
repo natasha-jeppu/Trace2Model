@@ -26,3 +26,30 @@ yum install graphviz graphviz-devel pkg-config python3-devel redhat-rpm-config
 pip3 install numpy pygraphviz transitions termcolor
 
 
+
+UBUNTU-----------------
+apt-get install build-essential
+apt-get install g++ gcc flex bison make git libwww-perl patch git
+
+install dependencies:
+apt-get install python3 cvc4 cbmc z3
+
+fastsynth:
+git clone https://github.com/kroening/fastsynth.git
+cd fastsynth
+git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
+git submodule init
+git submodule update
+
+cd lib/cbmc
+make -C src minisat2-download
+make -C src
+
+cd ../../src
+make
+
+
+python modules
+apt-get install graphviz libgraphviz-dev pkg-config
+pip3 install numpy pygraphviz transitions termcolor
+
