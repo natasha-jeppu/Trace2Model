@@ -88,7 +88,7 @@ jobs:
         
   OSX:
 
-    runs-on: macOS-10.14
+    runs-on: macos-latest
 
     steps:
       
@@ -96,6 +96,9 @@ jobs:
         
     - name: Setup Xcode
       uses: sinoru/actions-setup-xcode@v1.1.1
+      with:
+        xcode-version: 11.5
+        
     
     - name: Install Packages
       run: |
