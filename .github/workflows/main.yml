@@ -71,7 +71,7 @@ jobs:
     - name: Run data update syn bench
       run: |
         python3 syn_event_update.py -i ./benchmarks/syn_bench/uart.txt -v x:N
-        pyhton3 syn_event_update.py -i ./benchmarks/syn_bench/integrator_trace.txt -v op:N
+        python3 syn_event_update.py -i ./benchmarks/syn_bench/integrator_trace.txt -v op:N
         
     - name: Run incr bench
       run: |
