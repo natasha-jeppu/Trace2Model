@@ -98,6 +98,7 @@ jobs:
       run: |
         brew install libb2
         brew install zstd
+        brew install --HEAD ccache
     
     - name: Cache fastsynth
       id: cache-fastsynth
@@ -116,9 +117,9 @@ jobs:
         git submodule update
         cd lib/cbmc
         make -C src minisat2-download
-        make -C src
+        make -C src -j2 CXX="ccache clang++"
         cd ../../src
-        make
+        make -C -j2 CXX="ccache clang++"
     
     - name: Add to path
       run: |
