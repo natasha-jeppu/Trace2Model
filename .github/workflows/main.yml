@@ -75,8 +75,8 @@ jobs:
         
     - name: Run incr bench
       run: |
-        python3 incr.py -i ./benchmarks/shahar_bench/java.util.StringTokenizer.txt
-        python3 incr.py -i ./benchmarks/shahar_bench/ssh.net.txt
+        python3 incr.py -i ./benchmarks/shahar_bench/java.util.StringTokenizer.txt -o stb
+        python3 incr.py -i ./benchmarks/shahar_bench/ssh.net.txt -o stb
     
     - name: Run dfa bench
       run: |
