@@ -75,8 +75,10 @@ jobs:
         
     - name: Run incr bench
       run: |
-        python3 run.py -gen_o incr
+        python3 incr.py -i ./benchmarks/shahar_bench/java.util.StringTokenizer.txt
+        python3 incr.py -i ./benchmarks/shahar_bench/ssh.net.txt
     
     - name: Run dfa bench
       run: |
-        python3 run.py -gen_o dfa
+        python3 dfa.py -i ./benchmarks/old_bench/hcd-xhci_slot_withbsr.txt
+        python3 dfa.py -i ./benchmarks/old_bench/16384.txt
