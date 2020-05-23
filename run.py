@@ -48,7 +48,7 @@ def main():
 
 	if(syn == ''):
 		for f in onlyfiles:
-			if(f in ['linux.txt','java.net.DatagramSocket.txt','java.net.Socket.txt']):
+			if(f in ['linux.txt','java.net.DatagramSocket.txt','java.net.Socket.txt','attach_device.txt']):
 				continue
 			print("\nRunning example: " + f)
 
