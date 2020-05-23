@@ -50,7 +50,11 @@ jobs:
         make -C src
         cd ../../src
         make
-        export PATH=$PATH:$(pwd)/fastsynth
+    
+    - name: Add to path
+      run: |
+        ls
+        echo $(pwd)
 
     - name: Python modules
       run: |
