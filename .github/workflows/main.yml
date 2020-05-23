@@ -106,6 +106,9 @@ jobs:
       with:
         path: ./fastsynth
         key: ${{ runner.os }}-fastsynth
+        
+    - name: ccache stats
+      run: ccache -s --max-size=390MB
       
     - name: Fastsynth Setup
       if: steps.cache-fastsynth.outputs.cache-hit != 'true'
