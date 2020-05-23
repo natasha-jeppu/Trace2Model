@@ -97,7 +97,7 @@ jobs:
     - name: Setup Xcode
       uses: sinoru/actions-setup-xcode@v1.1.1
       with:
-        xcode-version: 11.5
+        xcode-version: 10.1
 
     - name: Cache cvc4_z3
       id: cache-cvc4_z3
