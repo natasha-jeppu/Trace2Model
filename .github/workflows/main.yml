@@ -99,6 +99,9 @@ jobs:
       with:
         xcode-version: 11.5
         
+    - name: Tool dependencies
+      run: |
+        brew install python3 cvc4 z3
     
     - name: Install Packages
       run: |
@@ -121,6 +124,7 @@ jobs:
         git submodule init
         git submodule update
         cd lib/cbmc
+        git log -1
         make -C src minisat2-download
         make -C src
         cd ../../src
