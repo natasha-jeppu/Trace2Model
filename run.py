@@ -30,10 +30,10 @@ def main():
 
 	if(gen_option == 'dfa'):
 		mypath = full_path + 'benchmarks/old_bench/'
-		file = 'dfa.py'
+		file = full_path + 'dfa.py'
 	elif(gen_option == 'incr'):
 		mypath = full_path + 'benchmarks/shahar_bench/'
-		file = 'incr.py -o stb'
+		file = full_path + 'incr.py -o stb'
 
 	if(syn != ''):
 		if(syn == 'guard'):
