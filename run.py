@@ -4,33 +4,88 @@ from os import listdir
 from os.path import isfile, join
 import time
 
-# mypath = './benchmarks/old_bench/'
-# onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f != '.DS_Store']
+from termcolor import colored
+import argparse
 
-# target_model_path = os.getcwd() + '/models/'
-# for f in onlyfiles:
-# 	print("\nRunning example: " + f)
-# 	os.system("python3 trace2model_mod_v7_with_start_state.py " + mypath + f + " 2 3 2 " + target_model_path)
-# 	# os.system("python3 merged_v9.py " + mypath + f + " 2 3 " + target_model_path)
-# 	print("\n\n")
+def parse_args():
+    parser = argparse.ArgumentParser()
+    required_parse = parser.add_argument_group('required arguments')
+    required_parse.add_argument('-gen_o','--gen_option', metavar = 'MODEL_GEN_OPTION', required = True, choices=['incr','dfa'],
+            help='Automata learning option : incr (incremental), dfa')
+    parser.add_argument('-syn', '--syn_type', metavar = 'SYNTHESIS_TYPE', choices=['guard','update',''], default='',
+            help='Predicate synthesis: guard, update')
 
-mypath = './benchmarks/old_bench/'
-# mypath = './benchmarks/shahar_bench/'
-onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f != '.DS_Store']
+    hyperparams = parser.parse_args()
+    return hyperparams
 
-result = []
-target_model_path = ''
-for f in onlyfiles:
-	if(f == 'linux.txt'):
-		continue
-	print("\nRunning example: " + f)
+def main():
+	hyperparams = parse_args()
+
+	gen_option = hyperparams.gen_option
+	syn = hyperparams.syn_type
+
+	file = ''
+	file_syn = ''
+
+	if(gen_option == 'dfa'):
+		mypath = './benchmarks/old_bench/'
+		file = 'dfa.py'
+	elif(gen_option == 'incr'):
+		mypath = './benchmarks/shahar_bench/'
+		file = 'incr.py -o stb'
+
+	if(syn != ''):
+		if(syn == 'guard'):
+			os.system('python3 syn_next_event.py -i ./benchmarks/syn_bench/minePump.txt -dv [all] methane:N pump:S')
+		elif(syn == 'update'):
+			os.system('python3 syn_event_update.py -i ./benchmarks/syn_bench/uart.txt -v x:N')
+			os.system('python3 syn_event_update.py -i ./benchmarks/syn_bench/integrator_trace.txt -v op:N')
+		
+
+	onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f != '.DS_Store']
+
+	result = []
+
+	if(syn == ''):
+		for f in onlyfiles:
+			if(f in ['linux.txt','java.net.DatagramSocket.txt','java.net.Socket.txt']):
+				continue
+			print("\nRunning example: " + f)
+
+			start_time = time.time()
+			os.system("python3 " + file + " -i " + mypath + f)
+			end_time = time.time()
+
+			temp = [f,end_time-start_time]
+			result.append(temp)
+			print("\n\n")
+
+		for x in result:
+			print(x[0] + ': ' + str(x[1]))
+
+	else:
+		if(syn == 'guard'):
+			start_time = time.time()
+			os.system("python3 " + file + " -i ./benchmarks/syn_bench/minePump_events.txt")
+			end_time = time.time()
+			print("Time taken: " + str(end_time-start_time))
+		else:
+			start_time = time.time()
+			os.system("python3 " + file + " -i ./benchmarks/syn_bench/uart_events.txt")
+			end_time = time.time()
+			print("Time taken: " + str(end_time-start_time))
+			start_time = time.time()
+			os.system("python3 " + file + " -i ./benchmarks/syn_bench/integrator_trace_events.txt ")
+			end_time = time.time()
+			print("Time taken: " + str(end_time-start_time))
+
+if __name__ == '__main__':
 	start_time = time.time()
-	# os.system("python3 incr.py -i " + mypath + f + " -o stb")
-	os.system("python3 dfa.py -i " + mypath + f + " -t .")
+	main()
 	end_time = time.time()
-	temp = [f,end_time-start_time]
-	result.append(temp)
-	print("\n\n")
+	print('\n\nTime taken: ' + str(end_time - start_time))
 
-for x in result:
-	print(x[0] + ': ' + str(x[1]))
+
+
+
+
