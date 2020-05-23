@@ -53,9 +53,7 @@ jobs:
     
     - name: Add to path
       run: |
-        cd fastsynth/src
-        ls
-        ::add-path::./fastsynth/src/fastsynth
+        echo "::add-path::$(pwd)/fastsynth/src/fastsynth"
 
     - name: Python modules
       run: |
