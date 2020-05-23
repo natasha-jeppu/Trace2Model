@@ -57,6 +57,10 @@ jobs:
         sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
         pip3 install numpy pygraphviz transitions termcolor
         
+    - name: Check fastsynth installation
+      run: |
+        fastsynth ./aux_files/simplify.sl
+        
     - name: Run benchmarks
       run: |
         python3 run.py -syn guard -gen_o incr
