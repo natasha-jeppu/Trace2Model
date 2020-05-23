@@ -1,0 +1,53 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: CBMC dependencies
+      run: |
+        sudo apt-get install g++ gcc flex bison make git libwww-perl patch git
+        
+    - name: Tool dependencies
+      run: |
+        sudo apt-get install python3 cvc4 cbmc z3
+        
+    - name: Fastsynth Setup
+      run: |
+        git clone https://github.com/kroening/fastsynth.git
+        cd fastsynth
+        git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
+        git submodule init
+        git submodule update
+        cd lib/cbmc
+        make -C src minisat2-download
+        make -C src
+        cd ../../src
+        make
+
+    - name: Python modules
+      run: |
+        sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip
+        pip3 install numpy pygraphviz transitions termcolor
+        
+    - name: Run benchmarks
+      run: |
+        python3 run.py -gen_o incr
