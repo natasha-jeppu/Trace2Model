@@ -60,3 +60,4 @@ jobs:
     - name: Run benchmarks
       run: |
         python3 run.py -gen_o incr
+        python3 run.py -gen_o dfa
