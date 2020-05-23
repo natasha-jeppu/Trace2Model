@@ -103,7 +103,7 @@ jobs:
       run: |
         brew install python3 z3
         brew tap cvc4/cvc4
-        brew install cvc4/cvc4/cvc4 [--HEAD] [--with-java-bindings]
+        brew install cvc4/cvc4/cvc4
     
     - name: Install Packages
       run: |
