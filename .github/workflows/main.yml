@@ -45,7 +45,7 @@ jobs:
 
     - name: Python modules
       run: |
-        sudo apt-get install graphviz libgraphviz-dev pkg-config
+        sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip
         pip3 install numpy pygraphviz transitions termcolor
         
     - name: Run benchmarks
