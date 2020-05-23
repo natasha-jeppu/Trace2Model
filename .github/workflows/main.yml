@@ -59,5 +59,7 @@ jobs:
         
     - name: Run benchmarks
       run: |
+        python3 run.py -syn guard -gen_o incr
+        python3 run.py -syn update -gen_o incr
         python3 run.py -gen_o incr
         python3 run.py -gen_o dfa
