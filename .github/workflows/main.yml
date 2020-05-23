@@ -9,149 +9,119 @@ on:
 
 jobs:
 
-  Linux:
+#   Linux:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
+#     steps:
     
-    - uses: actions/checkout@v2
+#     - uses: actions/checkout@v2
 
-    - name: CBMC dependencies
-      run: |
-        sudo apt-get install g++ gcc flex bison make git libwww-perl patch git
+#     - name: CBMC dependencies
+#       run: |
+#         sudo apt-get install g++ gcc flex bison make git libwww-perl patch git
         
-    - name: Tool dependencies
-      run: |
-        sudo apt-get install python3 cvc4 cbmc z3
+#     - name: Tool dependencies
+#       run: |
+#         sudo apt-get install python3 cvc4 cbmc z3
     
-    - name: Cache fastsynth
-      id: cache-fastsynth
-      uses: actions/cache@v1.2.0
-      with:
-        path: ./fastsynth
-        key: ${{ runner.os }}-fastsynth
+#     - name: Cache fastsynth
+#       id: cache-fastsynth
+#       uses: actions/cache@v1.2.0
+#       with:
+#         path: ./fastsynth
+#         key: ${{ runner.os }}-fastsynth
       
-    - name: Fastsynth Setup
-      if: steps.cache-fastsynth.outputs.cache-hit != 'true'
-      run: |
-        git clone https://github.com/kroening/fastsynth.git
-        cd fastsynth
-        git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
-        git submodule init
-        git submodule update
-        cd lib/cbmc
-        make -C src minisat2-download
-        make -C src
-        cd ../../src
-        make
+#     - name: Fastsynth Setup
+#       if: steps.cache-fastsynth.outputs.cache-hit != 'true'
+#       run: |
+#         git clone https://github.com/kroening/fastsynth.git
+#         cd fastsynth
+#         git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
+#         git submodule init
+#         git submodule update
+#         cd lib/cbmc
+#         make -C src minisat2-download
+#         make -C src
+#         cd ../../src
+#         make
     
-    - name: Add to path
-      run: |
-        echo "::add-path::$(pwd)/fastsynth/src/fastsynth"
+#     - name: Add to path
+#       run: |
+#         echo "::add-path::$(pwd)/fastsynth/src/fastsynth"
 
-    - name: Python modules
-      run: |
-        sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
-        pip3 install numpy pygraphviz transitions termcolor
+#     - name: Python modules
+#       run: |
+#         sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
+#         pip3 install numpy pygraphviz transitions termcolor
         
-    - name: Check fastsynth installation
-      run: |
-        fastsynth ./aux_files/simplify_event.sl
+#     - name: Check fastsynth installation
+#       run: |
+#         fastsynth ./aux_files/simplify_event.sl
         
-    - name: Setup artifact directory
-      run: mkdir -p result
+#     - name: Setup artifact directory
+#       run: mkdir -p result
     
-    - name: Run next event syn bench
-      run: |
-        python3 syn_next_event.py -i ./benchmarks/syn_bench/minePump.txt -dv [all] methane:N pump:S > ./result/syn_bench.txt
+#     - name: Run next event syn bench
+#       run: |
+#         python3 syn_next_event.py -i ./benchmarks/syn_bench/minePump.txt -dv [all] methane:N pump:S > ./result/syn_bench.txt
         
-    - name: Run data update syn bench
-      run: |
-        python3 syn_event_update.py -i ./benchmarks/syn_bench/uart.txt -v x:N > ./result/update_bench.txt
-        python3 syn_event_update.py -i ./benchmarks/syn_bench/integrator_trace.txt -v op:N >> ./result/update_bench.txt
+#     - name: Run data update syn bench
+#       run: |
+#         python3 syn_event_update.py -i ./benchmarks/syn_bench/uart.txt -v x:N > ./result/update_bench.txt
+#         python3 syn_event_update.py -i ./benchmarks/syn_bench/integrator_trace.txt -v op:N >> ./result/update_bench.txt
         
-    - name: Run incr bench
-      run: |
-        python3 incr.py -i ./benchmarks/shahar_bench/java.util.StringTokenizer.txt -o stb > ./result/incr_bench.txt
-        python3 incr.py -i ./benchmarks/shahar_bench/ssh.net.txt -o stb >> ./result/incr_bench.txt
+#     - name: Run incr bench
+#       run: |
+#         python3 incr.py -i ./benchmarks/shahar_bench/java.util.StringTokenizer.txt -o stb > ./result/incr_bench.txt
+#         python3 incr.py -i ./benchmarks/shahar_bench/ssh.net.txt -o stb >> ./result/incr_bench.txt
     
-    - name: Run dfa bench
-      run: |
-        python3 dfa.py -i ./benchmarks/old_bench/hcd-xhci_slot_withbsr.txt > ./result/dfa_bench.txt
-        python3 dfa.py -i ./benchmarks/old_bench/16384.txt >> ./result/dfa_bench.txt
+#     - name: Run dfa bench
+#       run: |
+#         python3 dfa.py -i ./benchmarks/old_bench/hcd-xhci_slot_withbsr.txt > ./result/dfa_bench.txt
+#         python3 dfa.py -i ./benchmarks/old_bench/16384.txt >> ./result/dfa_bench.txt
         
-    - uses: actions/upload-artifact@v2
-      with:
-        name: Result
-        path: ./result/
+#     - uses: actions/upload-artifact@v2
+#       with:
+#         name: Result
+#         path: ./result/
         
   OSX:
 
-    runs-on: macos-latest
+    runs-on: macOS-10.14
 
     steps:
-      
-    - uses: actions/checkout@v2
-        
-    - name: Setup Xcode
-      uses: sinoru/actions-setup-xcode@v1.1.1
-      with:
-        xcode-version: 10.1
-
-    - name: Cache cvc4_z3
-      id: cache-cvc4_z3
-      uses: actions/cache@v1.2.0
-      with:
-        path: ./cvc4_z3
-        key: ${{ runner.os }}-cvc4_z3
-        
-    - name: Tool dependencies
-      if: steps.cache-cvc4_z3.outputs.cache-hit != 'true'
-      run: |
-        brew install python3 z3
-        brew tap cvc4/cvc4
-        brew install cvc4/cvc4/cvc4
-    
     - name: Install Packages
-      if: steps.cache-cvc4_z3.outputs.cache-hit != 'true'
       run: |
         brew install libb2
         brew install zstd
-        
-    - name: Cache fastsynth
-      id: cache-fastsynth
-      uses: actions/cache@v1.2.0
-      with:
-        path: ./fastsynth
-        key: ${{ runner.os }}-fastsynth
-      
+        brew install --HEAD ccache
+
+    - name: ccache stats
+      run: ccache -s --max-size=390MB
+
+    - uses: actions/checkout@v1
+
     - name: Fastsynth Setup
-      if: steps.cache-fastsynth.outputs.cache-hit != 'true'
       run: |
         git clone https://github.com/kroening/fastsynth.git
-        cd fastsynth
-        git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
-    
+
     - name: cbmc submodule checkout
       run: |
         cd fastsynth
-        git submodule init
-        git submodule update
-        
-    - name: minisat2
+        git submodule update --init lib/cbmc
+
+    - name: minisat2-download
       run: |
-        cd fastsynth/lib/cbmc
-        make -C src minisat2-download
-        
-    - name: CBMC
+        cd fastsynth
+        make -C lib/cbmc/src minisat2-download
+
+    - name: cbmc build
       run: |
-        cd fastsynth/lib/cbmc
-        make -C src
-      
-    - name: fastsynth
+        cd fastsynth
+        make -C lib/cbmc/src -j2 CXX="ccache clang++"
+
+    - name: make
       run: |
-        cd fastsynth/src
-        make
-    
-    
+        cd fastsynth
+        make -C src -j2 CXX="ccache clang++"
