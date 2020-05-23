@@ -123,12 +123,22 @@ jobs:
         git clone https://github.com/kroening/fastsynth.git
         cd fastsynth
         git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
+    
+    - name: cbmc submodule checkout
+      run: |
         git submodule init
         git submodule update
+        
+    - name: minisat2
+      run: |
         cd lib/cbmc
-        git log -1
         make -C src minisat2-download
+    - name: CBMC
+      run: |
         make -C src
+      
+    - name: fastsynth
+      run: |
         cd ../../src
         make
     
