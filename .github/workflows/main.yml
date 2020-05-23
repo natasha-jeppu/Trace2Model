@@ -99,6 +99,11 @@ jobs:
       uses: sinoru/actions-setup-xcode@v1.1.1
       with:
         xcode-version: 11.4.1
+        
+    - name: Install Packages
+      run: |
+        brew install libb2
+        brew install zstd
     
     - name: Cache fastsynth
       id: cache-fastsynth
