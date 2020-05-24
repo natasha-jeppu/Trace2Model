@@ -154,7 +154,7 @@ jobs:
 
     - name: Python modules
       run: |
-        brew install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
+        brew install graphviz
         pip3 install numpy pygraphviz transitions termcolor
         
     - name: Check fastsynth installation
