@@ -155,7 +155,7 @@ jobs:
     - name: Python modules
       run: |
         brew install graphviz
-        pip3 install pygraphviz –install-option="--include-path=/usr/local/Cellar/graphviz/2.44.0/include/graphviz” –install-option=”--library-path=/usr/local/Cellar/graphviz/2.44.0/lib”
+        pip3 install pygraphviz --install-option="--include-path=/usr/local/Cellar/graphviz/2.44.0/include/graphviz" --install-option="--library-path=/usr/local/Cellar/graphviz/2.44.0/lib"
         pip3 install numpy transitions termcolor
         
     - name: Check fastsynth installation
