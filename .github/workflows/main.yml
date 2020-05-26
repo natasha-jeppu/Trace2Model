@@ -19,7 +19,7 @@ jobs:
 
     - name: CBMC dependencies
       run: |
-        sudo apt-get install g++ gcc flex bison make git libwww-perl patch git
+        sudo apt-get install g++ gcc flex bison make git libwww-perl patch
         
     - name: Tool dependencies
       run: |
@@ -58,6 +58,7 @@ jobs:
     - name: Check fastsynth installation
       run: |
         fastsynth ./aux_files/simplify_event.sl
+        fastsynth ./aux_files/gen_event_update.sl
         
     - name: Setup artifact directory
       run: mkdir -p result_linux
