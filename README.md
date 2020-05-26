@@ -2,7 +2,7 @@
 A framework to learn system models from system execution traces.
 
 ## Usage
-`pyhton3 <module_file_name> [args]`
+`pyhton3 <module_file_name> [args]`<br/>
 Use the `-h` option to see module arguments.
 
 Modules available:
@@ -67,7 +67,7 @@ cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
-Clone the repository `Trace2Model`
+Clone the repository `Trace2Model`<br/>
 Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
 cd Trace2Model
@@ -123,7 +123,7 @@ cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
-Clone the repository `Trace2Model`
+Clone the repository `Trace2Model`<br/>
 Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
 cd Trace2Model
@@ -200,7 +200,7 @@ Install Tool Dependencies
 brew install z3
 ~~~
 
-Clone the repository `Trace2Model`
+Clone the repository `Trace2Model`<br/>
 Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
 cd Trace2Model
