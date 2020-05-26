@@ -46,7 +46,7 @@ There are a few trace files already provided to play around with the tool in the
   yum install z3
 ~~~
 
-<space><space>*<space>Building Fastsynth
+<tab>Building Fastsynth
 ~~~
   git clone https://github.com/kroening/fastsynth.git
   cd fastsynth
