@@ -10,7 +10,7 @@ Modules available:
 
 For synthesis, a new trace file `<input_filename>_events.txt` is created with transition predicates.
 
-Use the `-h` option to see module arguments. You can use `run.py` to run a few benchmarks already present in the tool.
+Use the `-h` option to see module arguments. You can use `run.py` to run a benchmarks already present in the tool. See `benchmarks` folder.
 
 ## Setup Instructions
 
