@@ -404,7 +404,7 @@ def parse_args():
 	required_parse.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME', required = True,
             help='Input trace file for data update predicate generation')
 	parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
-            help='Variables that affect update variable behaviour')
+            help='Variables that affect update variable behaviour. Use \'-dv help\' for possible options. Use -dv [all] <var_list> to set variables for all events')
 	parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], type=int, nargs='+',
             help='Constants to be added to grammar for SyGus CVC4')
 

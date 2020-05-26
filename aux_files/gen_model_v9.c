@@ -5,11 +5,11 @@
 #include<stdint.h>
 void main()
 {
-	uint8_t event_seq_length = 3;
-	uint8_t num_input = 12;
-	uint8_t event_seq[12][3] = {{1,2,3},{2,3,4},{3,4,5},{4,5,4},{5,4,5},{5,4,6},{4,6,3},{6,3,4},{5,4,4},{4,4,7},{4,7,2},{7,2,3}};
-	uint8_t num_states = 5;
-	uint8_t t[36][3];
+	uint8_t event_seq_length = 7;
+	uint8_t num_input = 1;
+	uint8_t event_seq[1][7] = {{1,2,3,4,5,5,5}};
+	uint8_t num_states = 2;
+	uint8_t t[7][3];
 	uint8_t count=0;
  																		
 	for (uint8_t i=0;i<num_input;i++) 													
@@ -33,11 +33,11 @@ void main()
 		}																			
 	}
 
-	bool in[num_states][7];												
-	bool o[num_states][7];														
+	bool in[num_states][5];												
+	bool o[num_states][5];														
 																					
 	for (uint8_t i=0;i<num_states;i++)												
-		for (uint8_t j=0;j<7;j++)													
+		for (uint8_t j=0;j<5;j++)													
 		{																			
 			in[i][j] = false;														
 			o[i][j] = false;														
@@ -52,19 +52,15 @@ void main()
 	bool wrong_transition = false;														
 	for (uint8_t i=0; i<num_states;i++)														
 	{																				
-			if (in[i][ 0] && (o[i][0] || o[i][2] || o[i][3] || o[i][4] || o[i][5] || o[i][6]))
+			if (in[i][ 0] && (o[i][0] || o[i][2] || o[i][3] || o[i][4]))
 				wrong_transition = true;
-			else if (in[i][ 1] && (o[i][0] || o[i][1] || o[i][3] || o[i][4] || o[i][5] || o[i][6]))
+			else if (in[i][ 1] && (o[i][0] || o[i][1]))
 				wrong_transition = true;
-			else if (in[i][ 2] && (o[i][0] || o[i][1] || o[i][2] || o[i][4] || o[i][5] || o[i][6]))
+			else if (in[i][ 2] && (o[i][0] || o[i][1]))
 				wrong_transition = true;
-			else if (in[i][ 3] && (o[i][0] || o[i][1] || o[i][2]))
+			else if (in[i][ 3] && (o[i][1] || o[i][2] || o[i][3]))
 				wrong_transition = true;
-			else if (in[i][ 4] && (o[i][0] || o[i][1] || o[i][2] || o[i][4] || o[i][5] || o[i][6]))
-				wrong_transition = true;
-			else if (in[i][ 5] && (o[i][0] || o[i][1] || o[i][3] || o[i][4] || o[i][5] || o[i][6]))
-				wrong_transition = true;
-			else if (in[i][ 6] && (o[i][0] || o[i][2] || o[i][3] || o[i][4] || o[i][5] || o[i][6]))
+			else if (in[i][ 4] && (o[i][1]))
 				wrong_transition = true;
 	}
 	assert(wrong_transition != false);

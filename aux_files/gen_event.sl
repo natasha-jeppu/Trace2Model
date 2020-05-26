@@ -1,14 +1,15 @@
 (set-logic LIA)
 (synth-fun next ((methane Int) (pump Bool) ) Int
 	((Start Int (
-				 2
+				 1
+				 7
 				 (ite StartBool Start Start)))
 
 	(Var Int (
 			 1
 			 2
-			 7
-			 559
+			 22
+			 577
 			 methane
 			 (+ Var Var)						
 			 (- Var Var)						
@@ -26,18 +27,15 @@
 (declare-var pump Bool)
 
 
-(constraint (= (next 551 true ) 2))
-(constraint (= (next 551 true ) 2))
-(constraint (= (next 562 true ) 2))
-(constraint (= (next 562 true ) 2))
-(constraint (= (next 571 true ) 2))
-(constraint (= (next 566 true ) 2))
-(constraint (= (next 554 true ) 2))
-(constraint (= (next 564 true ) 2))
-(constraint (= (next 565 true ) 2))
-(constraint (= (next 560 true ) 2))
-(constraint (= (next 548 true ) 2))
-(constraint (= (next 553 true ) 2))
-(constraint (= (next 565 true ) 2))
+(constraint (= (next 571 false ) 1))
+(constraint (= (next 583 false ) 1))
+(constraint (= (next 597 false ) 1))
+(constraint (= (next 603 false ) 7))
+(constraint (= (next 599 false ) 1))
+(constraint (= (next 584 false ) 1))
+(constraint (= (next 583 false ) 1))
+(constraint (= (next 563 false ) 1))
+(constraint (= (next 545 false ) 1))
+(constraint (= (next 541 false ) 1))
 
 (check-synth)

@@ -3,6 +3,6 @@
 
 (declare-var methane Int)
 
-(constraint (= (inv methane) (>= methane (+ 16 565))))
+(constraint (= (inv methane) (>= (+ 22 577)  methane)))
 
 (check-synth)

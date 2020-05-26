@@ -322,9 +322,9 @@ def parse_args():
 	required_parse.add_argument('-i','--input_file', metavar = 'INPUT_FILENAME', required=True,
             help='Input trace file for data update predicate generation')
 	required_parse.add_argument('-v', '--var', metavar = 'UPDATE_VAR', required=True,
-            help='Variable for data update predicate synthesis')
+            help='Variable for data update predicate synthesis. Use \'-v help\' for possible options')
 	parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
-            help='Variables that affect update variable behaviour')
+            help='Variables that affect update variable behaviour. Use \'-dv help\' for possible options. Use -dv [all] <var_list> to set variables for all events')
 	parser.add_argument('-s','--synth_tool', metavar = 'SYNTHESIS_TOOL', default='fastsynth', choices = ['cvc4','fastsynth'],
             help='Synthesis tool for predicate generation: fastsynth or cvc4')
 	parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], type=int, nargs='+',
