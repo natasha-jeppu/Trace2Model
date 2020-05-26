@@ -2,7 +2,7 @@
 A framework to learn system models from system execution traces.
 
 ## Usage
-`pyhton3 <module_file_name> [args]`<br/>
+`python3 <module_file_name> [args]`<br/>
 Use the `-h` option to see module arguments.
 
 Modules available:
@@ -15,9 +15,16 @@ For synthesis, a new trace file `<input_filename>_events.txt` is created with tr
 
 Use the `-h` option to see module arguments. You can use `run.py` to run a benchmarks already present in the tool. See `benchmarks` folder.
 
+## Tool Dependencies
+You'll need the following tools installed (installation instructions for Fedora 29, Ubuntu 18.04 and MacOS 10.15 are provided below):
+1. `CVC4 v1.6`: https://cvc4.github.io/downloads.html
+2. `CBMC v5.10`: https://www.cprover.org/cbmc/
+3. `Fastsynth` : https://github.com/kroening/fastsynth
+4. `z3 v4.7.1` : https://github.com/Z3Prover/z3
+
 ## Setup Instructions
 
-### Fedora
+### Fedora (tested for Fedora 29)
 
 Install Basic Requirements
 
