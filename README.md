@@ -1,9 +1,9 @@
 # Trace2Model
 A framework to learn system models from system execution traces.
 
-# Setup Instructions
+## Setup Instructions
 
-## Fedora
+### Fedora
 
 Install Basic Requirements
 
@@ -29,7 +29,7 @@ git submodule init
 git submodule update
 ~~~
 
-Building CBMC
+Building CBMC : change to the CBMC directory `fastsynth/lib/cbmc` and run make
 ~~~
 cd fastsynth/lib/cbmc
 make -C src minisat2-download
@@ -42,7 +42,7 @@ cd fastsynth/lib/cbmc/src/cbmc
 export PATH=$PATH:$(pwd)
 ~~~
 
-Building Fastsynth
+Building Fastsynth : change to the Fastsynth directory `fastsynth/src` and run make
 ~~~
 cd fastsynth/src
 make
@@ -54,7 +54,7 @@ cd fastsynth/src/fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
-Check fastsynth installation
+Check Fastsynth installation
 ~~~
 fastsynth ./aux_files/simplify_event.sl
 fastsynth ./aux_files/gen_event_update.sl
@@ -67,7 +67,7 @@ pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 
-## Linux 
+### Linux 
 
 Install Basic Requirements
 ~~~
@@ -89,14 +89,14 @@ git submodule init
 git submodule update
 ~~~
 
-Building CBMC
+Building CBMC : change to the CBMC directory `fastsynth/lib/cbmc` and run make
 ~~~
 cd fastsynth/lib/cbmc
 make -C src minisat2-download
 make -C src
 ~~~
 
-Building Fastsynth
+Building Fastsynth : change to the Fastsynth directory `fastsynth/src` and run make
 ~~~
 cd fastsynth/src
 make
@@ -121,7 +121,7 @@ pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 
-## MacOS
+### MacOS
 
 Install Tool Dependencies
 ~~~
@@ -154,7 +154,7 @@ git submodule init
 git submodule update
 ~~~
 
-Building CBMC
+Building CBMC : change to the CBMC directory `fastsynth/lib/cbmc` and run make
 ~~~
 cd fastsynth/lib/cbmc
 make -C src minisat2-download
@@ -167,7 +167,7 @@ cd fastsynth/lib/cbmc/src/cbmc
 export PATH=$PATH:$(pwd)
 ~~~
 
-Building Fastsynth
+Building Fastsynth : change to the Fastsynth directory `fastsynth/src` and run make
 ~~~
 cd fastsynth/src
 make
