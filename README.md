@@ -41,40 +41,40 @@ There are a few trace files already provided to play around with the tool in the
 
 2. Install Tool Dependencies
 ~~~
-yum install python3
-yum install cvc4
-yum install z3
+  yum install python3
+  yum install cvc4
+  yum install z3
 ~~~
 
-Building Fastsynth
+  Building Fastsynth
 ~~~
-git clone https://github.com/kroening/fastsynth.git
-cd fastsynth
-git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
-git submodule init
-git submodule update
-cd lib/cbmc
-make -C src minisat2-download
-make -C src
-export PATH=$PATH:$(pwd)/src/cbmc
-cd ../../src
-make
-cd fastsynth
-export PATH=$PATH:$(pwd)
+  git clone https://github.com/kroening/fastsynth.git
+  cd fastsynth
+  git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
+  git submodule init
+  git submodule update
+  cd lib/cbmc
+  make -C src minisat2-download
+  make -C src
+  export PATH=$PATH:$(pwd)/src/cbmc
+  cd ../../src
+  make
+  cd fastsynth
+  export PATH=$PATH:$(pwd)
 ~~~
 
 3. Python Modules
 ~~~
-dnf install graphviz graphviz-devel pkg-config python3-devel redhat-rpm-config
-pip3 install numpy pygraphviz transitions termcolor
+  dnf install graphviz graphviz-devel pkg-config python3-devel redhat-rpm-config
+  pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 4. Clone the repository `Trace2Model`<br/>
 Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
-cd Trace2Model
-fastsynth ./aux_files/simplify_event.sl
-fastsynth ./aux_files/gen_event_update.sl
+  cd Trace2Model
+  fastsynth ./aux_files/simplify_event.sl
+  fastsynth ./aux_files/gen_event_update.sl
 ~~~
 
 
@@ -82,43 +82,43 @@ fastsynth ./aux_files/gen_event_update.sl
 
 1. Install Basic Requirements
 ~~~
-apt-get install build-essential
-apt-get install g++ gcc flex bison make git libwww-perl patch
+  apt-get install build-essential
+  apt-get install g++ gcc flex bison make git libwww-perl patch
 ~~~
 
 2. Install Tool Dependencies
 ~~~
-apt-get install python3 cvc4 cbmc z3
+  apt-get install python3 cvc4 cbmc z3
 ~~~
 
 Building Fastsynth
 ~~~
-git clone https://github.com/kroening/fastsynth.git
-cd fastsynth
-git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
-git submodule init
-git submodule update
-cd lib/cbmc
-make -C src minisat2-download
-make -C src
-cd ../../src
-make
-cd fastsynth
-export PATH=$PATH:$(pwd)
+  git clone https://github.com/kroening/fastsynth.git
+  cd fastsynth
+  git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
+  git submodule init
+  git submodule update
+  cd lib/cbmc
+  make -C src minisat2-download
+  make -C src
+  cd ../../src
+  make
+  cd fastsynth
+  export PATH=$PATH:$(pwd)
 ~~~
 
 3. Python Modules
 ~~~
-apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
-pip3 install numpy pygraphviz transitions termcolor
+  apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
+  pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 4. Clone the repository `Trace2Model`<br/>
 Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
-cd Trace2Model
-fastsynth ./aux_files/simplify_event.sl
-fastsynth ./aux_files/gen_event_update.sl
+  cd Trace2Model
+  fastsynth ./aux_files/simplify_event.sl
+  fastsynth ./aux_files/gen_event_update.sl
 ~~~
 
 
@@ -128,46 +128,46 @@ fastsynth ./aux_files/gen_event_update.sl
 
 1. Python Modules
 ~~~
-brew install python3
-brew install graphviz
-pip3 install numpy transitions termcolor
+  brew install python3
+  brew install graphviz
+  pip3 install numpy transitions termcolor
 ~~~
-Include graphviz PATH for pygraphviz installation as shown below:
+  Include graphviz PATH for pygraphviz installation as shown below:
 ~~~
-pip3 install pygraphviz --install-option="--include-path=/usr/local/Cellar/graphviz/2.44.0/include/graphviz" --install-option="--library-path=/usr/local/Cellar/graphviz/2.44.0/lib"
+  pip3 install pygraphviz --install-option="--include-path=/usr/local/Cellar/graphviz/2.44.0/include/graphviz" --install-option="--library-path=/usr/local/Cellar/graphviz/2.44.0/lib"
 ~~~
 
 2. Install Tool Dependencies
 ~~~
-brew tap cvc4/cvc4
-brew install cvc4/cvc4/cvc4
-brew install z3
+  brew tap cvc4/cvc4
+  brew install cvc4/cvc4/cvc4
+  brew install z3
 ~~~
 
-Building Fastsynth<br/>
-Install Xcode 10.x for Fastsynth build
+  Building Fastsynth<br/>
+  Install Xcode 10.x for Fastsynth build
 ~~~
-git clone https://github.com/kroening/fastsynth.git
-cd fastsynth
-git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
-git submodule init
-git submodule update
-cd lib/cbmc
-make -C src minisat2-download
-make -C src
-export PATH=$PATH:$(pwd)/src/cbmc
-cd ../../src
-make
-cd fastsynth
-export PATH=$PATH:$(pwd)
+  git clone https://github.com/kroening/fastsynth.git
+  cd fastsynth
+  git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
+  git submodule init
+  git submodule update
+  cd lib/cbmc
+  make -C src minisat2-download
+  make -C src
+  export PATH=$PATH:$(pwd)/src/cbmc
+  cd ../../src
+  make
+  cd fastsynth
+  export PATH=$PATH:$(pwd)
 ~~~
 
 
 3. Clone the repository `Trace2Model`<br/>
-Check Fastsynth installation : Move to `Trace2Model` folder and run
+  Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
-cd Trace2Model
-fastsynth ./aux_files/simplify_event.sl
-fastsynth ./aux_files/gen_event_update.sl
+  cd Trace2Model
+  fastsynth ./aux_files/simplify_event.sl
+  fastsynth ./aux_files/gen_event_update.sl
 ~~~
 
