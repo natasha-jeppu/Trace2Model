@@ -42,30 +42,29 @@ git submodule update
 
 Building CBMC : change to the CBMC directory `fastsynth/lib/cbmc` and run make
 ~~~
-cd fastsynth/lib/cbmc
+cd lib/cbmc
 make -C src minisat2-download
 make -C src
 ~~~
 
-Add to Path
+Add to Path: add `fastsynth/lib/cbmc/src/cbmc` to PATH
 ~~~
-cd fastsynth/lib/cbmc/src/cbmc
-export PATH=$PATH:$(pwd)
+export PATH=$PATH:$(pwd)/src/cbmc
 ~~~
 
 Building Fastsynth : change to the Fastsynth directory `fastsynth/src` and run make
 ~~~
-cd fastsynth/src
+cd ../../src
 make
 ~~~
 
-Add to Path
+Add to Path : add `fastsynth/src/fastsynth` to PATH
 ~~~
-cd fastsynth/src/fastsynth
+cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
-Check Fastsynth installation
+Check Fastsynth installation : Move to the main tool folder and run
 ~~~
 fastsynth ./aux_files/simplify_event.sl
 fastsynth ./aux_files/gen_event_update.sl
@@ -102,24 +101,24 @@ git submodule update
 
 Building CBMC : change to the CBMC directory `fastsynth/lib/cbmc` and run make
 ~~~
-cd fastsynth/lib/cbmc
+cd lib/cbmc
 make -C src minisat2-download
 make -C src
 ~~~
 
 Building Fastsynth : change to the Fastsynth directory `fastsynth/src` and run make
 ~~~
-cd fastsynth/src
+cd ../../src
 make
 ~~~
 
-Add to Path
+Add to Path : add `fastsynth/src/fastsynth` to PATH
 ~~~
-cd fastsynth/src/fastsynth
+cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
-Check fastsynth installation
+Check Fastsynth installation : Move to the main tool folder and run
 ~~~
 fastsynth ./aux_files/simplify_event.sl
 fastsynth ./aux_files/gen_event_update.sl
@@ -167,26 +166,25 @@ git submodule update
 
 Building CBMC : change to the CBMC directory `fastsynth/lib/cbmc` and run make
 ~~~
-cd fastsynth/lib/cbmc
+cd lib/cbmc
 make -C src minisat2-download
 make -C src
 ~~~
 
-Add to Path
+Add to Path: add `fastsynth/lib/cbmc/src/cbmc` to PATH
 ~~~
-cd fastsynth/lib/cbmc/src/cbmc
-export PATH=$PATH:$(pwd)
+export PATH=$PATH:$(pwd)/src/cbmc
 ~~~
 
 Building Fastsynth : change to the Fastsynth directory `fastsynth/src` and run make
 ~~~
-cd fastsynth/src
+cd ../../src
 make
 ~~~
 
-Add to Path
+Add to Path : add `fastsynth/src/fastsynth` to PATH
 ~~~
-cd fastsynth/src/fastsynth
+cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
@@ -195,7 +193,7 @@ Install Tool Dependencies
 brew install z3
 ~~~
 
-Check fastsynth installation
+Check Fastsynth installation : Move to the main tool folder and run
 ~~~
 fastsynth ./aux_files/simplify_event.sl
 fastsynth ./aux_files/gen_event_update.sl
