@@ -1,6 +1,17 @@
 # Trace2Model
 A framework to learn system models from system execution traces.
 
+## Usage
+Modules available:
+1. Incremental NFA learning: `incr.py`
+2. DFA learning: `dfa.py`
+3. Synthesize expressions that will serve as transition conditions for next event: `syn_next_event.py`
+4. Synthesize expressions that will serve as transition preducates for data update across transitions: `syn_event_update.py`
+
+For synthesis, a new trace file `<input_filename>_events.txt` is created with transition predicates.
+
+Use the `-h` option to see module arguments. You can use `run.py` to run a few benchmarks already present in the tool.
+
 ## Setup Instructions
 
 ### Fedora
