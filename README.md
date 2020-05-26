@@ -2,6 +2,9 @@
 A framework to learn system models from system execution traces.
 
 ## Usage
+`pyhton3 <module_file_name> [args]`
+Use the `-h` option to see module arguments.
+
 Modules available:
 1. Incremental NFA learning: `incr.py`
 2. DFA learning: `dfa.py`
