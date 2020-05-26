@@ -1,3 +1,9 @@
+#######################################################################
+# Generate transition conditions for next event
+# Author: Natasha Yogananda Jeppu, natasha.yogananda.jeppu@cs.ox.ac.uk
+#         University of Oxford
+#######################################################################
+
 import sys
 import numpy as np
 import subprocess

@@ -1,3 +1,10 @@
+#######################################################################
+# Run example benchmarks
+# Author: Natasha Yogananda Jeppu, natasha.yogananda.jeppu@cs.ox.ac.uk
+#         University of Oxford
+#######################################################################
+
+
 import sys
 import os
 from os import listdir

@@ -1,3 +1,10 @@
+#######################################################################
+# Generate predicates for data update across transitions
+# Author: Natasha Yogananda Jeppu, natasha.yogananda.jeppu@cs.ox.ac.uk
+#         University of Oxford
+#######################################################################
+
+
 import numpy as np
 import subprocess
 import time

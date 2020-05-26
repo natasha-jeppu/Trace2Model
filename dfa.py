@@ -1,3 +1,9 @@
+#######################################################################
+# Generate DFA from trace
+# Author: Natasha Yogananda Jeppu, natasha.yogananda.jeppu@cs.ox.ac.uk
+#         University of Oxford
+#######################################################################
+
 import sys
 import re
 import random
