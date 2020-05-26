@@ -22,6 +22,12 @@ You'll need the following tools installed (installation instructions for Fedora 
 3. `Fastsynth` : https://github.com/kroening/fastsynth
 4. `z3 v4.7.1` : https://github.com/Z3Prover/z3
 
+## Benchmarks
+There are a few trace files already provided to play around with the tool in the `benchmarks` folder
+1. `dfa_bench` : benchmarks to run non-incremental dfa learning
+2. `incr_bench` : benchmarks to run incremental nfa learning
+3. `syn_bench` : benchmarks to predicate synthesis
+
 ## Setup Instructions
 
 ### Fedora (tested for Fedora 29)
