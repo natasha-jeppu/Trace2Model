@@ -67,7 +67,7 @@ pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 
-#Linux 
+## Linux 
 
 Install Basic Requirements
 ~~~
@@ -121,7 +121,7 @@ pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 
-#MacOS
+## MacOS
 
 Install Tool Dependencies
 ~~~
@@ -133,7 +133,13 @@ brew install cvc4/cvc4/cvc4
 Python Modules
 ~~~
 brew install graphviz
+~~~
+Include graphviz PATH for pygraphviz installation as shown below:
+~~~
 pip3 install pygraphviz --install-option="--include-path=/usr/local/Cellar/graphviz/2.44.0/include/graphviz" --install-option="--library-path=/usr/local/Cellar/graphviz/2.44.0/lib"
+~~~
+Install other modules
+~~~
 pip3 install numpy transitions termcolor
 ~~~
 
