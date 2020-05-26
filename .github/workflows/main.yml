@@ -74,13 +74,13 @@ jobs:
         
     - name: Run incr bench
       run: |
-        python3 incr.py -i ./benchmarks/shahar_bench/java.util.StringTokenizer.txt -o stb -t ./result_linux > ./result_linux/incr_bench.txt
-        python3 incr.py -i ./benchmarks/shahar_bench/ssh.net.txt -o stb -t ./result_linux >> ./result_linux/incr_bench.txt
+        python3 incr.py -i ./benchmarks/incr_bench/java.util.StringTokenizer.txt -o stb -t ./result_linux > ./result_linux/incr_bench.txt
+        python3 incr.py -i ./benchmarks/incr_bench/ssh.net.txt -o stb -t ./result_linux >> ./result_linux/incr_bench.txt
     
     - name: Run dfa bench
       run: |
-        python3 dfa.py -i ./benchmarks/old_bench/hcd-xhci_slot_withbsr.txt -t ./result_linux > ./result_linux/dfa_bench.txt
-        python3 dfa.py -i ./benchmarks/old_bench/16384.txt -t ./result_linux >> ./result_linux/dfa_bench.txt
+        python3 dfa.py -i ./benchmarks/dfa_bench/hcd-xhci_slot_withbsr.txt -t ./result_linux > ./result_linux/dfa_bench.txt
+        python3 dfa.py -i ./benchmarks/dfa_bench/16384.txt -t ./result_linux >> ./result_linux/dfa_bench.txt
         
     - uses: actions/upload-artifact@v2
       with:
@@ -164,13 +164,13 @@ jobs:
         
     - name: Run incr bench
       run: |
-        python3 incr.py -i ./benchmarks/shahar_bench/java.util.StringTokenizer.txt -o stb -t ./result_mac > ./result_mac/incr_bench.txt
-        python3 incr.py -i ./benchmarks/shahar_bench/ssh.net.txt -o stb -t ./result_mac >> ./result_mac/incr_bench.txt
+        python3 incr.py -i ./benchmarks/incr_bench/java.util.StringTokenizer.txt -o stb -t ./result_mac > ./result_mac/incr_bench.txt
+        python3 incr.py -i ./benchmarks/incr_bench/ssh.net.txt -o stb -t ./result_mac >> ./result_mac/incr_bench.txt
     
     - name: Run dfa bench
       run: |
-        python3 dfa.py -i ./benchmarks/old_bench/hcd-xhci_slot_withbsr.txt -t ./result_mac > ./result_mac/dfa_bench.txt
-        python3 dfa.py -i ./benchmarks/old_bench/16384.txt -t ./result_mac >> ./result_mac/dfa_bench.txt
+        python3 dfa.py -i ./benchmarks/dfa_bench/hcd-xhci_slot_withbsr.txt -t ./result_mac > ./result_mac/dfa_bench.txt
+        python3 dfa.py -i ./benchmarks/dfa_bench/16384.txt -t ./result_mac >> ./result_mac/dfa_bench.txt
         
     - uses: actions/upload-artifact@v2
       with:
