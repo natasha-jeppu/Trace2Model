@@ -46,35 +46,19 @@ yum install cvc4
 yum install z3
 ~~~
 
-Cloning Fastsynth
+Building Fastsynth
 ~~~
 git clone https://github.com/kroening/fastsynth.git
 cd fastsynth
 git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
 git submodule init
 git submodule update
-~~~
-
-Building CBMC : change to the CBMC directory `fastsynth/lib/cbmc` and run make
-~~~
 cd lib/cbmc
 make -C src minisat2-download
 make -C src
-~~~
-
-Add to Path: add `fastsynth/lib/cbmc/src/cbmc` to PATH
-~~~
 export PATH=$PATH:$(pwd)/src/cbmc
-~~~
-
-Building Fastsynth : change to the Fastsynth directory `fastsynth/src` and run make
-~~~
 cd ../../src
 make
-~~~
-
-Add to Path : add `fastsynth/src/fastsynth` to PATH
-~~~
 cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
@@ -107,30 +91,18 @@ apt-get install g++ gcc flex bison make git libwww-perl patch
 apt-get install python3 cvc4 cbmc z3
 ~~~
 
-Cloning Fastsynth
+Building Fastsynth
 ~~~
 git clone https://github.com/kroening/fastsynth.git
 cd fastsynth
 git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
 git submodule init
 git submodule update
-~~~
-
-Building CBMC : change to the CBMC directory `fastsynth/lib/cbmc` and run make
-~~~
 cd lib/cbmc
 make -C src minisat2-download
 make -C src
-~~~
-
-Building Fastsynth : change to the Fastsynth directory `fastsynth/src` and run make
-~~~
 cd ../../src
 make
-~~~
-
-Add to Path : add `fastsynth/src/fastsynth` to PATH
-~~~
 cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
@@ -172,36 +144,20 @@ brew install cvc4/cvc4/cvc4
 brew install z3
 ~~~
 
-Install Xcode 10.x for Fastsynth build<br/>
-Cloning Fastsynth
+Building Fastsynth<br/>
+Install Xcode 10.x for Fastsynth build
 ~~~
 git clone https://github.com/kroening/fastsynth.git
 cd fastsynth
 git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
 git submodule init
 git submodule update
-~~~
-
-Building CBMC : change to the CBMC directory `fastsynth/lib/cbmc` and run make
-~~~
 cd lib/cbmc
 make -C src minisat2-download
 make -C src
-~~~
-
-Add to Path: add `fastsynth/lib/cbmc/src/cbmc` to PATH
-~~~
 export PATH=$PATH:$(pwd)/src/cbmc
-~~~
-
-Building Fastsynth : change to the Fastsynth directory `fastsynth/src` and run make
-~~~
 cd ../../src
 make
-~~~
-
-Add to Path : add `fastsynth/src/fastsynth` to PATH
-~~~
 cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
