@@ -24,9 +24,9 @@ You'll need the following tools installed (installation instructions for Fedora 
 
 ## Benchmarks
 There are a few trace files already provided to play around with the tool in the `benchmarks` folder
-1. `dfa_bench` : benchmarks to run non-incremental dfa learning
-2. `incr_bench` : benchmarks to run incremental nfa learning
-3. `syn_bench` : benchmarks to predicate synthesis
+1. `dfa_bench` : benchmarks for non-incremental DFA learning
+2. `incr_bench` : benchmarks for incremental NFA learning
+3. `syn_bench` : benchmarks for predicate synthesis
 
 ## Setup Instructions
 
