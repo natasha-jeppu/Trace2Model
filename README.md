@@ -78,7 +78,7 @@ pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 
-### Linux 
+### Linux (tested on Ubuntu 18.04)
 
 Install Basic Requirements
 ~~~
@@ -132,7 +132,7 @@ pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 
-### MacOS
+### MacOS (tested on MacOS 10.15)
 
 Install Tool Dependencies
 ~~~
