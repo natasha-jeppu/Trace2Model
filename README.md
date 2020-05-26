@@ -143,9 +143,7 @@ Install other modules
 pip3 install numpy transitions termcolor
 ~~~
 
-Install Basic Requirements
-Install Xcode 10.x
-
+Install Xcode 10.x for Fastsynth build
 
 Cloning Fastsynth
 ~~~
