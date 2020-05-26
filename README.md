@@ -32,7 +32,7 @@ There are a few trace files already provided to play around with the tool in the
 
 ### Fedora (tested for Fedora 29)
 
-Install Basic Requirements
+1. Install Basic Requirements
 
 ~~~
 dnf groupinstall "Development Tools"
@@ -40,7 +40,7 @@ dnf install kernel-devel kernel-headers
 dnf install gcc gcc-c++ flex bison perl-libwww-perl patch git
 ~~~
 
-Install Tool Dependencies
+2. Install Tool Dependencies
 ~~~
 yum install python3
 yum install cvc4
@@ -80,7 +80,13 @@ cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
-Clone the repository `Trace2Model`<br/>
+3. Python Modules
+~~~
+dnf install graphviz graphviz-devel pkg-config python3-devel redhat-rpm-config
+pip3 install numpy pygraphviz transitions termcolor
+~~~
+
+4. Clone the repository `Trace2Model`<br/>
 Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
 cd Trace2Model
@@ -88,22 +94,16 @@ fastsynth ./aux_files/simplify_event.sl
 fastsynth ./aux_files/gen_event_update.sl
 ~~~
 
-Python Modules
-~~~
-dnf install graphviz graphviz-devel pkg-config python3-devel redhat-rpm-config
-pip3 install numpy pygraphviz transitions termcolor
-~~~
-
 
 ### Linux (tested on Ubuntu 18.04)
 
-Install Basic Requirements
+1. Install Basic Requirements
 ~~~
 apt-get install build-essential
 apt-get install g++ gcc flex bison make git libwww-perl patch
 ~~~
 
-Install Tool Dependencies
+2. Install Tool Dependencies
 ~~~
 apt-get install python3 cvc4 cbmc z3
 ~~~
@@ -136,7 +136,13 @@ cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
-Clone the repository `Trace2Model`<br/>
+3. Python Modules
+~~~
+apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
+pip3 install numpy pygraphviz transitions termcolor
+~~~
+
+4. Clone the repository `Trace2Model`<br/>
 Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
 cd Trace2Model
@@ -144,37 +150,30 @@ fastsynth ./aux_files/simplify_event.sl
 fastsynth ./aux_files/gen_event_update.sl
 ~~~
 
-Python Modules
-~~~
-apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
-pip3 install numpy pygraphviz transitions termcolor
-~~~
+
 
 
 ### MacOS (tested on MacOS 10.15)
 
-Install Tool Dependencies
+1. Python Modules
 ~~~
 brew install python3
-brew tap cvc4/cvc4
-brew install cvc4/cvc4/cvc4
-~~~
-
-Python Modules
-~~~
 brew install graphviz
+pip3 install numpy transitions termcolor
 ~~~
 Include graphviz PATH for pygraphviz installation as shown below:
 ~~~
 pip3 install pygraphviz --install-option="--include-path=/usr/local/Cellar/graphviz/2.44.0/include/graphviz" --install-option="--library-path=/usr/local/Cellar/graphviz/2.44.0/lib"
 ~~~
-Install other modules
+
+2. Install Tool Dependencies
 ~~~
-pip3 install numpy transitions termcolor
+brew tap cvc4/cvc4
+brew install cvc4/cvc4/cvc4
+brew install z3
 ~~~
 
-Install Xcode 10.x for Fastsynth build
-
+Install Xcode 10.x for Fastsynth build<br/>
 Cloning Fastsynth
 ~~~
 git clone https://github.com/kroening/fastsynth.git
@@ -208,12 +207,8 @@ cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
-Install Tool Dependencies
-~~~
-brew install z3
-~~~
 
-Clone the repository `Trace2Model`<br/>
+3. Clone the repository `Trace2Model`<br/>
 Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
 cd Trace2Model
