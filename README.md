@@ -1,8 +1,9 @@
+# Trace2Model
 A framework to learn system models from system execution traces.
 
-#Setup Instructions
+# Setup Instructions
 
-##Fedora
+## Fedora
 
 Install Basic Requirements
 
