@@ -64,7 +64,7 @@ cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
-Check Fastsynth installation : Move to the main tool folder and run
+Check Fastsynth installation : Move to the main tool folder `Trace2Model` and run
 ~~~
 fastsynth ./aux_files/simplify_event.sl
 fastsynth ./aux_files/gen_event_update.sl
@@ -118,7 +118,7 @@ cd fastsynth
 export PATH=$PATH:$(pwd)
 ~~~
 
-Check Fastsynth installation : Move to the main tool folder and run
+Check Fastsynth installation : Move to the main tool folder `Trace2Model` and run
 ~~~
 fastsynth ./aux_files/simplify_event.sl
 fastsynth ./aux_files/gen_event_update.sl
@@ -193,7 +193,7 @@ Install Tool Dependencies
 brew install z3
 ~~~
 
-Check Fastsynth installation : Move to the main tool folder and run
+Check Fastsynth installation : Move to the main tool folder `Trace2Model` and run
 ~~~
 fastsynth ./aux_files/simplify_event.sl
 fastsynth ./aux_files/gen_event_update.sl
