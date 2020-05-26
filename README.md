@@ -33,11 +33,11 @@ There are a few trace files already provided to play around with the tool in the
 ### Fedora (tested for Fedora 29)
 
 1. Install Basic Requirements
-
+-
 ~~~
-- dnf groupinstall "Development Tools"
-- dnf install kernel-devel kernel-headers
-- dnf install gcc gcc-c++ flex bison perl-libwww-perl patch git
+dnf groupinstall "Development Tools"
+dnf install kernel-devel kernel-headers
+dnf install gcc gcc-c++ flex bison perl-libwww-perl patch git
 ~~~
 
 2. Install Tool Dependencies
