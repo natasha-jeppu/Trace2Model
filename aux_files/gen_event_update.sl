@@ -6,8 +6,10 @@
 				 (* Start Start)
 				 ip
 				 op
+				 -5
 				 0
 				 1
+				 5
 				 (ite StartBool Start Start)))
 
 	 (StartBool Bool (
