@@ -123,6 +123,17 @@ def simplify(expression,data_type):
 					expr_simple = expr_simple + ' and ' + temp_expr_simple
 				continue
 
+			found = [i for i in output if('SMT: synth_fun::next -> ' in i)]
+			if(not found):
+				print(colored("[WARNING] FAILED",'magenta'))
+				temp_expr_simple = ' and '.join(list_cond)
+
+				if(expr_simple == ''):
+					expr_simple = temp_expr_simple
+				elif(temp_expr_simple != ''):
+					expr_simple = expr_simple + ' and ' + temp_expr_simple
+				continue
+
 			expr = [i for i in output if('SMT: synth_fun::inv -> ' in i)][0]
 			temp_expr_simple = expr.replace('SMT: synth_fun::inv -> ','').replace('|synth::parameter0|',x[0])
 

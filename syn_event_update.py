@@ -300,6 +300,11 @@ def gen_syn(input_dict,trace_dict):
 				event.append(data_type[update_ind][0] + '\' = ' + output)
 
 			elif(synth_tool == 'fastsynth'):
+				found = [i for i in output if('SMT: synth_fun::next -> ' in i)]
+				if(not found):
+					print(colored("[WARNING] FAILED",'magenta'))
+					event.append('')
+					continue
 				expr = [i for i in output if('SMT: synth_fun::next -> ' in i)][0]
 				temp_expr_simple = expr.replace('SMT: synth_fun::next -> ','')
 				for x in data_type:
