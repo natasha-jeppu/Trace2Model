@@ -1,5 +1,6 @@
 # Trace2Model
 A framework to learn system models from system execution traces.
+Paper: https://arxiv.org/abs/2001.05230
 
 ## Usage
 `python3 <module_file_name> [args]`<br/>
