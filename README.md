@@ -1,5 +1,5 @@
 # Trace2Model
-A framework to learn system models from system execution traces.
+A framework to learn system models from system execution traces. <br/>
 Paper: https://arxiv.org/abs/2001.05230
 
 ## Usage
