@@ -9,11 +9,11 @@ Modules available:
 1. Incremental NFA learning: `incr.py`
 2. DFA learning: `dfa.py`
 3. Synthesize expressions that will serve as transition conditions for next event: `syn_next_event.py`
-4. Synthesize expressions that will serve as transition preducates for data update across transitions: `syn_event_update.py`
+4. Synthesize expressions that will serve as transition predicates for data update across transitions: `syn_event_update.py`
 
-For synthesis, a new trace file `<input_filename>_events.txt` is created with transition predicates.
+For the synthesis modules 3 and 4, a new trace file `<input_filename>_events.txt` is created with a sequence of transition predicates. Use this as input to the model learning modules 1 and 2.
 
-Use the `-h` option to see module arguments. You can use `run.py` to run a benchmarks already present in the tool. See `benchmarks` folder.
+Use the `-h` option to see module arguments. You can use `run.py` to run a set of benchmarks already present in the tool. See the `benchmarks` folder.
 
 ## Tool Dependencies
 You'll need the following tools installed (installation instructions for Fedora 29, Ubuntu 18.04 and MacOS 10.15 are provided below):
