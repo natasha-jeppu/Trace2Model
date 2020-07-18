@@ -1,18 +1,20 @@
 # Trace2Model
 A framework to learn system models from system execution traces. <br/>
-Paper: https://arxiv.org/abs/2001.05230
+Based on work presented in 'Learning Concise Models from Long Execution Traces' (https://arxiv.org/abs/2001.05230)
 
 ## Usage
 `python3 <module_file_name> [args]`<br/>
 Use the `-h` option to see module arguments.
 
-Modules available:
-1. Incremental NFA learning: `incr.py`
-2. DFA learning: `dfa.py`
-3. Synthesize expressions that will serve as transition conditions for next event: `syn_next_event.py`
-4. Synthesize expressions that will serve as transition predicates for data update across transitions: `syn_event_update.py`
+The modules available in this framework are divided into two categories:
+1. Automata learning modules - generate automata from given trace input
+  a. Incremental NFA learning: `incr.py`
+  b. DFA learning: `dfa.py`
+2. Transition expression synthesis modules - generate a sequence of transition predicates from raw trace data, to be used as input to automata learning modules in 1.
+  a. Synthesize expressions that will serve as transition conditions for next event: `syn_next_event.py`
+  b. Synthesize expressions that will serve as transition predicates for data update across transitions: `syn_event_update.py`
 
-For the synthesis modules 3 and 4, a new trace file `<input_filename>_events.txt` is created with a sequence of transition predicates. Use this as input to the model learning modules 1 and 2.
+For the synthesis modules 2a and 2b, a new trace file `<input_filename>_events.txt` is created with a sequence of transition predicates. Use this as input to the model learning modules 1a and 1b.
 
 Use the `-h` option to see module arguments. You can use `run.py` to run a set of benchmarks already present in the tool. See the `benchmarks` folder.
 
