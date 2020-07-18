@@ -7,12 +7,12 @@ Based on work presented in 'Learning Concise Models from Long Execution Traces' 
 Use the `-h` option to see module arguments.
 
 The modules available in this framework are divided into two categories:
-1. Automata learning modules - generate automata from given trace input
-  a. Incremental NFA learning: `incr.py`
-  b. DFA learning: `dfa.py`
-2. Transition expression synthesis modules - generate a sequence of transition predicates from raw trace data, to be used as input to automata learning modules in 1.
-  a. Synthesize expressions that will serve as transition conditions for next event: `syn_next_event.py`
-  b. Synthesize expressions that will serve as transition predicates for data update across transitions: `syn_event_update.py`
+1. Automata learning modules - generate automata from given trace input <br/>
+  a. Incremental NFA learning: `incr.py` <br/>
+  b. DFA learning: `dfa.py` <br/>
+2. Transition expression synthesis modules - generate a sequence of transition predicates from raw trace data, to be used as input to automata learning modules in 1. <br/>
+  a. Synthesize expressions that will serve as transition conditions for next event: `syn_next_event.py` <br/>
+  b. Synthesize expressions that will serve as transition predicates for data update across transitions: `syn_event_update.py` <br/>
 
 For the synthesis modules 2a and 2b, a new trace file `<input_filename>_events.txt` is created with a sequence of transition predicates. Use this as input to the model learning modules 1a and 1b.
 
