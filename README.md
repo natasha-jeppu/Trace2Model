@@ -37,16 +37,14 @@ There are a few trace files already provided to play around with the tool in the
 
 1. Install Basic Requirements
 ~~~
-  dnf groupinstall "Development Tools"
-  dnf install kernel-devel kernel-headers
-  dnf install gcc gcc-c++ flex bison perl-libwww-perl patch git
+  dnf -y groupinstall "Development Tools"
+  dnf -y install kernel-devel kernel-headers
+  dnf -y install gcc gcc-c++ flex bison perl-libwww-perl patch git
 ~~~
 
 2. Install Tool Dependencies
 ~~~
-  yum install python3
-  yum install cvc4
-  yum install z3
+  dnf -y install python3 cvc4 z3
 ~~~
 
 Building Fastsynth
@@ -68,12 +66,15 @@ Building Fastsynth
 
 3. Python Modules
 ~~~
-  dnf install graphviz graphviz-devel pkg-config python3-devel redhat-rpm-config
+  dnf -y install graphviz graphviz-devel pkg-config python3-devel redhat-rpm-config
   pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 4. Clone the repository `Trace2Model`<br/>
-Check Fastsynth installation : Move to `Trace2Model` folder and run
+~~~
+  git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
+~~~
+Check Fastsynth installation : 
 ~~~
   cd Trace2Model
   fastsynth ./aux_files/simplify_event.sl
@@ -81,17 +82,17 @@ Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
 
 
-### Linux (tested on Ubuntu 18.04)
+### Ubuntu 18.04
 
 1. Install Basic Requirements
 ~~~
-  apt-get install build-essential
-  apt-get install g++ gcc flex bison make git libwww-perl patch
+  apt-get -y install build-essential
+  apt-get -y install g++ gcc flex bison make git libwww-perl patch
 ~~~
 
 2. Install Tool Dependencies
 ~~~
-  apt-get install python3 cvc4 cbmc z3
+  apt-get -y install python3 cvc4 cbmc z3
 ~~~
 
 Building Fastsynth
@@ -112,12 +113,15 @@ Building Fastsynth
 
 3. Python Modules
 ~~~
-  apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
+  apt-get -y install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
   pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 4. Clone the repository `Trace2Model`<br/>
-Check Fastsynth installation : Move to `Trace2Model` folder and run
+~~~
+  git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
+~~~
+Check Fastsynth installation : 
 ~~~
   cd Trace2Model
   fastsynth ./aux_files/simplify_event.sl
@@ -128,7 +132,7 @@ Check Fastsynth installation : Move to `Trace2Model` folder and run
 
 
 ### MacOS (tested on MacOS 10.15)
-
+You will need Homebrew for installation. You can install it from https://brew.sh. <br/>
 1. Python Modules
 ~~~
   brew install python3
@@ -167,7 +171,10 @@ Check Fastsynth installation : Move to `Trace2Model` folder and run
 
 
 3. Clone the repository `Trace2Model`<br/>
-  Check Fastsynth installation : Move to `Trace2Model` folder and run
+~~~
+  git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
+~~~
+  Check Fastsynth installation :
 ~~~
   cd Trace2Model
   fastsynth ./aux_files/simplify_event.sl
