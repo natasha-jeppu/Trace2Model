@@ -1,18 +1,20 @@
 # Trace2Model
 A framework to learn system models from system execution traces. <br/>
-Paper: https://arxiv.org/abs/2001.05230
+Based on work presented in 'Learning Concise Models from Long Execution Traces' (https://arxiv.org/abs/2001.05230)
 
 ## Usage
 `python3 <module_file_name> [args]`<br/>
 Use the `-h` option to see module arguments.
 
-Modules available:
-1. Incremental NFA learning: `incr.py`
-2. DFA learning: `dfa.py`
-3. Synthesize expressions that will serve as transition conditions for next event: `syn_next_event.py`
-4. Synthesize expressions that will serve as transition predicates for data update across transitions: `syn_event_update.py`
+The modules available in this framework are divided into two categories:
+1. Automata learning modules - generate automata from given trace input <br/>
+  a. Incremental NFA learning: `incr.py` <br/>
+  b. DFA learning: `dfa.py` <br/>
+2. Transition expression synthesis modules - generate a sequence of transition predicates from raw trace data, to be used as input to automata learning modules in 1. <br/>
+  a. Synthesize expressions that will serve as transition conditions for next event: `syn_next_event.py` <br/>
+  b. Synthesize expressions that will serve as transition predicates for data update across transitions: `syn_event_update.py` <br/>
 
-For the synthesis modules 3 and 4, a new trace file `<input_filename>_events.txt` is created with a sequence of transition predicates. Use this as input to the model learning modules 1 and 2.
+For the synthesis modules 2a and 2b, a new trace file `<input_filename>_events.txt` is created with a sequence of transition predicates. Use this as input to the model learning modules 1a and 1b.
 
 Use the `-h` option to see module arguments. You can use `run.py` to run a set of benchmarks already present in the tool. See the `benchmarks` folder.
 
@@ -35,16 +37,14 @@ There are a few trace files already provided to play around with the tool in the
 
 1. Install Basic Requirements
 ~~~
-  dnf groupinstall "Development Tools"
-  dnf install kernel-devel kernel-headers
-  dnf install gcc gcc-c++ flex bison perl-libwww-perl patch git
+  dnf -y groupinstall "Development Tools"
+  dnf -y install kernel-devel kernel-headers
+  dnf -y install gcc gcc-c++ flex bison perl-libwww-perl patch git
 ~~~
 
 2. Install Tool Dependencies
 ~~~
-  yum install python3
-  yum install cvc4
-  yum install z3
+  dnf -y install python3 cvc4 z3
 ~~~
 
 Building Fastsynth
@@ -66,12 +66,15 @@ Building Fastsynth
 
 3. Python Modules
 ~~~
-  dnf install graphviz graphviz-devel pkg-config python3-devel redhat-rpm-config
+  dnf -y install graphviz graphviz-devel pkg-config python3-devel redhat-rpm-config
   pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 4. Clone the repository `Trace2Model`<br/>
-Check Fastsynth installation : Move to `Trace2Model` folder and run
+~~~
+  git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
+~~~
+Check Fastsynth installation : 
 ~~~
   cd Trace2Model
   fastsynth ./aux_files/simplify_event.sl
@@ -79,17 +82,17 @@ Check Fastsynth installation : Move to `Trace2Model` folder and run
 ~~~
 
 
-### Linux (tested on Ubuntu 18.04)
+### Ubuntu 18.04
 
 1. Install Basic Requirements
 ~~~
-  apt-get install build-essential
-  apt-get install g++ gcc flex bison make git libwww-perl patch
+  apt-get -y install build-essential
+  apt-get -y install g++ gcc flex bison make git libwww-perl patch
 ~~~
 
 2. Install Tool Dependencies
 ~~~
-  apt-get install python3 cvc4 cbmc z3
+  apt-get -y install python3 cvc4 cbmc z3
 ~~~
 
 Building Fastsynth
@@ -110,12 +113,15 @@ Building Fastsynth
 
 3. Python Modules
 ~~~
-  apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
+  apt-get -y install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
   pip3 install numpy pygraphviz transitions termcolor
 ~~~
 
 4. Clone the repository `Trace2Model`<br/>
-Check Fastsynth installation : Move to `Trace2Model` folder and run
+~~~
+  git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
+~~~
+Check Fastsynth installation : 
 ~~~
   cd Trace2Model
   fastsynth ./aux_files/simplify_event.sl
@@ -126,7 +132,7 @@ Check Fastsynth installation : Move to `Trace2Model` folder and run
 
 
 ### MacOS (tested on MacOS 10.15)
-
+You will need Homebrew for installation. You can install it from https://brew.sh. <br/>
 1. Python Modules
 ~~~
   brew install python3
@@ -165,7 +171,10 @@ Check Fastsynth installation : Move to `Trace2Model` folder and run
 
 
 3. Clone the repository `Trace2Model`<br/>
-  Check Fastsynth installation : Move to `Trace2Model` folder and run
+~~~
+  git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
+~~~
+  Check Fastsynth installation :
 ~~~
   cd Trace2Model
   fastsynth ./aux_files/simplify_event.sl
