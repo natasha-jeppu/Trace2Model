@@ -97,6 +97,7 @@ def gen_c_model(trace_input,constraint,num_states,start_index,init_model,var):
 
 	for i in range(len(seq_input_uniq)):
 		f.write("{")
+		j = -1
 		for j in range(len(seq_input_uniq[0])-1):
 			f.write("%d," %seq_input_uniq[i][j])
 		j = j + 1

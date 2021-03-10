@@ -1,8 +1,11 @@
 (set-logic LIA)
-(synth-fun inv ((methane Int)) Bool)
+(synth-fun inv ((prev_inp.temp Int) (desiredTemperature Int) (allowedError Int) ) Bool)
 
-(declare-var methane Int)
+(declare-var prev_inp.temp Int)
+(declare-var desiredTemperature Int)
+(declare-var allowedError Int)
 
-(constraint (= (inv methane) (>= (+ 22 577)  methane)))
+
+(constraint (= (inv prev_inp.temp desiredTemperature allowedError) (and (>= prev_inp.temp (- desiredTemperature allowedError)) (not (= prev_inp.temp (- desiredTemperature allowedError))))))
 
 (check-synth)

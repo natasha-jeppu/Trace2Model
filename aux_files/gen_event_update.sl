@@ -1,30 +1,30 @@
 (set-logic LIA)
-(synth-fun next ((ip Int) (op Int) ) Int
-	((Start Int (
-				 (+ Start Start)						
-				 (- Start Start)						
-				 (* Start Start)
-				 ip
-				 op
-				 -5
-				 0
-				 1
-				 5
-				 (ite StartBool Start Start)))
 
-	 (StartBool Bool (
-					 (>= Start Start)						
-					 (<= Start Start)						
-					 (and StartBool StartBool)			
-					 (or  StartBool StartBool)				
-					 (not StartBool)))))
+(declare-datatypes ((c_t 0))
+	(((on) (off))))
 
-(declare-var ip Int)
-(declare-var op Int)
+(synth-fun next ((s c_t) ) c_t
+	((Start c_t) (StartBool Bool))
+	((Start c_t (
+					s
+					on
+					off
+					(ite StartBool Start Start)))
+
+	(StartBool Bool (
+				 (= Start Start)
+				 true
+				 false				
+				 (and StartBool StartBool)			
+				 (or  StartBool StartBool)				
+				 (not StartBool)))
+		))
+
+(declare-var s c_t)
 
 
-(constraint (= (next 1 -4 ) -3))
-(constraint (= (next 1 -3 ) -2))
-(constraint (= (next 1 -2 ) -1))
+(constraint (= (next on ) off))
+(constraint (= (next off ) on))
+(constraint (= (next on ) off))
 
 (check-synth)

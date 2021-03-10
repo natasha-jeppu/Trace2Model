@@ -1,0 +1,11 @@
+(set-logic ALL_SUPPORTED)
+
+(synth-fun next ((val Int)) Int)
+
+(declare-var val Int)
+
+(constraint (= (next 4) 2))
+(constraint (= (next 6) 3))
+(constraint (= (next 8) 4))
+
+(check-synth)

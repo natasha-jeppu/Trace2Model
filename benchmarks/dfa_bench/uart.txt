@@ -1,3 +1,4 @@
+start
 reset
 0
 reset
@@ -2074,3 +2075,4 @@ write
 x+1
 read
 x-1
+start

@@ -240,7 +240,6 @@ def gen_syn(input_dict,trace_dict):
 
 		if(len(event_keys) != 1):
 			window = len(temp)
-
 		
 		input_syn = {'input':temp, 'data_type':data_type, 'value':value, 'window':window}
 
@@ -261,7 +260,7 @@ def gen_syn(input_dict,trace_dict):
 
 
 			try:
-				output, o_err = p.communicate(timeout = 5)
+				output, o_err = p.communicate(timeout = 15)
 				if(synth_tool == 'fastsynth'):
 					output = str(output).split('\\n')
 				p.kill()
@@ -298,6 +297,7 @@ def gen_syn(input_dict,trace_dict):
 				output = output.replace(op_reg,'').replace(')\\n','')
 				update_ind = event_types[i][0].index(update_var)
 				event.append(data_type[update_ind][0] + '\' = ' + output)
+				print(event)
 
 			elif(synth_tool == 'fastsynth'):
 				found = [i for i in output if('SMT: synth_fun::next -> ' in i)]
@@ -312,6 +312,7 @@ def gen_syn(input_dict,trace_dict):
 					temp_expr_simple = temp_replace
 				update_ind = event_types[i][0].index(update_var)
 				event.append(data_type[update_ind][0] + '\' = ' + temp_expr_simple)
+				print(event)
 
 		trace_events[i] = event
 		print(colored(event,'green'))
