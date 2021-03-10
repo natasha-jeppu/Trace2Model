@@ -1,6 +1,0 @@
-(set-logic LIA)
-
-(assert (forall ((cmd Int)) (= (= 1 cmd) (> cmd 0))))
-(assert (forall ((cmd Int)) (= (= 1 cmd) (= cmd 1))))
-
-(check-sat)
