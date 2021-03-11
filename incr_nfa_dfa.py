@@ -616,8 +616,9 @@ def make_model(full_events, model, var, hyperparams, num_states, input_dict):
         ind_list = []
         num_of_ind = min([round(0.5*len(full_events)), 1000])
 
+        max_ind = max(len(full_events)-10, round(len(full_events)*0.75))
         for i in range(num_of_ind):
-            ind = random.randint(10, len(full_events)-10)
+            ind = random.randint(10, max_ind)
             ind_list.append(ind)
 
         ind_list = np.unique(ind_list)
