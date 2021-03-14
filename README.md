@@ -77,7 +77,7 @@ Building Fastsynth
 Check Fastsynth installation : 
 ~~~
   cd Trace2Model
-  fastsynth ./aux_files/simplify_event.sl
+  fastsynth ./aux_files/gen_event.sl
   fastsynth ./aux_files/gen_event_update.sl
 ~~~
 
@@ -124,7 +124,7 @@ Building Fastsynth
 Check Fastsynth installation : 
 ~~~
   cd Trace2Model
-  fastsynth ./aux_files/simplify_event.sl
+  fastsynth ./aux_files/gen_event.sl
   fastsynth ./aux_files/gen_event_update.sl
 ~~~
 
@@ -177,7 +177,7 @@ You will need Homebrew for installation. You can install it from https://brew.sh
   Check Fastsynth installation :
 ~~~
   cd Trace2Model
-  fastsynth ./aux_files/simplify_event.sl
+  fastsynth ./aux_files/gen_event.sl
   fastsynth ./aux_files/gen_event_update.sl
 ~~~
 
