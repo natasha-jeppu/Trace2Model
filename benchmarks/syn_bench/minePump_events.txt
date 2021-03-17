@@ -1,1496 +1,646 @@
 start
-highwater, methane' = (ite (>= (+ 1199 (- methane)) methane) methane (+ 1199 (- methane)))
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= (+ 1199 (- methane)) methane) methane (+ 1199 (- methane)))
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= (+ 1199 (- methane)) methane) methane (+ 1199 (- methane)))
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-critical
-highwater, methane' = (ite (>= (+ 1199 (- methane)) methane) methane (+ 1199 (- methane)))
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= (+ 1199 (- methane)) methane) methane (+ 1199 (- methane)))
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+highwater
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+critical
+not_critical
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+critical
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= (+ 1199 (- methane)) methane) methane (+ 1199 (- methane)))
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= (+ 1199 (- methane)) methane) methane (+ 1199 (- methane)))
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= (+ 1199 (- methane)) methane) methane (+ 1199 (- methane)))
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= (+ 1199 (- methane)) methane) methane (+ 1199 (- methane)))
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= (+ 1199 (- methane)) methane) methane (+ 1199 (- methane)))
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 not_critical
-switch_pump_on, methane' = methane
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-critical
-not_critical
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
 critical
 not_critical
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-start
-critical
-highwater, methane' = (ite (>= methane 621) 621 methane)
-critical
-critical
-critical
-critical
-critical
-not_critical
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
 critical
 not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-critical
-not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-critical
-critical
-not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-critical
-not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-critical
-critical
-not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-critical
-not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 621) 621 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 621) 621 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 621) 621 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-critical
-not_critical
-highwater, methane' = (ite (>= methane 621) 621 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-critical
-not_critical
-highwater, methane' = (ite (>= methane 621) 621 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-not_critical
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 621) 621 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-start
-critical
-highwater, methane' = (ite (<= methane 631) methane 631)
-critical
-critical
-critical
-critical
-critical
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 631) methane 631)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
 start
 critical
-not_critical
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
+highwater
 critical
-switch_pump_off, methane' = methane
-turn_off
+critical
+critical
 critical
 critical
 not_critical
-switch_pump_on, methane' = methane
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
 turn_off
 critical
-highwater, methane' = methane
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
 critical
 critical
 not_critical
-switch_pump_on, methane' = methane
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
 turn_off
 not_critical
-switch_pump_on, methane' = methane
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
 turn_off
 not_critical
-switch_pump_on, methane' = methane
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 not_critical
-switch_pump_on, methane' = methane
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+critical
+not_critical
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+critical
+not_critical
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+critical
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
 start
-critical
-highwater, methane' = (ite (>= methane 618) 618 methane)
-critical
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-critical
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 618) 618 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
 start
 critical
-highwater, methane' = (ite (<= methane 595) methane 595)
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 595) methane 595)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 595) methane 595)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-start
-critical
-highwater, methane' = 625
-critical
-critical
-critical
-critical
-critical
-critical
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical, methane' = (ite pump methane 596)
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical, methane' = (ite pump methane 596)
-switch_pump_off, methane' = methane
-turn_off
-critical, methane' = (ite pump methane 596)
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-start
-critical
-highwater, methane' = (ite (>= methane 643) 643 methane)
-critical
+highwater
 critical
 critical
 critical
@@ -1499,1221 +649,2275 @@ critical
 critical
 critical
 not_critical
-switch_pump_on, methane' = methane
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 not_critical
-switch_pump_on, methane' = methane
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 not_critical
-switch_pump_on, methane' = methane
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 not_critical
-switch_pump_on, methane' = methane
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 critical
 not_critical
-highwater, methane' = (ite (>= methane 643) 643 methane)
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = (ite (<= methane 603) methane 603)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 603) methane 603)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 603) methane 603)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 603) methane 603)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 603) methane 603)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 603) methane 603)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-critical
-highwater, methane' = (ite (<= methane 603) methane 603)
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
 turn_off
 critical
 critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
 start
-critical
-highwater, methane' = (ite (>= methane 615) 615 methane)
-critical
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (>= methane 615) 615 methane)
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical, methane' = (ite pump methane 593)
-switch_pump_off, methane' = methane
-turn_off
-critical, methane' = (ite pump methane 593)
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-start
-critical
-highwater, methane' = (ite (<= methane 623) methane 623)
-critical
-critical
-critical
-critical
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
-turn_off
-highwater, methane' = (ite (<= methane 623) methane 623)
-switch_pump_on, methane' = methane
-turn_on
-start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
 start
 critical
-highwater, methane' = (ite (>= methane 630) 630 methane)
-critical
-critical
-critical
-critical
-critical
-critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+highwater
+critical
+critical
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+critical
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 630) 630 methane)
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+critical
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 630) 630 methane)
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 630) 630 methane)
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+critical
+highwater
+critical
+critical
+critical
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+start
+critical
+highwater
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+critical
+not_critical
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+low_water
+switch_pump_off
 turn_off
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+start
+critical
+highwater
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
 turn_on
 start
 critical
-not_critical, methane' = (ite (>= (+ 1193 (- methane)) methane) methane (+ 1193 (- methane)))
-highwater, methane' = methane
-switch_pump_on, methane' = methane
+highwater
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
-turn_off, methane' = methane
-critical
-critical
-critical
-not_critical, methane' = (ite (>= (+ 1193 (- methane)) methane) methane (+ 1193 (- methane)))
-switch_pump_on, methane' = methane
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+not_critical
+highwater
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+critical
+highwater
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
 turn_off
 start
 critical
-highwater, methane' = (ite (>= methane 607) 607 methane)
+highwater
 critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+critical
+critical
+not_critical
+switch_pump_on
 turn_on
 critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
-turn_off
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
-turn_on
-critical
-switch_pump_off, methane' = methane
+switch_pump_off
 turn_off
 critical
 critical
-not_critical, methane' = methane
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
-low_water, methane' = methane
-switch_pump_off, methane' = methane
+critical
+switch_pump_off
 turn_off
-highwater, methane' = (ite (>= methane 607) 607 methane)
-switch_pump_on, methane' = methane
+not_critical
+switch_pump_on
 turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+start
+critical
+highwater
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+start
+critical
+highwater
+critical
+critical
+critical
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+start
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+start
+critical
+not_critical
+highwater
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+start
+critical
+highwater
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+start
+critical
+highwater
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+start
+critical
+highwater
+critical
+critical
+critical
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+critical
+switch_pump_off
+turn_off
+not_critical
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
+highwater
+switch_pump_on
+turn_on
+low_water
+switch_pump_off
+turn_off
 start

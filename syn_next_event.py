@@ -1,178 +1,72 @@
 #######################################################################
-# Generate transition conditions for next event
+# Generate transition guards for next event
 # Author: Natasha Yogananda Jeppu, natasha.yogananda.jeppu@cs.ox.ac.uk
 #         University of Oxford
 #######################################################################
 
-import sys
-import numpy as np
-import subprocess
-import time
-import re
-
-import statistics as stat
 import argparse
+import numpy as np
+import pickle
+import re
+import statistics as stat
+import subprocess
+import sys
+import time
 
 from os.path import abspath
 from termcolor import colored
 
-def pre_process(trace):
+import tree
 
-	trace_set = dict.fromkeys([i[0] for i in trace],0)
+def pre_process(trace):
+	trace_set = dict.fromkeys([i[0] for i in trace if i[0]!='trace'],0)
 
 	j = 0
-	for j in range(len(trace)-1):
+	for j in range(len(trace)):
+		if trace[j][0] == 'trace':
+			continue
 		temp1 = trace[j][1:]
-		temp1.append(trace[j+1][0])
+		if trace[j+1][0] == 'trace':
+			temp1.append('-')
+		else:
+			temp1.append(trace[j+1][0])
 		if(trace_set[trace[j][0]] == 0):
 			trace_set[trace[j][0]] = [temp1]
 		else:
 			trace_set[trace[j][0]].append(temp1)
-	temp1 = trace[j+1][1:]
-	temp1.append('-')
-	if(trace_set[trace[j+1][0]] == 0):
-		trace_set[trace[j+1][0]] = [temp1]
-	else:
-		trace_set[trace[j+1][0]].append(temp1)
 
 	input_dict = {'trace_set': trace_set}
 
 	return input_dict
 
-def simplify(expression,data_type):
-	print("\nInitial expr: ")
-	print(expression)
-
-	expr_split = expression.split(' and ')
-
-	expr_simple = ''
-	list_mult_cond = []
-	for x in data_type:
-		list_cond = [y for y in expr_split if x[0] in y and not (any(z[0] in y for z in data_type if z!=x))]
-
-		for y in expr_split:
-			if(x[0] in y and y not in list_cond and y not in list_mult_cond):
-				list_mult_cond.append(y)
-
-		if(list_cond):
-			print("Variable: " + x[0])
-			f = open(full_path + 'aux_files/simplify_event.sl','w')
-			f.write('(set-logic LIA)\n')
-			f.write('(synth-fun inv ((' + x[0])
-			if(x[1] == 'N'):
-				f.write(' Int)) Bool)\n')
-			elif(x[1] == 'S'):
-				f.write(' Bool)) Bool)\n')
-
-			f.write('\n(declare-var ' + x[0])
-			if(x[1] == 'N'):
-				f.write(' Int)\n')
-			elif(x[1] == 'S'):
-				f.write(' Bool)\n')
-
-			f.write('\n(constraint (= (inv ' + x[0] +') ')
-			if (len(list_cond) == 1):
-				i = 0
-				if ('!' in list_cond[i]):
-					f.write('(not ' + list_cond[i].replace('!', '') + ')))')
-				else:
-					f.write(list_cond[i] + '))')
-			else:
-				i = 0
-				for i in range(len(list_cond)-1):
-					if('!' in list_cond[i]):
-						f.write('(and (not ' + list_cond[i].replace('!','') + ')')
-					else:
-						f.write('(and ' + list_cond[i])
-
-				i = i + 1
-				if('!' in list_cond[i]):
-					f.write('(not ' + list_cond[i].replace('!','') + ')')
-				else:
-					f.write(' ' + list_cond[i])
-				for j in range(i+2):
-					f.write(')')
-			f.write('\n\n')
-			f.write('(check-synth)')
-			f.close()
-
-			p = subprocess.Popen('fastsynth ' + full_path + 'aux_files/simplify_event.sl', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-
-			try:
-				output, o_err = p.communicate(timeout=10)
-				output = str(output).split('\\n')
-				p.kill()
-			except subprocess.CalledProcessError:
-				p.kill()
-				print(colored("[WARNING] FAILED",'magenta'))
-				temp_expr_simple = ' and '.join(list_cond)
-
-				if(expr_simple == ''):
-					expr_simple = temp_expr_simple
-				elif(temp_expr_simple != ''):
-					expr_simple = expr_simple + ' and ' + temp_expr_simple
-				continue
-			except subprocess.TimeoutExpired:
-				p.kill()
-				print(colored("[WARNING] TIMEOUT",'magenta'))
-				temp_expr_simple = ' and '.join(list_cond)
-
-				if(expr_simple == ''):
-					expr_simple = temp_expr_simple
-				elif(temp_expr_simple != ''):
-					expr_simple = expr_simple + ' and ' + temp_expr_simple
-				continue
-
-			found = [i for i in output if('SMT: synth_fun::next -> ' in i)]
-			if(not found):
-				print(colored("[WARNING] FAILED",'magenta'))
-				temp_expr_simple = ' and '.join(list_cond)
-
-				if(expr_simple == ''):
-					expr_simple = temp_expr_simple
-				elif(temp_expr_simple != ''):
-					expr_simple = expr_simple + ' and ' + temp_expr_simple
-				continue
-
-			expr = [i for i in output if('SMT: synth_fun::inv -> ' in i)][0]
-			temp_expr_simple = expr.replace('SMT: synth_fun::inv -> ','').replace('|synth::parameter0|',x[0])
-
-			if('(ite' in temp_expr_simple):
-				temp_expr_simple = ' and '.join(list_cond)
-
-			if(expr_simple == ''):
-				expr_simple = temp_expr_simple
-			elif(temp_expr_simple != ''):
-				expr_simple = expr_simple + ' and ' + temp_expr_simple
-
-	for x in list_mult_cond:
-		expr_simple = expr_simple + ' and ' + x
-
-	return(expr_simple)
-
-
-
-def post_process(output,next_event,data_type,trace_dict):
+def post_process(output,next_event,data_type,trace_dict,enum_val):
 	event_keys = trace_dict['event_keys']
 	output_split = output.split()
-	syn_event = dict.fromkeys([event_keys[x] for x in next_event],0)
+	syn_event = dict.fromkeys([str(x) for x in next_event],0)
 
 	for i in range(len(output_split)-1,-1,-1):
-		if (output_split[i] in ['(+','(-','(*','(<=','(>=']):
-			output_split[i : i+3] = [''.join(x + ' ' for x in output_split[i:i+3])]
-
+		if (output_split[i] in ['(+','(-','(*','(<=','(>=','(=','(>','(<']):
+			if output_split[i] == '(=':
+				output_split[i : i+3] = ['(' + output_split[i+1] + ' == ' + output_split[i+2]]
+			else:
+				output_split[i : i+3] = ['(' + output_split[i+1] + ' ' + output_split[i].replace('(','') + ' ' + output_split[i+2]]
 
 	cond = []
 	arg1 = []
 	arg2 = []
+	expr = []
 
 	for i in range(len(output_split)-1,-1,-1):
 		if (output_split[i] == '(ite'):
 			cond.append(output_split[i+1])
 			arg1.append(output_split[i+2])
 			arg2.append(output_split[i+3])
-			output_split[i : i+4] = [''.join(x + ' ' for x in output_split[i:i+4])]
+			output_split[i : i+4] = [' '.join(output_split[i:i+4])]
+			expr.append(output_split[i])
 
+	print("\nSynth solution:")
+	print(output)
+	print(next_event)
 
 	print("Conditions: ")
 	print(cond)
@@ -180,74 +74,46 @@ def post_process(output,next_event,data_type,trace_dict):
 	print(arg1)
 	print("Arg2: ")
 	print(arg2)
+	print("Expr: ")
+	print(expr)
 
-	e_char = [x for x in arg1 if ('(ite' not in x)]
+	e_char = []
+	[e_char.append(x) for x in arg1 if ('(ite' not in x)]
+	[e_char.append(x) for x in arg2 if ('(ite' not in x)]
 
-	for x in arg2:
-		if ('(ite' not in x):
-			e_char.append(x)
-
-	e_int = np.unique([int(re.search('[0-9]+',x).group(0)) for x in e_char])
+	e_int = np.unique([int(re.findall('[0-9]+',x)[0]) for x in e_char])
 	print("next_event: ")
 	print(e_int)
 
+	last_ind = len(cond) - 1
+	root = tree.Node(cond[last_ind])
+	root.insert(expr[last_ind], expr, cond, arg1, arg2)
+
+	temp = []
+	expressions = []
+	root.PrintTree(temp, expressions)
+
+	dict_expr = {}
+	for e in expressions:
+		dict_expr.setdefault(e[0],[])
+		dict_expr[e[0]].append(e[1:])
+	print(dict_expr)
+
 	for j in e_int:
-		char_list = [x for x in e_char if (str(j) in x)]
-
+		if j == 0:
+			continue
+		expr_split = dict_expr[str(j)]
 		temp = []
-		cond_list = []
-
-		for i in range(len(cond)):
-
-			arg1_temp = arg1[i]
-			arg2_temp = arg2[i]
-			for x in cond:
-				arg1_temp = arg1_temp.replace(x,'')
-				arg2_temp = arg2_temp.replace(x,'')
-
-			if ('(ite' in arg1_temp):
-				c1 = any((' ' + x + ' ') in arg1_temp for x in char_list)
+		for x in expr_split:
+			if len(x) > 1:
+				temp.append('(' + ' and '.join(x) + ')')
 			else:
-				c1 = any(x in arg1_temp for x in char_list)
-
-			if ('(ite' in arg2_temp):
-				c2 = any((' ' + x + ' ') in arg2_temp for x in char_list)
-			else:
-				c2 = any(x in arg2_temp for x in char_list)
-
-			if(c1):
-				if(cond[i] not in cond_list):
-					cond_list.append(cond[i].strip())
-				found = 0
-				for x in cond_list:
-					if(x in arg1[i]):
-						found = 1
-						for ind in [temp.index(y) for y in temp if x in y and cond[i].strip() not in y]:
-							temp[ind] = temp[ind] + ' and ' + cond[i].strip()
-				if(not found):
-					temp.append(cond[i].strip())
-
-			if(c2):
-				if(cond[i] not in cond_list):
-					cond_list.append(cond[i].strip())
-				found = 0
-				for x in cond_list:
-					if(x in arg2[i]):
-						found = 1
-						for ind in [temp.index(y) for y in temp if x in y and cond[i].strip() not in y]:
-							temp[ind] = temp[ind] + ' and !' + cond[i].strip()
-				if(not found):
-					temp.append('!' + cond[i].strip())
-
-		for i in range(len(temp)):
-			temp[i] = simplify(temp[i],data_type)
-			print(colored('Final expr: ','green'))
-			print(colored(temp[i],'green'))
-
-		syn_event[event_keys[j]] = '(' + temp[0] + ')'
-		for i in range(1,len(temp)):
-			syn_event[event_keys[j]] = syn_event[event_keys[j]] + ' or (' + temp[i] + ')'
-
+				temp.append(x[0])
+		if len(temp) > 1:
+			final_expr = '(' + ' or '.join(temp) + ')'
+		else:
+			final_expr = temp[0]
+		syn_event[str(j)] = final_expr
 
 	return syn_event
 
@@ -262,23 +128,38 @@ def gen_syn(input_dict,trace_dict):
 
 	trace_events = dict.fromkeys(event_types.keys(),0)
 
+	enum_val = {}
+
 	for i in trace_set.keys():
-		event = 0
-		temp = trace_set[i]
+		temp = np.unique(trace_set[i],axis=0)
+		temp = [list(x) for x in temp]
 
 		last_ind = len(temp[0]) - 1
-		value = [1,2]
+		value = []
 
-		print('---------------' + i + '----------------')
+		print('\n---------------' + i + '----------------')
 		print(event_types[i])
 
-		next_event = np.unique([event_keys.index(x[last_ind]) for x in temp if x[last_ind] != '-'])
+		next_event = np.unique([x[last_ind] for x in temp if x[last_ind] != '-'])
 		data_type = [x.split(':') for x in event_types[i][0]]
+		enum_type = [x for x in data_type if x[1] == 'E']
+		
+		for x in enum_type:
+			ind = data_type.index(x)
+			values = [y[ind] for y in temp]
+			if x[0] not in enum_val.keys():
+				enum_val[x[0]] = []
+			[enum_val[x[0]].append(y) for y in values]
+			enum_val[x[0]] = list(np.unique(enum_val[x[0]]))
 
 		if(const_grammar):
-			for x in const_grammar:
-				value.append(x)
+			if 'nil' in const_grammar:
+				value = []
+			else:
+				for x in const_grammar:
+					value.append(int(x))
 		else:
+			value = [1,2]
 			for x in range(last_ind):
 				if(data_type[x][1] == 'N'):
 					data = [round(float(y[x])) for y in temp]
@@ -286,18 +167,34 @@ def gen_syn(input_dict,trace_dict):
 						value.append(int(round(stat.stdev([round(float(y[x])) for y in temp]))))
 					value.append(int(round(np.mean([round(float(y[x])) for y in temp]))))
 
-		value = np.unique(value)
+		value = list(np.unique(value))
 
 		if(len(next_event) == 0):
 			continue
 
-		j=0
-		while(j < len(temp)):
+		trace_events[i] = dict.fromkeys(next_event,0)
+		if len(next_event) == 1:
+			continue
+		for j in next_event:
+			if j == i:
+				continue
+
 			f = open(full_path + 'aux_files/gen_event.sl','w')
 			f.write("(set-logic LIA)\n")
+
+			for x in enum_type:
+				f.write("(declare-datatypes ((" + x[0] + "_t 0))\n")
+				f.write("	((")
+				for y in enum_val[x[0]]:
+					f.write("(" + y + ") ")
+				f.write(")))\n")
+
 			f.write("(synth-fun next (")
 
 			for x in data_type:
+				if x[1] == 'E':
+					f.write("(" + x[0] + " " + x[0] + "_t)")
+					continue
 				f.write("(" + x[0] + " ")
 				if(x[1] == 'N'):
 					f.write("Int) ")
@@ -305,25 +202,45 @@ def gen_syn(input_dict,trace_dict):
 					f.write("Bool) ")
 
 			f.write(") Int\n")
+			f.write("	((Start Int) ")
+
+			num_data = [x for x in data_type if x[1] == 'N']
+			if(num_data  or value):
+				f.write(" (Var Int) ")
+
+			for k in range(len(enum_type)):
+				f.write("(EnumVar" + str(k) + " " + enum_type[k][0] + "_t) ")
+			f.write("(StartBool Bool))\n")
+
 			f.write("	((Start Int (\n")
-			for k in range(len(next_event)):
-				f.write("				 " + str(next_event[k]) + "\n")
+			for k in range(2):
+				f.write("				 " + str(k) + "\n")
 			f.write("				 (ite StartBool Start Start)")
 			f.write("))\n\n")
 
-			f.write("	(Var Int (\n")
-			for x in value:
-				f.write("			 " + str(x) + "\n")
+			if(num_data  or value):
+				f.write("	(Var Int (\n")
+				for x in value:
+					if x < 0:
+						f.write("				 (- " + str(x*-1) + ")\n")
+					else:
+						f.write("				 " + str(x) + "\n")
 
-			num_data = [x for x in data_type if x[1] == 'N']
-			for k in range(len(num_data)):
-				f.write("			 " + num_data[k][0] + "\n")
+				for k in range(len(num_data)):
+					f.write("			 " + num_data[k][0] + "\n")
 
-			f.write("\
-			 (+ Var Var)						\n\
-			 (- Var Var)						\n\
-			 (* Var Var)")
-			f.write("))\n\n")
+				f.write("\
+			 	(+ Var Var)						\n\
+			 	(- Var Var)						\n\
+			 	(* Var Var)")
+				f.write("))\n\n")
+
+			for k in range(len(enum_type)):
+				f.write("(EnumVar" + str(k) + " " + enum_type[k][0] + "_t (\n")
+				f.write("	" + enum_type[k][0] + "\n")
+				for y in enum_val[enum_type[k][0]]:
+					f.write(y + "\n")
+				f.write("))\n\n") 
 
 
 			f.write("	 (StartBool Bool (\n")
@@ -331,59 +248,74 @@ def gen_syn(input_dict,trace_dict):
 			for k in range(len(bool_data)):
 				f.write("				 	 " + bool_data[k][0] + "\n")
 
-			f.write("\
+			for k in range(len(enum_type)):
+				f.write("	 ( = EnumVar" + str(k) + " EnumVar" + str(k) + ")\n")
+			
+			if(num_data or value):
+				f.write("\
+					 (> Var Var)						\n\
 					 (>= Var Var)						\n\
+					 (< Var Var)						\n\
 					 (<= Var Var)						\n\
+					 (= Var Var)						\n")
+
+			f.write("\
 					 (and StartBool StartBool)			\n\
 					 (or  StartBool StartBool)				\n\
 					 (not StartBool)")
 
 			f.write("))))\n\n")
 
-
-
-			for x in data_type:
-				if(x[1] == 'N'):
-					f.write("(declare-var " + x[0] + " Int)\n")
-				elif(x[1] == 'S'):
-					f.write("(declare-var " + x[0] + " Bool)\n")
-
-			f.write("\n\n")
-
 			count = 0
 			while(count < len(temp)):
-				if(j+count == len(temp)):
-					break;
-				if(temp[j+count][last_ind] == '-'):
+				if(temp[count][last_ind] == '-'):
 					count = count + 1
 					continue;
 				f.write("(constraint (= (next ")
 				for x in range(last_ind):
 					if(data_type[x][1] == 'N'):
-						f.write(str(round(float(temp[j+count][x]))) + " ")
+						val = round(float(temp[count][x]))
+						if val < 0:
+							f.write("(- " + str(val*-1) + ") ")
+						else:
+							f.write(str(val) + " ")
 					elif(data_type[x][1] == 'S'):
-						if (temp[j+count][x] == 'true'):
+						if (temp[count][x] == 'true'):
 							f.write("true ")
 						else:
 							f.write("false ")
-
-				f.write(") " + str(event_keys.index(temp[j+count][last_ind])) + "))\n")
+					elif(data_type[x][1] == 'E'):
+						f.write(temp[count][x] + " ")
+				if temp[count][last_ind] == j:
+					f.write(") 1))\n")
+				else:
+					f.write(") 0))\n")
 
 				count = count + 1
-
-			j=j+count
 			f.write("\n(check-synth)\n")
-
 			f.close()
 
 			p = subprocess.Popen('cvc4 '+ full_path + 'aux_files/gen_event.sl --lang sygus', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 			try:
-				output,o_err = p.communicate(timeout=5)
+				output,o_err = p.communicate(timeout=300)
 				p.kill()
 			except subprocess.TimeoutExpired:
 				p.kill()
 				print(colored("[WARNING] TIMEOUT",'magenta'))
-				event = 0
+				trace_events[i][j] = 0
+				print(colored(j + ': ' + str(trace_events[i][j]),'green'))
+				continue
+			except subprocess.CalledProcessError:
+				p.kill()
+				print(colored("[ERROR] FAILED",'magenta'))
+				trace_events[i][j] = '[ERROR] FAILED'
+				print(colored(j + ': ' + trace_events[i][j],'green'))
+				continue
+
+			if 'unknown' in str(output):
+				print(colored("[ERROR] FAILED",'magenta'))
+				trace_events[i][j] = '[ERROR] FAILED'
+				print(colored(j + ': ' + trace_events[i][j],'green'))
 				continue
 
 			output = str(output).replace('b\'unsat\\n','').replace('\'','')
@@ -396,17 +328,39 @@ def gen_syn(input_dict,trace_dict):
 					op_reg = op_reg + 'Int)'
 				elif(x[1] == 'S'):
 					op_reg = op_reg + 'Bool)'
+				elif(x[1] == 'E'):
+					op_reg = op_reg + x[0] + '_t)'
 				if(data_type.index(x) < len(data_type) - 1):
 					op_reg = op_reg + ' '
 
 			op_reg = op_reg + ') Int '
 			output = output.replace(op_reg,'').replace(')\\n','')
-			event = post_process(output,next_event,data_type,trace_dict)
-
-		trace_events[i] = event
-		print(colored(event,'green'))
+			output = with_let(output)
+			output = post_process(output,[0,1],data_type,trace_dict,enum_val)
+			trace_events[i][j] = output['1']
+			print(colored(j + ': ' + trace_events[i][j],'green'))
 
 	return trace_events
+
+def with_let(model):
+	reg_str = '\(\_let\_[0-9]+ \(.*?\)'
+	let_str = []
+	let_str = re.findall(reg_str,model)
+	let_str.reverse()
+
+	let_def = re.findall('(\(let \(.*?\) )',model)
+	model = re.sub('(\(let \(.*?\) )','',model)
+
+	if not let_str:
+		return model
+
+	for i in let_str:
+		i = i.strip('(')
+		let_val = re.findall('\_let\_[0-9]+',i)
+		expr = re.findall('\(.*?\)',i)
+		model = model.replace(let_val[0],expr[0])
+
+	return model
 
 
 def parse_args():
@@ -416,7 +370,7 @@ def parse_args():
             help='Input trace file for data update predicate generation')
 	parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
             help='Variables that affect update variable behaviour. Use \'-dv help\' for possible options. Use -dv [all] <var_list> to set variables for all events')
-	parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], type=int, nargs='+',
+	parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], nargs='+',
             help='Constants to be added to grammar for SyGus CVC4')
 
 	hyperparams = parser.parse_args()
@@ -466,7 +420,7 @@ def main():
 	if(['help'] in var_list):
 		print(colored("[HELP]",'green') + " Possible options:")
 		print(event_types)
-		exit()
+		exit(0)
 
 	if(var_list):
 		if(var_list[0][0] == '[all]'):
@@ -516,37 +470,43 @@ def main():
 	trace_dict = {'trace_id':trace_id, 'type_id':type_id, 'event_keys':event_keys, 'event_types':event_types, 'const_grammar':const_grammar}
 
 	f = open(trace_filename.replace('.txt','') + '_events.txt','w')
-	f.close()
+	temp = events_split[trace_id[0]+1:]
 
-	for i in range(len(trace_id) - 1):
-		f = open(trace_filename.replace('.txt','') + '_events.txt','a')
-		temp = events_split[trace_id[i]+1:trace_id[i+1]]
-		print("----------- Trace: " + str(i+1) + " ------\n" )
-		if(not temp):
-			continue
-
-		if(len(temp) < 2):
-			f.write("start\n")
-			f.write(temp[0][0] + '\n')
-			f.close()
-			continue
-
-		input_dict = pre_process(temp)
-		trace_events = gen_syn(input_dict,trace_dict)
-		print(colored(trace_events,'green'))
-
-		if(i == 0):
-			f.write("start\n")
-		f.write(temp[0][0] + '\n')
-		for j in range(1,len(temp)):
-			if(trace_events[temp[j-1][0]] == 0):
-				f.write(temp[j][0] + '\n')
-			elif(trace_events[temp[j-1][0]][temp[j][0]] == 0):
-				f.write(temp[j][0] + '\n')
-			else:
-				f.write(trace_events[temp[j-1][0]][temp[j][0]] + ': ' + temp[j][0] + '\n')
+	if(len(temp) < 2):
 		f.write("start\n")
+		f.write(temp[0][0] + '\n')
 		f.close()
+
+	input_dict = pre_process(temp)
+	trace_events = gen_syn(input_dict,trace_dict)
+	
+	# dump generated predicates into '.pkl' file
+	pickle_f = open(trace_filename.replace('.txt','.pkl'),'wb')
+	pickle.dump(trace_events,pickle_f)
+	pickle_f.close()
+
+	print('\n')
+	print(colored(trace_events,'green'))
+
+	f.write("start\n")
+	f.write(temp[0][0] + '\n')
+	for j in range(1,len(temp)):
+		if temp[j-1][0] == 'trace':
+			f.write(temp[j][0] + '\n')
+			continue
+		if temp[j][0] == 'trace':
+			f.write("start\n")
+			continue
+		if temp[j][0] == temp[j-1][0]:
+			f.write(temp[j][0] + '\n')
+			continue
+		if(trace_events[temp[j-1][0]] == 0):
+			f.write(temp[j][0] + '\n')
+		elif(trace_events[temp[j-1][0]][temp[j][0]] == 0):
+			f.write(temp[j][0] + '\n')
+		else:
+			f.write(trace_events[temp[j-1][0]][temp[j][0]] + ': ' + temp[j][0] + '\n')
+	f.close()
 
 full_path = abspath(__file__).replace('syn_next_event.py','')
 if __name__ == '__main__':
