@@ -504,7 +504,7 @@ def gen_syn(input_dict,trace_dict):
 					p.kill()
 					print(colored("[WARNING] TIMEOUT",'magenta'))
 					if(len(event_keys) != 1):
-						event.append('[WARNING] UNKNOWN')
+						event.append('[WARNING] TIMEOUT')
 						break
 					else:
 						continue
