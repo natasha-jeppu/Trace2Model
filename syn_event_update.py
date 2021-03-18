@@ -518,7 +518,7 @@ def gen_syn(input_dict,trace_dict):
 							print(colored("[WARNING] unknown",'magenta'))
 							event.append('[WARNING] UNKNOWN')
 							j = j + 1
-						break
+						break	
 
 					output = str(output).replace('b\'unsat\\n','').replace('\'','')
 					
@@ -604,22 +604,47 @@ def gen_syn(input_dict,trace_dict):
 	return trace_events
 
 def with_let(model):
-	reg_str = '\(\_let\_[0-9]+ \(.*?\)'
-	let_str = []
-	let_str = re.findall(reg_str,model)
-	let_str.reverse()
-
-	let_def = re.findall('(\(let \(.*?\) )',model)
-	model = re.sub('(\(let \(.*?\) )','',model)
-
-	if not let_str:
+	if '_let_' not in model:
 		return model
 
-	for i in let_str:
-		i = i.strip('(')
-		let_val = re.findall('\_let\_[0-9]+',i)
-		expr = re.findall('\(.*?\)',i)
-		model = model.replace(let_val[0],expr[0])
+	expr_list = model.split()
+
+	ind1 = 0
+	ind2 = 0
+	open_count = 0
+	close_count = 0
+	found = False
+	let_list = []
+	for i in range(len(expr_list)):
+		x = expr_list[i]
+		if found:
+			open_count += x.count('(')
+			close_count += x.count(')')
+			if open_count == close_count and open_count!=0:
+				ind2 = i
+				let_list.append(expr_list[ind1:ind2+1])
+				found = False
+				open_count = 0
+				close_count = 0
+
+		if '(_let_' in x:
+			found = True
+			ind1 = i
+			open_count = x.count('(')
+
+	model = model.replace('(let ','')
+	let_pairs = []
+	for let_expr_list in let_list:
+		let_str = ' '.join(let_expr_list)
+		model = model.replace(let_str,'')
+		let_expr = re.findall('\_let\_[0-9]+',let_str)[0]
+		replace_with = let_str.replace(let_expr_list[0] + ' ','')
+		open_count = let_expr_list[0].count('(')
+		replace_with = replace_with[:len(replace_with)-open_count]
+		let_pairs.append([let_expr, replace_with])
+
+	for pair in let_pairs:
+		model = model.replace(pair[0],pair[1])
 
 	return model
 
