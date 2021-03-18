@@ -25,6 +25,8 @@ def pre_process(trace):
 	for j in range(len(trace)):
 		if trace[j][0] == 'trace':
 			continue
+		if any([x == '-' for x in trace[j][1:]]):
+			continue
 		temp1 = trace[j][1:]
 		if trace[j+1][0] == 'trace':
 			temp1.append('-')
@@ -36,6 +38,8 @@ def pre_process(trace):
 			trace_set[trace[j][0]].append(temp1)
 
 	input_dict = {'trace_set': trace_set}
+	# print(trace_set)
+	# exit(0)
 
 	return input_dict
 
@@ -131,14 +135,16 @@ def gen_syn(input_dict,trace_dict):
 	enum_val = {}
 
 	for i in trace_set.keys():
+		print('\n---------------' + i + '----------------')
+		print(event_types[i])
+		
+		if not trace_set[i]:
+			continue
 		temp = np.unique(trace_set[i],axis=0)
 		temp = [list(x) for x in temp]
 
 		last_ind = len(temp[0]) - 1
 		value = []
-
-		print('\n---------------' + i + '----------------')
-		print(event_types[i])
 
 		next_event = np.unique([x[last_ind] for x in temp if x[last_ind] != '-'])
 		data_type = [x.split(':') for x in event_types[i][0]]
@@ -437,13 +443,10 @@ def main():
 		for i in var_list:
 			temp = []
 			temp = [event_types[i[0]][0].index(x) + 1 for x in event_types[i[0]][0] if x in i[1:]]
-			temp = np.unique(temp)
-			var_list_ind[i[0]] = [0]
-			for j in temp:
-				var_list_ind[i[0]].append(j)
+			temp = list(np.unique(temp))
+			var_list_ind[i[0]] = [0] + temp
 
 		print(var_list_ind)
-
 		temp = []
 		for x in events_split:
 			if(len(x) > 1):
@@ -476,6 +479,7 @@ def main():
 		f.write("start\n")
 		f.write(temp[0][0] + '\n')
 		f.close()
+		exit(0)
 
 	input_dict = pre_process(temp)
 	trace_events = gen_syn(input_dict,trace_dict)
