@@ -941,7 +941,7 @@ def main():
                     num_states = num_states + 1
                     print("No model, increasing number of states to %d" %(num_states))
 
-full_path = abspath(__file__).replace('nfa.py','')
+full_path = abspath(__file__).replace('incr.py','')
 C_gen_model = full_path + 'aux_files/gen_model_new.c'
 C_gen_model_output = full_path + 'aux_files/cbmc_output_gen_model_new.json'
 
