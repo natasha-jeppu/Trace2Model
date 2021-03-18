@@ -648,8 +648,10 @@ def with_let(model):
 		replace_with = replace_with[:len(replace_with)-open_count]
 		let_pairs.append([let_expr, replace_with])
 
+	let_pairs.reverse()
 	for pair in let_pairs:
 		model = model.replace(pair[0],pair[1])
+	model.strip()
 
 	return model
 
