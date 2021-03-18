@@ -503,7 +503,11 @@ def gen_syn(input_dict,trace_dict):
 				except subprocess.TimeoutExpired:
 					p.kill()
 					print(colored("[WARNING] TIMEOUT",'magenta'))
-					continue
+					if(len(event_keys) != 1):
+						event.append('[WARNING] UNKNOWN')
+						break
+					else:
+						continue
 				except subprocess.CalledProcessError:
 					p.kill()
 					print(colored("[WARNING] FAILED",'magenta'))
@@ -514,6 +518,7 @@ def gen_syn(input_dict,trace_dict):
 					if 'unknown' in str(output):
 						if(len(event_keys) != 1):
 							event.append('[WARNING] UNKNOWN')
+							j = j + window + 1
 						elif not found:
 							print(colored("[WARNING] unknown",'magenta'))
 							event.append('[WARNING] UNKNOWN')
