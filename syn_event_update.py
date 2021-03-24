@@ -311,6 +311,14 @@ def syn_enum_file(input_syn,j,enum_val,update_var):
 				f.write("(" + type_t[0] + y + ") ")
 			f.write(")))\n")
 
+	if update_var.split(':') not in data_type:
+		type_t = update_var.split(':')
+		f.write("(declare-datatypes ((" + type_t[0] + "_t 0))\n")
+		f.write("	((")
+		for y in enum_val[type_t[0]]:
+			f.write("(" + type_t[0] + y + ") ")
+		f.write(")))\n")
+
 	f.write("\n(synth-fun next (")
 
 	for x in data_type:
@@ -332,7 +340,8 @@ def syn_enum_file(input_syn,j,enum_val,update_var):
 	f.write("(StartBool Bool) (Start_Int Int))\n")
 
 	f.write("	((Start " + update_var.split(':')[0] + "_t (\n")
-	f.write("				" + update_var.split(':')[0] + "\n")
+	if update_var.split(':') in data_type:
+		f.write("				" + update_var.split(':')[0] + "\n")
 	for y in enum_val[update_var.split(':')[0]]:
 		f.write("				" + update_var.split(':')[0] + y + "\n")
 	f.write("				(ite StartBool Start Start)))\n\n")
@@ -459,6 +468,11 @@ def gen_syn(input_dict,trace_dict):
 				enum_val[x[0]] = []
 			[enum_val[x[0]].append(y) for y in values]
 			enum_val[x[0]] = list(np.unique(enum_val[x[0]]))
+
+		if update_var.split(':')[1] == 'E' and update_var.split(':') not in enum_type:
+			values = []
+			[values.append(y[last_ind]) for y in temp]
+			enum_val[update_var.split(':')[0]] = list(np.unique(values))
 
 		if 'nil' in const_grammar:
 			value = []
