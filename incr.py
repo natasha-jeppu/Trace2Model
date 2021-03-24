@@ -359,7 +359,7 @@ def nfa_traverse(model,trace, vis=[],find_vis=False):
         return (1,[],vis)
     return (1,[])
 
-def nfa_to_dfa(nfa):
+def nfa_to_dfa(nfa, full_event_id):
     def find_eq_states_to_merge(full_trans):
         states = list(full_trans.keys())
         event_len = len(full_trans[states[0]])
@@ -417,7 +417,7 @@ def nfa_to_dfa(nfa):
             for y in x[1:]:
                 invalid_merge = False
                 for i in outgoing[y]:
-                    if full_trans[replace_with][i] != full_trans[y][i]:
+                    if full_trans[y][i] != '-' and full_trans[replace_with][i] != full_trans[y][i]:
                         if not check_if_subset(full_trans[replace_with][i], full_trans[y][i], outgoing, incoming, full_trans):
                             if not (full_trans[replace_with][i] == y and full_trans[y][i] == replace_with):
                                 invalid_merge = True
@@ -569,9 +569,19 @@ def nfa_to_dfa(nfa):
         if to_be_merged:
             full_trans = merge_states(full_trans, to_be_merged)
 
+        full_trans_after_minimise = copy.deepcopy(full_trans)
+
         to_be_merged, outgoing, incoming = find_eq_states_to_merge(full_trans)
         if to_be_merged:
             full_trans = subset_states_merge(full_trans, to_be_merged, outgoing, incoming)
+
+            dfa, num_states = dict2t(full_trans)
+            (f,trace) = nfa_traverse(dfa, full_event_id)
+            if not f:
+                print(colored("[WARNING] Invalid merge, Reverting back....\n",'magenta'))
+                full_trans = copy.deepcopy(full_trans_after_minimise)
+            else:
+                print(colored("Valid merge, Continue....\n",'green'))
 
     return full_trans
 
@@ -821,7 +831,8 @@ def main():
     f = open(trace_filename,'r')
     events_raw = f.readlines()
     full_events = [x.replace('\n','') for x in events_raw]
-    unique_events = list(np.unique(full_events))
+    unique_events, ind = np.unique(full_events, return_index=True)
+    unique_events = list(unique_events[np.argsort(ind)])
     unique_events = [x for x in unique_events if x != 'start']
     f.close()
 
@@ -886,7 +897,7 @@ def main():
             print("Wrong input.\n")
             do_dfa = input("Do you wish to convert to DFA? (y/n)")
         if do_dfa == 'y':
-            trans_dict = nfa_to_dfa(final_model_gen)
+            trans_dict = nfa_to_dfa(final_model_gen, input_dict_store['event_id'])
             final_model_gen, num_states = dict2t(trans_dict)
             print("Length of trace: " + str(len(input_dict_store['event_id'])))
 
