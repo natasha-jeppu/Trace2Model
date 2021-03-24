@@ -419,8 +419,9 @@ def nfa_to_dfa(nfa):
                 for i in outgoing[y]:
                     if full_trans[replace_with][i] != full_trans[y][i]:
                         if not check_if_subset(full_trans[replace_with][i], full_trans[y][i], outgoing, incoming, full_trans):
-                            invalid_merge = True
-                            break
+                            if not (full_trans[replace_with][i] == y and full_trans[y][i] == replace_with):
+                                invalid_merge = True
+                                break
                 if not invalid_merge:
                     for key in full_trans:
                         for i in range(len(full_trans[key])):
@@ -674,7 +675,12 @@ def make_model(full_events, model, var, hyperparams, num_states, input_dict):
 
         (f,trace) = nfa_traverse(init_model,input_dict['event_id'])
         if(f):
-            continue
+            input_dict_store = text_preprocess(-1,hyperparams,var)
+            (f_full_trace,trace) = nfa_traverse(init_model,input_dict_store['event_id'])
+            if f_full_trace:
+                break
+            else:
+                continue
 
         # pass only remaining trace
         if len(trace) - len_seq <= 0:
