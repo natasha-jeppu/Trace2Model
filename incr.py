@@ -394,7 +394,8 @@ def nfa_to_dfa(nfa, full_event_id):
                     continue
 
                 same_out = (all([x in outgoing[o1] for x in outgoing[o2]]) \
-                    and all([x in incoming[o1] for x in incoming[o2]]))
+                    and all([x in incoming[o1] for x in incoming[o2]])) or \
+                    (outgoing[o1] == outgoing[o2])
                 if same_out:
                     temp.append(o2)
 
@@ -644,7 +645,7 @@ def make_model(full_events, model, var, hyperparams, num_states, input_dict):
             temp.append(full_events[i])
 
         full_events = temp
-        
+     
     start_id = [i for i in range(len(full_events)) if full_events[i]=='start']
     
     events_list = []
@@ -655,7 +656,6 @@ def make_model(full_events, model, var, hyperparams, num_states, input_dict):
     events_tup_to_list = [list(x) for x in events_tuple]
 
     events_tup_to_list.sort(key=len)
-
     print(len(events_tup_to_list))
     var['events_tup_to_list_internal'] = events_tup_to_list
 
@@ -671,7 +671,7 @@ def make_model(full_events, model, var, hyperparams, num_states, input_dict):
     start_index = -1
 
     input_dict['event_uniq'] = var['o_event_uniq']
-
+    found_model = 0
     while(True):
         var['o_event_uniq'] = input_dict['event_uniq']
 
@@ -684,11 +684,15 @@ def make_model(full_events, model, var, hyperparams, num_states, input_dict):
         input_dict = text_preprocess(start_index,hyperparams,var)
 
         (f,trace) = nfa_traverse(init_model,input_dict['event_id'])
-        if(f):
-            input_dict_store = text_preprocess(-1,hyperparams,var)
-            (f_full_trace,trace) = nfa_traverse(init_model,input_dict_store['event_id'])
-            if f_full_trace:
-                break
+        if f:
+            if found_model:
+                input_dict_store = text_preprocess(-1,hyperparams,var)
+                (f_full_trace,trace) = nfa_traverse(init_model,input_dict_store['event_id'])
+                if f_full_trace:
+                    break
+                else:
+                    found_model = 0
+                    continue
             else:
                 continue
 
@@ -831,6 +835,10 @@ def main():
     f = open(trace_filename,'r')
     events_raw = f.readlines()
     full_events = [x.replace('\n','') for x in events_raw]
+    if 'start' not in full_events[-1] or 'start' not in full_events[0]:
+        print(colored("Delimiter 'start' missing, cannot identify beginning and end of trace\n",'magenta'))
+        exit(0)
+
     unique_events, ind = np.unique(full_events, return_index=True)
     unique_events = list(unique_events[np.argsort(ind)])
     unique_events = [x for x in unique_events if x != 'start']
@@ -871,6 +879,7 @@ def main():
 
     model_gen = []
     i = 1
+
     for event_list in events_tup_to_list:
         print("\n\n\n******************************************** TRACE:" + str(i))
         model_gen, var, input_dict, num_states = make_model(event_list, model_gen, var, hyperparams, num_states, input_dict)
