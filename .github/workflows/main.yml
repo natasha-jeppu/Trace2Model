@@ -53,24 +53,9 @@ jobs:
     - name: Setup artifact directory
       run: mkdir -p result_linux
     
-    - name: Run next event syn bench
+    - name: Run benchmarks
       run: |
-        python3 syn_next_event.py -i ./benchmarks/Predicate_Synth/heartbeat.txt -c 0 > ./result_linux/syn_bench.txt
-        
-    - name: Run data update syn bench
-      run: |
-        python3 syn_event_update.py -i ./benchmarks/Predicate_Synth/uart.txt -c 0 1 -v x:N > ./result_linux/update_bench.txt
-        python3 syn_event_update.py -i ./benchmarks/Predicate_Synth/integrator.txt -v op:N -c 0 >> ./result_linux/update_bench.txt
-        
-    - name: Run incr bench
-      run: |
-        python3 learn_model.py -i ./benchmarks/Predicate_Synth/TelAviv/java.util.StringTokenizer.txt -t ./result_linux --incr > ./result_linux/incr_bench.txt
-        python3 learn_model.py -i ./benchmarks/Predicate_Synth/TelAviv/ssh.net.txt -t ./result_linux --incr >> ./result_linux/incr_bench.txt
-    
-    - name: Run dfa bench
-      run: |
-        python3 learn_model.py -i ./benchmarks/Predicate_Synth/SoC/hcd-xhci_slot_withbsr.txt -t ./result_linux --incr --dfa > ./result_linux/dfa_bench.txt
-        python3 learn_model.py -i ./benchmarks/Predicate_Synth/SoC/integrator.txt -t ./result_linux --incr --dfa >> ./result_linux/dfa_bench.txt
+        python3 run.py -gen_o incr -mt dfa -synth guard > ./result_linux/output.txt
         
     - uses: actions/upload-artifact@v2
       with:
@@ -125,15 +110,10 @@ jobs:
     - name: Setup artifact directory
       run: mkdir -p result_mac
     
-    - name: Run next event syn bench
+    - name: Run benchmarks
       run: |
-        python3 syn_next_event.py -i ./benchmarks/Predicate_Synth/heartbeat.txt -c 0 > ./result_mac/syn_bench.txt
-        
-    - name: Run data update syn bench
-      run: |
-        python3 syn_event_update.py -i ./benchmarks/Predicate_Synth/uart.txt -c 0 1 -v x:N > ./result_mac/update_bench.txt
-        python3 syn_event_update.py -i ./benchmarks/Predicate_Synth/integrator.txt -v op:N -c 0 >> ./result_mac/update_bench.txt
-        
+        python3 run.py -gen_o incr -mt dfa -synth guard > ./result_linux/output.txt
+    
     - name: Run incr bench
       run: |
         python3 learn_model.py -i ./benchmarks/Predicate_Synth/TelAviv/java.util.StringTokenizer.txt -t ./result_mac --incr > ./result_mac/incr_bench.txt
