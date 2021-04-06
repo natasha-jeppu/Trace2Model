@@ -50,6 +50,11 @@ jobs:
         sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
         pip3 install numpy pygraphviz transitions termcolor
         
+    - name: Check cvc4 installation
+      run: |
+        cvc4 aux_files/gen_event.sl --lang=sygus
+        cvc4 aux_files/gen_event_update_enum.sl --lang=sygus
+
     - name: Setup artifact directory
       run: mkdir -p result_linux
     
