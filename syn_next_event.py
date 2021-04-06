@@ -301,7 +301,7 @@ def gen_syn(input_dict,trace_dict):
 			f.write("\n(check-synth)\n")
 			f.close()
 
-			p = subprocess.Popen('cvc4 '+ full_path + 'aux_files/gen_event.sl --lang sygus', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+			p = subprocess.Popen('cvc4 '+ full_path + 'aux_files/gen_event.sl', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 			try:
 				output,o_err = p.communicate(timeout=300)
 				p.kill()
