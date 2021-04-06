@@ -55,14 +55,13 @@ jobs:
     - name: CVC4 Setup
       if: steps.cache-cvc4.outputs.cache-hit != 'true'
       run: |
-        git clone https://github.com/CVC4/CVC4.git cvc4
-        cd cvc4
-        ./contrib/get-antlr-3.4
-        ./configure.sh
-        cd ./build
-        make
-        make check 
-        make install
+        wget https://github.com/CVC4/CVC4/releases/download/1.8/cvc4-1.8-x86_64-linux-opt
+        chmod +x cvc4-1.8-x86_64-linux-opt
+        ln -s ./cvc4-1.8-x86_64-linux-opt cvc4
+        
+    - name: Add to path
+      run: |
+        echo "$(pwd)" >> $GITHUB_PATH
         
     - name: Check cvc4 installation
       run: |
