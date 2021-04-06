@@ -377,7 +377,8 @@ def parse_args():
 	parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
             help='Variables that affect update variable behaviour. Use \'-dv help\' for possible options. Use -dv [all] <var_list> to set variables for all events')
 	parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], nargs='+',
-            help='Constants to be added to grammar for SyGus CVC4')
+            help='Constants to be added to grammar for SyGus CVC4. By default uses average and std dev values\
+            of the constants in trace. Use "nil" to not use any constants.')
 
 	hyperparams = parser.parse_args()
 	return hyperparams
@@ -484,10 +485,10 @@ def main():
 	input_dict = pre_process(temp)
 	trace_events = gen_syn(input_dict,trace_dict)
 	
-	# dump generated predicates into '.pkl' file
-	pickle_f = open(trace_filename.replace('.txt','.pkl'),'wb')
-	pickle.dump(trace_events,pickle_f)
-	pickle_f.close()
+	# uncomment to dump generated predicates into '.pkl' file
+	# pickle_f = open(trace_filename.replace('.txt','.pkl'),'wb')
+	# pickle.dump(trace_events,pickle_f)
+	# pickle_f.close()
 
 	print('\n')
 	print(colored(trace_events,'green'))

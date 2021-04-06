@@ -4,7 +4,6 @@
 #         University of Oxford
 #######################################################################
 
-
 import sys
 import os
 from os import listdir
@@ -18,8 +17,10 @@ import argparse
 def parse_args():
     parser = argparse.ArgumentParser()
     required_parse = parser.add_argument_group('required arguments')
-    required_parse.add_argument('-gen_o','--gen_option', metavar = 'MODEL_GEN_OPTION', required = True, choices=['incr','dfa'],
-            help='Automata learning option : incr (incremental), dfa')
+    required_parse.add_argument('-gen_o','--gen_option', metavar = 'MODEL_GEN_OPTION', required = True, choices=['incr','non-incr'],
+            help='Automata learning option : incr (incremental), non-incr (non-incremental)')
+    required_parse.add_argument('-mt','--model_type', metavar = 'MODEL_TYPE', required = True, choices=['dfa','nfa'],
+            help='Generate NFA or DFA.')
     parser.add_argument('-syn', '--syn_type', metavar = 'SYNTHESIS_TYPE', choices=['guard','update',''], default='',
             help='Predicate synthesis: guard, update')
 
@@ -30,38 +31,40 @@ def main():
 	hyperparams = parse_args()
 
 	gen_option = hyperparams.gen_option
+	mt = hyperparams.model_type
 	syn = hyperparams.syn_type
-
-	file = ''
-	file_syn = ''
-
-	if(gen_option == 'dfa'):
-		mypath = full_path + 'benchmarks/dfa_bench/'
-		file = full_path + 'dfa.py'
-	elif(gen_option == 'incr'):
-		mypath = full_path + 'benchmarks/incr_bench/'
-		file = full_path + 'incr.py -o stb'
 
 	if(syn != ''):
 		if(syn == 'guard'):
-			os.system('python3 ' + full_path + 'syn_next_event.py -i ' + full_path + 'benchmarks/syn_bench/minePump.txt -dv [all] methane:N pump:S')
+			os.system('python3 ' + full_path + 'syn_next_event.py -i ' + full_path + 'benchmarks/Predicate_Synth/heartbeat.txt -c 0')
+			os.system('python3 ' + full_path + 'syn_next_event.py -i ' + full_path + 'benchmarks/Predicate_Synth/hvactemp.txt -c nil')
+
+			# uncomment for more examples
+			# os.system('python3 ' + full_path + 'syn_next_event.py -i ' + full_path + 'benchmarks/Predicate_Synth/isaalarm.txt -c nil')
+			# os.system('python3 ' + full_path + 'syn_next_event.py -i ' + full_path + 'benchmarks/Predicate_Synth/sensor.txt -c nil')
+			# os.system('python3 ' + full_path + 'syn_next_event.py -i ' + full_path + 'benchmarks/Predicate_Synth/simple_alarm.txt -c nil')
 		elif(syn == 'update'):
-			os.system('python3 ' + full_path + 'syn_event_update.py -i ' + full_path + 'benchmarks/syn_bench/uart.txt -v x:N')
-			os.system('python3 ' + full_path + 'syn_event_update.py -i ' + full_path + 'benchmarks/syn_bench/integrator_trace.txt -v op:N')
+			os.system('python3 ' + full_path + 'syn_event_update.py -i ' + full_path + 'benchmarks/Predicate_Synth/uart.txt -v x:N -c 0 1')
+			os.system('python3 ' + full_path + 'syn_event_update.py -i ' + full_path + 'benchmarks/Predicate_Synth/integrator.txt -v op:N -c 0')
 		
 
-	onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f != '.DS_Store']
+	mypath = full_path + 'benchmarks/SoC/'
+	onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and '.txt' in f]
 
 	result = []
 
 	if(syn == ''):
 		for f in onlyfiles:
-			if(f in ['linux.txt','java.net.DatagramSocket.txt','java.net.Socket.txt','attach_device.txt']):
-				continue
 			print("\nRunning example: " + f)
 
 			start_time = time.time()
-			os.system("python3 " + file + " -i " + mypath + f)
+			cmd = 'python3 learn_model.py -i ' + mypath + f
+			if gen_option == 'incr':
+				cmd = cmd + ' --incr'
+			if mt == 'dfa':
+				cmd = cmd + ' --dfa'
+			print(cmd)
+			os.system(cmd)
 			end_time = time.time()
 
 			temp = [f,end_time-start_time]
@@ -73,19 +76,33 @@ def main():
 
 	else:
 		if(syn == 'guard'):
-			start_time = time.time()
-			os.system("python3 " + file + " -i " + full_path + "benchmarks/syn_bench/minePump_events.txt")
-			end_time = time.time()
-			print("Time taken: " + str(end_time-start_time))
+			cmd = 'python3 learn_model.py -i ' + full_path + 'benchmarks/Predicate_Synth/heartbeat_events.txt'
+			if gen_option == 'incr':
+				cmd = cmd + ' --incr'
+			if mt == 'dfa':
+				cmd = cmd + ' --dfa'
+			os.system(cmd)
+			
+			cmd = 'python3 learn_model.py -i ' + full_path + 'benchmarks/Predicate_Synth/hvactemp_events.txt'
+			if gen_option == 'incr':
+				cmd = cmd + ' --incr'
+			if mt == 'dfa':
+				cmd = cmd + ' --dfa'
+			os.system(cmd)
 		else:
-			start_time = time.time()
-			os.system("python3 " + file + " -i " + full_path + "benchmarks/syn_bench/uart_events.txt")
-			end_time = time.time()
-			print("Time taken: " + str(end_time-start_time))
-			start_time = time.time()
-			os.system("python3 " + file + " -i " + full_path + "benchmarks/syn_bench/integrator_trace_events.txt ")
-			end_time = time.time()
-			print("Time taken: " + str(end_time-start_time))
+			cmd = 'python3 learn_model.py -i ' + full_path + 'benchmarks/Predicate_Synth/uart_events.txt'
+			if gen_option == 'incr':
+				cmd = cmd + ' --incr'
+			if mt == 'dfa':
+				cmd = cmd + ' --dfa'
+			os.system(cmd)
+			
+			cmd = 'python3 learn_model.py -i ' + full_path + 'benchmarks/Predicate_Synth/integrator_events.txt'
+			if gen_option == 'incr':
+				cmd = cmd + ' --incr'
+			if mt == 'dfa':
+				cmd = cmd + ' --dfa'
+			os.system(cmd)
 
 full_path = abspath(__file__).replace('run.py','')
 

@@ -679,8 +679,9 @@ def parse_args():
             help='Variable for data update predicate synthesis. Use \'-v help\' for possible options')
 	parser.add_argument('-dv', '--dvar_list', metavar = 'EVENT_NAME DEPENDENT_VARIABLE_LIST', action='append', nargs='+', default=[],
             help='Variables that affect update variable behaviour. Use \'-dv help\' for possible options. Use -dv [all] <var_list> to set variables for all events')
-	parser.add_argument('-s','--synth_tool', metavar = 'SYNTHESIS_TOOL', default='fastsynth', choices = ['cvc4','fastsynth'],
-            help='Synthesis tool for predicate generation: fastsynth or cvc4')
+	# fastsynth: does not support latest SMT lib format
+	# parser.add_argument('-s','--synth_tool', metavar = 'SYNTHESIS_TOOL', default='fastsynth', choices = ['cvc4','fastsynth'],
+ #            help='Synthesis tool for predicate generation: fastsynth or cvc4')
 	parser.add_argument('-c','--const', metavar = 'GRAMMAR_CONST', default=[], nargs='+',
             help='Constants to be added to grammar for SyGus CVC4')
 
@@ -697,8 +698,12 @@ def main():
 	trace_filename = hyperparams.input_file
 	update_var = hyperparams.var
 	var_list = hyperparams.dvar_list
-	synth_tool = hyperparams.synth_tool
 	const_grammar = hyperparams.const
+
+	# fastsynth: does not support latest SMT lib format
+	# synth_tool = hyperparams.synth_tool
+	synth_tool = 'cvc4'
+	
 
 	f = open(trace_filename,'r')
 	events_raw = f.readlines()
