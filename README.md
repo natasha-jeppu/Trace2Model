@@ -88,7 +88,7 @@ You can use `run.py` to run a set of benchmarks already present in the tool. See
 
 ## Tool Dependencies
 You'll need the following tools installed (installation instructions for Fedora 29, Ubuntu 18.04 and MacOS 10.15 are provided below):
-1. [`CVC4 version 1.9-prerelease [git master 96c6ec71]`](https://cvc4.github.io/downloads.html)
+1. [`CVC4 v1.8`](https://github.com/CVC4/CVC4/releases/tag/1.8)
 2. [`CBMC v5.11 (cbmc-5.11-1062-g25ba4e6a6)`](https://github.com/diffblue/cbmc)
 
 ## Benchmarks
@@ -111,7 +111,15 @@ There are a few trace files already provided to play around with the tool in the
 
 2. Install Tool Dependencies
 ~~~
-  dnf -y install python3 cvc4
+  dnf -y install python3
+~~~
+
+Building cvc4
+~~~
+  wget https://github.com/CVC4/CVC4/releases/download/1.8/cvc4-1.8-x86_64-linux-opt
+  chmod +x cvc4-1.8-x86_64-linux-opt
+  ln -s ./cvc4-1.8-x86_64-linux-opt cvc4
+  export PATH=$PATH:$(pwd)
 ~~~
 
 Building CBMC
@@ -134,7 +142,15 @@ Building CBMC
 ~~~
   git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
 ~~~
-5. Run example benchmarks<br/>
+
+5. Verify cvc4 installation
+~~~
+  cd Trace2Model
+  cvc4 aux_files/gen_event.sl
+  cvc4 aux_files/gen_event_update_enum.sl
+~~~
+
+6. Run example benchmarks<br/>
 ~~~
   cd Trace2Model
   python3 run.py -gen_o incr -mt dfa -syn guard
@@ -151,7 +167,15 @@ Building CBMC
 
 2. Install Tool Dependencies
 ~~~
-  apt-get -y install python3 cvc4
+  apt-get -y install python3
+~~~
+
+Building cvc4
+~~~
+  wget https://github.com/CVC4/CVC4/releases/download/1.8/cvc4-1.8-x86_64-linux-opt
+  chmod +x cvc4-1.8-x86_64-linux-opt
+  ln -s ./cvc4-1.8-x86_64-linux-opt cvc4
+  export PATH=$PATH:$(pwd)
 ~~~
 
 Building CBMC
@@ -175,7 +199,14 @@ Building CBMC
   git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
 ~~~
 
-5. Run example benchmarks<br/>
+5. Verify cvc4 installation
+~~~
+  cd Trace2Model
+  cvc4 aux_files/gen_event.sl
+  cvc4 aux_files/gen_event_update_enum.sl
+~~~
+
+6. Run example benchmarks<br/>
 ~~~
   cd Trace2Model
   python3 run.py -gen_o incr -mt dfa -syn guard
@@ -188,19 +219,19 @@ Building CBMC
 You will need Homebrew for installation. You can install it from https://brew.sh. <br/>
 1. Python Modules
 ~~~
-  brew install python3
   brew install graphviz
+  pip3 install graphviz
+  pip3 install pygraphviz
   pip3 install numpy transitions termcolor
-~~~
-  Include graphviz PATH for pygraphviz installation as shown below:
-~~~
-  pip3 install pygraphviz --install-option="--include-path=/usr/local/Cellar/graphviz/2.44.0/include/graphviz" --install-option="--library-path=/usr/local/Cellar/graphviz/2.44.0/lib"
 ~~~
 
 2. Install Tool Dependencies
+Building cvc4
 ~~~
-  brew tap cvc4/cvc4
-  brew install cvc4/cvc4/cvc4
+  wget https://github.com/CVC4/CVC4/releases/download/1.8/cvc4-1.8-macos-opt
+  chmod +x cvc4-1.8-macos-opt
+  ln -s ./cvc4-1.8-macos-opt cvc4
+  export PATH=$PATH:$(pwd)
 ~~~
 
   Building CBMC<br/>
@@ -220,7 +251,14 @@ You will need Homebrew for installation. You can install it from https://brew.sh
   git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
 ~~~
 
-4. Run example benchmarks<br/>
+4. Verify cvc4 installation
+~~~
+  cd Trace2Model
+  cvc4 aux_files/gen_event.sl
+  cvc4 aux_files/gen_event_update_enum.sl
+~~~
+
+5. Run example benchmarks<br/>
 ~~~
   cd Trace2Model
   python3 run.py -gen_o incr -mt dfa -syn guard
