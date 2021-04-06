@@ -505,7 +505,7 @@ def gen_syn(input_dict,trace_dict):
 					syn_enum_file(input_syn, j, enum_val, update_var)
 
 				if(synth_tool == 'cvc4'):
-					p = subprocess.Popen('cvc4 ' + full_path + 'aux_files/gen_event_update_enum.sl --lang sygus', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+					p = subprocess.Popen('cvc4 ' + full_path + 'aux_files/gen_event_update_enum.sl', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 				elif(synth_tool == 'fastsynth'):
 					p = subprocess.Popen('fastsynth ' + full_path + 'aux_files/gen_event_update_enum.sl', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
