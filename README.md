@@ -39,7 +39,29 @@ required arguments:
 
 2. Transition expression synthesis modules - generate a sequence of transition predicates from raw trace data, to be used as input to automata learning modules in 1. <br/>
   a. Synthesize expressions that will serve as transition conditions for next event: `syn_next_event.py` <br/>
+  
+~~~
+usage: syn_next_event.py [-h] -i INPUT_FILENAME
+                         [-dv EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...]]
+                         [-c GRAMMAR_CONST [GRAMMAR_CONST ...]]
 
+optional arguments:
+  -h, --help            show this help message and exit
+  -dv EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...], --dvar_list EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...]
+                        Variables that affect update variable behaviour. Use '-dv help' for possible
+                        options. Use -dv [all] <var_list> to set variables for all events
+  -c GRAMMAR_CONST [GRAMMAR_CONST ...], --const GRAMMAR_CONST [GRAMMAR_CONST ...]
+                        Constants to be added to grammar for SyGus CVC4. By default uses average and
+                        std dev values of the constants in trace. Use "nil" to not use any
+                        constants.
+
+required arguments:
+  -i INPUT_FILENAME, --input_file INPUT_FILENAME
+                        Input trace file for data update predicate generation
+~~~
+
+  b. Synthesize expressions that will serve as transition predicates for data update across transitions: `syn_event_update.py` <br/>
+  
 ~~~
 usage: syn_event_update.py [-h] -i INPUT_FILENAME -v UPDATE_VAR
                            [-dv EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...]]
@@ -61,27 +83,6 @@ required arguments:
                         options
 ~~~
 
-  b. Synthesize expressions that will serve as transition predicates for data update across transitions: `syn_event_update.py` <br/>
-~~~
-usage: syn_next_event.py [-h] -i INPUT_FILENAME
-                         [-dv EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...]]
-                         [-c GRAMMAR_CONST [GRAMMAR_CONST ...]]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -dv EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...], --dvar_list EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...]
-                        Variables that affect update variable behaviour. Use '-dv help' for possible
-                        options. Use -dv [all] <var_list> to set variables for all events
-  -c GRAMMAR_CONST [GRAMMAR_CONST ...], --const GRAMMAR_CONST [GRAMMAR_CONST ...]
-                        Constants to be added to grammar for SyGus CVC4. By default uses average and
-                        std dev values of the constants in trace. Use "nil" to not use any
-                        constants.
-
-required arguments:
-  -i INPUT_FILENAME, --input_file INPUT_FILENAME
-                        Input trace file for data update predicate generation
-~~~
-
 For the synthesis modules 2a and 2b, a new trace file `<input_filename>_events.txt` is created with a sequence of transition predicates. Use this as input to the model learning modules 1a.
 You can use `run.py` to run a set of benchmarks already present in the tool. See the `benchmarks` folder.
 
@@ -92,9 +93,10 @@ You'll need the following tools installed (installation instructions for Fedora 
 
 ## Benchmarks
 There are a few trace files already provided to play around with the tool in the `benchmarks` folder
-1. `dfa_bench` : benchmarks for non-incremental DFA learning
-2. `incr_bench` : benchmarks for incremental NFA learning
-3. `syn_bench` : benchmarks for predicate synthesis
+1. `SoC` : benchmarks from the SoC domain. Traces are generated using the QEMU virtual platform.
+2. `AWS` : benchmarks from AWS IoT. Traces are obtained from C implementations of AWS IoT Events Detector Models. 
+3. `TelAviv` : log data from a variety of domains, including tcp and ssh protocols and JAVA APIs.
+4. `Predicate_Synth` : benchmarks for predicate synthesis.
 
 ## Setup Instructions
 
