@@ -146,6 +146,8 @@ jobs:
         git clone https://github.com/diffblue/cbmc.git
         cd cbmc
         git reset --hard 25ba4e6a600b033df7dbaf3d19437afd8b9bdd1c
+        make -C src minisat2-download
+        make -C src
         
     - name: Add to path
       run: |
