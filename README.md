@@ -134,7 +134,7 @@ Building CBMC
 ~~~
   git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
 ~~~
-5. Run example benchmarks<\br>
+5. Run example benchmarks<br/>
 ~~~
   cd Trace2Model
   python3 run.py -gen_o incr -mt dfa -synth guard
@@ -175,7 +175,7 @@ Building CBMC
   git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
 ~~~
 
-5. Run example benchmarks<\br>
+5. Run example benchmarks<br/>
 ~~~
   cd Trace2Model
   python3 run.py -gen_o incr -mt dfa -synth guard
@@ -220,7 +220,7 @@ You will need Homebrew for installation. You can install it from https://brew.sh
   git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
 ~~~
 
-4. Run example benchmarks<\br>
+4. Run example benchmarks<br/>
 ~~~
   cd Trace2Model
   python3 run.py -gen_o incr -mt dfa -synth guard
