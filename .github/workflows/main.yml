@@ -107,11 +107,16 @@ jobs:
         brew tap cvc4/cvc4
         brew install cvc4/cvc4/cvc4
         
+    - name: Check cvc4 installation
+      run: |
+        cvc4 aux_files/gen_event.sl
+        cvc4 aux_files/gen_event_update_enum.sl
+        
     - name: Python modules
       if: steps.cache-cbmc.outputs.cache-hit != 'true'
       run: |
-        brew install graphviz
-        pip3 install pygraphviz --install-option="--include-path=/usr/local/Cellar/graphviz/2.44.0/include/graphviz" --install-option="--library-path=/usr/local/Cellar/graphviz/2.44.0/lib"
+        brew install libgraphviz-dev
+        pip3 install pygraphviz
         pip3 install numpy transitions termcolor
 
     - name: Setup xcode
