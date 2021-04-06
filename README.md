@@ -106,7 +106,7 @@ There are a few trace files already provided to play around with the tool in the
 ~~~
   dnf -y groupinstall "Development Tools"
   dnf -y install kernel-devel kernel-headers
-  dnf -y install gcc gcc-c++ flex bison perl-libwww-perl patch git
+  dnf -y install gcc gcc-c++ flex bison perl-libwww-perl patch git wget
 ~~~
 
 2. Install Tool Dependencies
@@ -162,7 +162,7 @@ Building CBMC
 1. Install Basic Requirements
 ~~~
   apt-get -y install build-essential
-  apt-get -y install g++ gcc flex bison make git libwww-perl patch
+  apt-get -y install g++ gcc flex bison make git libwww-perl patch wget
 ~~~
 
 2. Install Tool Dependencies
