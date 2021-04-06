@@ -43,7 +43,7 @@ jobs:
     
     - name: Add to path
       run: |
-        echo "::add-path::$(pwd)/cbmc/src/cbmc"
+        echo "$(pwd)/cbmc/src/cbmc" >> $GITHUB_PATH
 
     - name: Python modules
       run: |
@@ -105,7 +105,7 @@ jobs:
         
     - name: Add to path
       run: |
-        echo "::add-path::$(pwd)/cbmc/src/cbmc"
+         echo "$(pwd)/cbmc/src/cbmc" >> $GITHUB_PATH
                 
     - name: Setup artifact directory
       run: mkdir -p result_mac
