@@ -136,7 +136,7 @@ jobs:
         cvc4 aux_files/gen_event_update_enum.sl
         
     - name: Python modules
-      if: steps.cache-cbmc.outputs.cache-hit != 'true'
+      if: steps.cache-python3.outputs.cache-hit != 'true'
       run: |
         brew install graphviz
         pip3 install graphviz
@@ -165,16 +165,6 @@ jobs:
     - name: Run benchmarks
       run: |
         python3 run.py -gen_o incr -mt dfa -syn guard > ./result_mac/output.txt
-    
-    - name: Run incr bench
-      run: |
-        python3 learn_model.py -i ./benchmarks/Predicate_Synth/TelAviv/java.util.StringTokenizer.txt -t ./result_mac --incr > ./result_mac/incr_bench.txt
-        python3 learn_model.py -i ./benchmarks/Predicate_Synth/TelAviv/ssh.net.txt -t ./result_mac --incr >> ./result_mac/incr_bench.txt
-    
-    - name: Run dfa bench
-      run: |
-        python3 learn_model.py -i ./benchmarks/Predicate_Synth/SoC/hcd-xhci_slot_withbsr.txt -t ./result_mac --incr --dfa > ./result_mac/dfa_bench.txt
-        python3 learn_model.py -i ./benchmarks/Predicate_Synth/SoC/integrator.txt -t ./result_mac --incr --dfa >> ./result_mac/dfa_bench.txt
         
     - uses: actions/upload-artifact@v2
       with:
