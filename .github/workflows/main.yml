@@ -138,7 +138,8 @@ jobs:
     - name: Python modules
       if: steps.cache-cbmc.outputs.cache-hit != 'true'
       run: |
-        brew install graphviz-devel
+        brew install graphviz
+        pip3 install graphviz
         pip3 install pygraphviz
         pip3 install numpy transitions termcolor
 
