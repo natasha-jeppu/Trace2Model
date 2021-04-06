@@ -137,7 +137,7 @@ Building CBMC
 5. Run example benchmarks<br/>
 ~~~
   cd Trace2Model
-  python3 run.py -gen_o incr -mt dfa -synth guard
+  python3 run.py -gen_o incr -mt dfa -syn guard
 ~~~
 
 
@@ -178,7 +178,7 @@ Building CBMC
 5. Run example benchmarks<br/>
 ~~~
   cd Trace2Model
-  python3 run.py -gen_o incr -mt dfa -synth guard
+  python3 run.py -gen_o incr -mt dfa -syn guard
 ~~~
 
 
@@ -223,6 +223,6 @@ You will need Homebrew for installation. You can install it from https://brew.sh
 4. Run example benchmarks<br/>
 ~~~
   cd Trace2Model
-  python3 run.py -gen_o incr -mt dfa -synth guard
+  python3 run.py -gen_o incr -mt dfa -syn guard
 ~~~
 
