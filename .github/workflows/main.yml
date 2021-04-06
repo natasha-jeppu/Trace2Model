@@ -55,7 +55,7 @@ jobs:
     
     - name: Run benchmarks
       run: |
-        python3 run.py -gen_o incr -mt dfa -synth guard > ./result_linux/output.txt
+        python3 run.py -gen_o incr -mt dfa -syn guard > ./result_linux/output.txt
         
     - uses: actions/upload-artifact@v2
       with:
@@ -112,7 +112,7 @@ jobs:
     
     - name: Run benchmarks
       run: |
-        python3 run.py -gen_o incr -mt dfa -synth guard > ./result_linux/output.txt
+        python3 run.py -gen_o incr -mt dfa -syn guard > ./result_linux/output.txt
     
     - name: Run incr bench
       run: |
