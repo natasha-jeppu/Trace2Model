@@ -90,6 +90,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
+    
+    - uses: actions/checkout@v1
 
     - name: Cache cbmc
       id: cache-cbmc
@@ -97,15 +99,36 @@ jobs:
       with:
         path: ./cbmc
         key: ${{ runner.os }}-cbmc
+    
+    - name: Cache python3
+      id: cache-python3
+      uses: actions/cache@v1.2.0
+      with:
+        path: $(pwd)
+        key: ${{ runner.os }}-python3
         
-    - uses: actions/checkout@v1
+    - name: Cache cvc4
+      id: cache-cvc4
+      uses: actions/cache@v1.2.0
+      with:
+        path: ./cvc4
+        key: ${{ runner.os }}-cvc4
 
-    - name: python3 and cvc4
-      if: steps.cache-cbmc.outputs.cache-hit != 'true'
+    - name: python3
+      if: steps.cache-python3.outputs.cache-hit != 'true'
       run: |
         brew install python3
-        brew tap cvc4/cvc4
-        brew install cvc4/cvc4/cvc4
+        
+    - name: CVC4 Setup
+      if: steps.cache-cvc4.outputs.cache-hit != 'true'
+      run: |
+        wget https://github.com/CVC4/CVC4/releases/download/1.8/cvc4-1.8-macos-opt
+        chmod +x cvc4-1.8-macos-opt
+        ln -s ./cvc4-1.8-macos-opt cvc4
+        
+    - name: Add to path
+      run: |
+        echo "$(pwd)" >> $GITHUB_PATH
         
     - name: Check cvc4 installation
       run: |
@@ -140,7 +163,7 @@ jobs:
     
     - name: Run benchmarks
       run: |
-        python3 run.py -gen_o incr -mt dfa -syn guard > ./result_linux/output.txt
+        python3 run.py -gen_o incr -mt dfa -syn guard > ./result_mac/output.txt
     
     - name: Run incr bench
       run: |
