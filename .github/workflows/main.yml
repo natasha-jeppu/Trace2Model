@@ -72,18 +72,10 @@ jobs:
       run: |
         sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
         pip3 install numpy pygraphviz transitions termcolor
-
-    - name: Setup artifact directory
-      run: mkdir -p result_linux
     
     - name: Run benchmarks
       run: |
-        python3 run.py -gen_o incr -mt dfa -syn guard > ./result_linux/output.txt
-        
-    - uses: actions/upload-artifact@v2
-      with:
-        name: Result_linux
-        path: ./result_linux/
+        python3 run.py -gen_o incr -mt dfa -syn guard
         
   OSX:
 
@@ -158,15 +150,7 @@ jobs:
     - name: Add to path
       run: |
          echo "$(pwd)/cbmc/src/cbmc" >> $GITHUB_PATH
-                
-    - name: Setup artifact directory
-      run: mkdir -p result_mac
     
     - name: Run benchmarks
       run: |
-        python3 run.py -gen_o incr -mt dfa -syn guard > ./result_mac/output.txt
-        
-    - uses: actions/upload-artifact@v2
-      with:
-        name: Result_mac
-        path: ./result_mac/
+        python3 run.py -gen_o incr -mt dfa -syn guard
