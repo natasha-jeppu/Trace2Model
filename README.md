@@ -1,29 +1,94 @@
 # Trace2Model
-A framework to learn system models from system execution traces. <br/>
-Based on work presented in 'Learning Concise Models from Long Execution Traces' (https://arxiv.org/abs/2001.05230)
+A framework to learn concise system models from system execution traces. <br/>
+Based on work presented in 'Learning Concise Models from Long Execution Traces'
+
+* N. Y. Jeppu, T. Melham, D. Kroening and J. O’Leary, "Learning Concise Models from Long Execution Traces," 2020 57th ACM/IEEE Design Automation Conference (DAC), San Francisco, CA, USA, 2020, pp. 1-6, doi: 10.1109/DAC18072.2020.9218613.[[PDF]](https://arxiv.org/pdf/2001.05230.pdf)
+
 
 ## Usage
-`python3 <module_file_name> [args]`<br/>
-Use the `-h` option to see module arguments.
-
 The modules available in this framework are divided into two categories:
 1. Automata learning modules - generate automata from given trace input <br/>
-  a. Incremental NFA learning: `incr.py` <br/>
-  b. DFA learning: `dfa.py` <br/>
+  a. Incremental model learning: `learn_model.py` <br/>
+  
+~~~
+usage: learn_model.py [-h] -i INPUT_FILENAME [-w SLIDING_WINDOW] [-n NUM_STATES] [--dfa [DFA]]
+                      [-t TARGET_PATH] [-o TRACE_ORDER] [--incr [INCREMENTAL_SAT]]
+                      [--trace-stats [TRACE_STATS]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -w SLIDING_WINDOW, --window SLIDING_WINDOW
+                        Sliding window size. Default = 3
+  -n NUM_STATES, --num_states NUM_STATES
+                        Number of states. Default = 2
+  --dfa [DFA]           Generate a DFA. Generates NFA by default.
+  -t TARGET_PATH, --target TARGET_PATH
+                        Target model path. Default =
+                        /Users/natppu/Documents/Research/Trace2model_new/Tool/models
+  -o TRACE_ORDER, --order TRACE_ORDER
+                        Trace order. Available options stb, bts, same, random. Default = same
+  --incr [INCREMENTAL_SAT]
+                        Incremental model learning
+  --trace-stats [TRACE_STATS]
+                        Print trace statistics
+
+required arguments:
+  -i INPUT_FILENAME, --input_file INPUT_FILENAME
+                        Input trace file for model learning
+~~~
+
 2. Transition expression synthesis modules - generate a sequence of transition predicates from raw trace data, to be used as input to automata learning modules in 1. <br/>
   a. Synthesize expressions that will serve as transition conditions for next event: `syn_next_event.py` <br/>
+
+~~~
+usage: syn_event_update.py [-h] -i INPUT_FILENAME -v UPDATE_VAR
+                           [-dv EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...]]
+                           [-c GRAMMAR_CONST [GRAMMAR_CONST ...]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -dv EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...], --dvar_list EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...]
+                        Variables that affect update variable behaviour. Use '-dv help' for possible
+                        options. Use -dv [all] <var_list> to set variables for all events
+  -c GRAMMAR_CONST [GRAMMAR_CONST ...], --const GRAMMAR_CONST [GRAMMAR_CONST ...]
+                        Constants to be added to grammar for SyGus CVC4
+
+required arguments:
+  -i INPUT_FILENAME, --input_file INPUT_FILENAME
+                        Input trace file for data update predicate generation
+  -v UPDATE_VAR, --var UPDATE_VAR
+                        Variable for data update predicate synthesis. Use '-v help' for possible
+                        options
+~~~
+
   b. Synthesize expressions that will serve as transition predicates for data update across transitions: `syn_event_update.py` <br/>
+~~~
+usage: syn_next_event.py [-h] -i INPUT_FILENAME
+                         [-dv EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...]]
+                         [-c GRAMMAR_CONST [GRAMMAR_CONST ...]]
 
-For the synthesis modules 2a and 2b, a new trace file `<input_filename>_events.txt` is created with a sequence of transition predicates. Use this as input to the model learning modules 1a and 1b.
+optional arguments:
+  -h, --help            show this help message and exit
+  -dv EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...], --dvar_list EVENT_NAME DEPENDENT_VARIABLE_LIST [EVENT_NAME DEPENDENT_VARIABLE_LIST ...]
+                        Variables that affect update variable behaviour. Use '-dv help' for possible
+                        options. Use -dv [all] <var_list> to set variables for all events
+  -c GRAMMAR_CONST [GRAMMAR_CONST ...], --const GRAMMAR_CONST [GRAMMAR_CONST ...]
+                        Constants to be added to grammar for SyGus CVC4. By default uses average and
+                        std dev values of the constants in trace. Use "nil" to not use any
+                        constants.
 
-Use the `-h` option to see module arguments. You can use `run.py` to run a set of benchmarks already present in the tool. See the `benchmarks` folder.
+required arguments:
+  -i INPUT_FILENAME, --input_file INPUT_FILENAME
+                        Input trace file for data update predicate generation
+~~~
+
+For the synthesis modules 2a and 2b, a new trace file `<input_filename>_events.txt` is created with a sequence of transition predicates. Use this as input to the model learning modules 1a.
+You can use `run.py` to run a set of benchmarks already present in the tool. See the `benchmarks` folder.
 
 ## Tool Dependencies
 You'll need the following tools installed (installation instructions for Fedora 29, Ubuntu 18.04 and MacOS 10.15 are provided below):
-1. `CVC4 v1.6`: https://cvc4.github.io/downloads.html
-2. `CBMC v5.10`: https://www.cprover.org/cbmc/
-3. `Fastsynth` : https://github.com/kroening/fastsynth
-4. `z3 v4.7.1` : https://github.com/Z3Prover/z3
+1. [`CVC4 version 1.9-prerelease [git master 96c6ec71]`](https://cvc4.github.io/downloads.html)
+2. [`CBMC v5.11 (cbmc-5.11-1062-g25ba4e6a6)`](https://github.com/diffblue/cbmc)
 
 ## Benchmarks
 There are a few trace files already provided to play around with the tool in the `benchmarks` folder
@@ -44,24 +109,17 @@ There are a few trace files already provided to play around with the tool in the
 
 2. Install Tool Dependencies
 ~~~
-  dnf -y install python3 cvc4 z3
+  dnf -y install python3 cvc4
 ~~~
 
-Building Fastsynth
+Building CBMC
 ~~~
-  git clone https://github.com/kroening/fastsynth.git
-  cd fastsynth
-  git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
-  git submodule init
-  git submodule update
-  cd lib/cbmc
+  git clone https://github.com/diffblue/cbmc.git
+  cd cbmc
+  git reset --hard 25ba4e6a600b033df7dbaf3d19437afd8b9bdd1c
   make -C src minisat2-download
   make -C src
   export PATH=$PATH:$(pwd)/src/cbmc
-  cd ../../src
-  make
-  cd fastsynth
-  export PATH=$PATH:$(pwd)
 ~~~
 
 3. Python Modules
@@ -74,11 +132,10 @@ Building Fastsynth
 ~~~
   git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
 ~~~
-Check Fastsynth installation : 
+5. Run example benchmarks<\br>
 ~~~
   cd Trace2Model
-  fastsynth ./aux_files/gen_event.sl
-  fastsynth ./aux_files/gen_event_update.sl
+  python3 run.py -gen_o incr -mt dfa -synth guard
 ~~~
 
 
@@ -92,23 +149,17 @@ Check Fastsynth installation :
 
 2. Install Tool Dependencies
 ~~~
-  apt-get -y install python3 cvc4 cbmc z3
+  apt-get -y install python3 cvc4
 ~~~
 
-Building Fastsynth
+Building CBMC
 ~~~
-  git clone https://github.com/kroening/fastsynth.git
-  cd fastsynth
-  git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
-  git submodule init
-  git submodule update
-  cd lib/cbmc
+  git clone https://github.com/diffblue/cbmc.git
+  cd cbmc
+  git reset --hard 25ba4e6a600b033df7dbaf3d19437afd8b9bdd1c
   make -C src minisat2-download
   make -C src
-  cd ../../src
-  make
-  cd fastsynth
-  export PATH=$PATH:$(pwd)
+  export PATH=$PATH:$(pwd)/src/cbmc
 ~~~
 
 3. Python Modules
@@ -121,11 +172,11 @@ Building Fastsynth
 ~~~
   git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
 ~~~
-Check Fastsynth installation : 
+
+5. Run example benchmarks<\br>
 ~~~
   cd Trace2Model
-  fastsynth ./aux_files/gen_event.sl
-  fastsynth ./aux_files/gen_event_update.sl
+  python3 run.py -gen_o incr -mt dfa -synth guard
 ~~~
 
 
@@ -148,25 +199,17 @@ You will need Homebrew for installation. You can install it from https://brew.sh
 ~~~
   brew tap cvc4/cvc4
   brew install cvc4/cvc4/cvc4
-  brew install z3
 ~~~
 
-  Building Fastsynth<br/>
-  Install Xcode 10.x for Fastsynth build
+  Building CBMC<br/>
+  Install Xcode 10.x for CBMC build
 ~~~
-  git clone https://github.com/kroening/fastsynth.git
-  cd fastsynth
-  git reset --hard b8841e05ef97a35d28fb097fa0e19cc998021997
-  git submodule init
-  git submodule update
-  cd lib/cbmc
+  git clone https://github.com/diffblue/cbmc.git
+  cd cbmc
+  git reset --hard 25ba4e6a600b033df7dbaf3d19437afd8b9bdd1c
   make -C src minisat2-download
   make -C src
   export PATH=$PATH:$(pwd)/src/cbmc
-  cd ../../src
-  make
-  cd fastsynth
-  export PATH=$PATH:$(pwd)
 ~~~
 
 
@@ -174,10 +217,10 @@ You will need Homebrew for installation. You can install it from https://brew.sh
 ~~~
   git clone https://github.com/natasha-jeppu/Trace2Model.git Trace2Model
 ~~~
-  Check Fastsynth installation :
+
+4. Run example benchmarks<\br>
 ~~~
   cd Trace2Model
-  fastsynth ./aux_files/gen_event.sl
-  fastsynth ./aux_files/gen_event_update.sl
+  python3 run.py -gen_o incr -mt dfa -synth guard
 ~~~
 
