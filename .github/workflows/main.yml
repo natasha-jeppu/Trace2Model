@@ -65,8 +65,8 @@ jobs:
         
     - name: Check cvc4 installation
       run: |
-        cvc4 aux_files/gen_event.sl --lang=sygus
-        cvc4 aux_files/gen_event_update_enum.sl --lang=sygus
+        cvc4 aux_files/gen_event.sl
+        cvc4 aux_files/gen_event_update_enum.sl
 
     - name: Python modules
       run: |
