@@ -23,7 +23,7 @@ jobs:
         
     - name: Tool dependencies
       run: |
-        sudo apt-get install python3 cvc4 cbmc
+        sudo apt-get install python3
     
     - name: Cache cbmc
       id: cache-cbmc
@@ -31,6 +31,13 @@ jobs:
       with:
         path: ./cbmc
         key: ${{ runner.os }}-cbmc
+        
+    - name: Cache cvc4
+      id: cache-cvc4
+      uses: actions/cache@v1.2.0
+      with:
+        path: ./cvc4
+        key: ${{ runner.os }}-cvc4
       
     - name: CBMC Setup
       if: steps.cache-cbmc.outputs.cache-hit != 'true'
@@ -44,16 +51,28 @@ jobs:
     - name: Add to path
       run: |
         echo "$(pwd)/cbmc/src/cbmc" >> $GITHUB_PATH
-
-    - name: Python modules
+        
+    - name: CVC4 Setup
+      if: steps.cache-cvc4.outputs.cache-hit != 'true'
       run: |
-        sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
-        pip3 install numpy pygraphviz transitions termcolor
+        git clone https://github.com/CVC4/CVC4.git cvc4
+        cd cvc4
+        ./contrib/get-antlr-3.4
+        ./configure.sh
+        cd ./build
+        make
+        make check 
+        make install
         
     - name: Check cvc4 installation
       run: |
         cvc4 aux_files/gen_event.sl --lang=sygus
         cvc4 aux_files/gen_event_update_enum.sl --lang=sygus
+
+    - name: Python modules
+      run: |
+        sudo apt-get install graphviz libgraphviz-dev pkg-config python3-pip python3-setuptools
+        pip3 install numpy pygraphviz transitions termcolor
 
     - name: Setup artifact directory
       run: mkdir -p result_linux
