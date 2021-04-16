@@ -628,6 +628,7 @@ def make_model(full_events, model, var, hyperparams, num_states, input_dict):
         num_of_ind = min([round(0.5*len(full_events)), 1000])
 
         max_ind = max(len(full_events)-10, round(len(full_events)*0.75))
+
         for i in range(num_of_ind):
             ind = random.randint(10, max_ind)
             ind_list.append(ind)
@@ -743,7 +744,7 @@ def make_model(full_events, model, var, hyperparams, num_states, input_dict):
 
     start_index = -1
     input_dict = text_preprocess(start_index,hyperparams,var)
-    input_dict_store = input_dict
+    input_dict_store = copy.deepcopy(input_dict)
     
     while(True):
         vis = [1]
@@ -762,8 +763,12 @@ def make_model(full_events, model, var, hyperparams, num_states, input_dict):
             print(colored(trace,'red'))
             print('\n')
 
-            input_dict_store['seq_input_uniq'] = [trace]
-            input_dict['event_id'] = trace
+            if len(trace)-10 > 1:
+                input_dict_store['seq_input_uniq'] = [trace[len(trace)-10:]]
+                input_dict['event_id'] = trace[len(trace)-10:]
+            else:
+                input_dict_store['seq_input_uniq'] = [trace]
+                input_dict['event_id'] = trace
 
             (found_ce,ce_global) = get_ce(input_dict,var,init_model)
     
@@ -893,7 +898,7 @@ def main():
     start_index = -1
     var['org_trace'] = full_events
     input_dict = text_preprocess(start_index,hyperparams,var)
-    input_dict_store = input_dict
+    input_dict_store = copy.deepcopy(input_dict)
 
     while(True):
         vis = [1]
