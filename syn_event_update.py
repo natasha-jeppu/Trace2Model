@@ -104,6 +104,7 @@ def syn_int_file(input_syn,j,enum_val):
 			f.write("		" + str(x) + "\n")
 
 	f.write("\
+		(abs Start) 							\n\
 		(+ Start Start)						\n\
 		(- Start Start)						\n\
 		(* Start Start)\n")
@@ -247,6 +248,7 @@ def syn_bool_file(input_syn,j,enum_val):
 			f.write("		" + str(x) + "\n")
 
 	f.write("\
+		(abs Start_Int)								\n\
 		(+ Start_Int Start_Int)						\n\
 		(- Start_Int Start_Int)						\n\
 		(* Start_Int Start_Int)\n")
@@ -381,6 +383,7 @@ def syn_enum_file(input_syn,j,enum_val,update_var):
 
 	f.write("	(Start_Int Int (\n")
 	f.write("\
+				(abs Start_Int)		\n\
 				(+ Start_Int Start_Int)\n\
 				(- Start_Int Start_Int)\n\
 				(* Start_Int Start_Int)\n")
@@ -488,8 +491,8 @@ def gen_syn(input_dict,trace_dict):
 		j=0
 		found = True
 		while(j <= len(temp)):
-			predicates = {'1':0, '2':0, '3':0, '4':0, '5':0, '6':0};
-			for window in range(2,7):
+			predicates = {'1':0, '2':0, '3':0, '4':0, '5':0, '6':0, '7':0, '8':0, '9':0};
+			for window in range(2,10):
 				if not found and len(event_keys) == 1:
 					window = 1
 				if(len(event_keys) != 1):
@@ -612,8 +615,8 @@ def gen_syn(input_dict,trace_dict):
 			if (j + p_ind) > len(temp):
 				length = len(temp) - j
 			else:
-				length = p_ind - 1
-			j = j + p_ind - 1
+				length = p_ind
+			j = j + p_ind
 
 			[event.append(predicates[str(p_ind)]) for x in range(length)]
 
