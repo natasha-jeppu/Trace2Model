@@ -50,8 +50,12 @@ def post_process(output,next_event,data_type,trace_dict,enum_val):
 		if (output_split[i] in ['(+','(-','(*','(<=','(>=','(=','(>','(<']):
 			if output_split[i] == '(=':
 				output_split[i : i+3] = ['(' + output_split[i+1] + ' == ' + output_split[i+2]]
+			elif output_split[i] == '(-':
+				if output_split[i+1].count('(') != output_split[i+1].count(')'):
+					output_split[i : i+2] = ['(-' + output_split[i+1]]
 			else:
 				output_split[i : i+3] = ['(' + output_split[i+1] + ' ' + output_split[i].replace('(','') + ' ' + output_split[i+2]]
+			
 		elif output_split[i] == '(not':
 			output_split[i : i+2] = [' '.join(output_split[i : i+2])]
 		elif output_split[i] == '(abs':
