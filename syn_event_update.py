@@ -669,7 +669,7 @@ def with_let(model):
 	for pair in let_pairs:
 		model = model.replace(pair[0],pair[1])
 	model.strip()
-
+	model = model[:-1]
 	return model
 
 
