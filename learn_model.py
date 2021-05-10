@@ -334,12 +334,14 @@ def nfa_traverse(model,trace, vis=[],find_vis=False):
 
     state = [1]
     temp = vis
+    trans = []
     for i in range(len(trace)):
         if trace[i] == 1:
             state = [1]
 
         found = [x[2] for x in model if x[0] in state and x[1] == trace[i]]
         if find_vis:
+            [trans.append(x) for x in model if x[0] in state and x[1] == trace[i]]
             [vis.append(x[0]) for x in model if x[0] in state and x[1] == trace[i]]
             if i == len(trace)-1 or trace[i+1] == 1:
                 if len(found) == 1:
@@ -350,12 +352,13 @@ def nfa_traverse(model,trace, vis=[],find_vis=False):
         if not found:
             if not find_vis:
                 return (0,trace[0:i+1])
-            return (0,trace[0:i+1],temp)
+            return (0,trace[0:i+1],temp,[])
         else:
             state = found
 
     if find_vis:
-        return (1,[],vis)
+        trans = [list(x) for x in np.unique(trans, axis=0)]
+        return (1,[],vis,trans)
     return (1,[])
 
 def nfa_to_dfa(nfa, full_event_id):
@@ -748,7 +751,7 @@ def make_model(full_events, model, var, hyperparams, num_states, input_dict):
     
     while(True):
         vis = [1]
-        (f, trace, vis) = nfa_traverse(final_model_gen,input_dict_store['event_id'], vis ,True)
+        (f, trace, vis, trans) = nfa_traverse(final_model_gen,input_dict_store['event_id'], vis ,True)
 
         if f:
             print(colored("\nAll behaviors present",'green'))
@@ -912,12 +915,16 @@ def main():
             final_model_gen, num_states = dict2t(trans_dict)
             print("Length of trace: " + str(len(input_dict_store['event_id'])))
 
-        (f, trace, vis) = nfa_traverse(final_model_gen,input_dict_store['event_id'], vis ,True)
+        (f, trace, vis, trans) = nfa_traverse(final_model_gen,input_dict_store['event_id'], vis ,True)
 
         if f:
             print(colored("\nAll behaviors present",'green'))
             vis = list(np.unique(vis))
-            final_model = [x for x in final_model_gen if x[0] in vis and x[2] in vis]
+            final_model = trans
+            (f, trace) = nfa_traverse(trans,input_dict_store['event_id'])
+            if not f:
+                print(colored("Missing Transition!",'red'))
+                exit(0)
             print(colored("States not visited",'green'))
             print(colored([s+1 for s in range(num_states) if s+1 not in vis],'green'))
             print(colored("Final Generated model",'green'))
