@@ -53,6 +53,8 @@ def post_process(output,next_event,data_type,trace_dict,enum_val):
 			elif output_split[i] == '(-':
 				if output_split[i+1].count('(') != output_split[i+1].count(')'):
 					output_split[i : i+2] = ['(-' + output_split[i+1]]
+				else:
+					output_split[i : i+3] = ['(' + output_split[i+1] + ' ' + output_split[i].replace('(','') + ' ' + output_split[i+2]]
 			else:
 				output_split[i : i+3] = ['(' + output_split[i+1] + ' ' + output_split[i].replace('(','') + ' ' + output_split[i+2]]
 			
@@ -517,7 +519,6 @@ def main():
 
 	if(len(temp) < 2):
 		f.write("start\n")
-		f.write(temp[0][0] + '\n')
 		f.close()
 		exit(0)
 
@@ -525,18 +526,16 @@ def main():
 	trace_events = gen_syn(input_dict,trace_dict)
 	
 	# uncomment to dump generated predicates into '.pkl' file
-	# pickle_f = open(trace_filename.replace('.txt','.pkl'),'wb')
-	# pickle.dump(trace_events,pickle_f)
-	# pickle_f.close()
+	pickle_f = open(trace_filename.replace('.txt','.pkl'),'wb')
+	pickle.dump(trace_events,pickle_f)
+	pickle_f.close()
 
 	print('\n')
 	print(colored(trace_events,'green'))
 
 	f.write("start\n")
-	f.write(temp[0][0] + '\n')
 	for j in range(1,len(temp)):
 		if temp[j-1][0] == 'trace':
-			f.write(temp[j][0] + '\n')
 			continue
 		if temp[j][0] == 'trace':
 			f.write("start\n")
