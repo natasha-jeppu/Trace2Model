@@ -10,6 +10,7 @@ import subprocess
 import time
 import argparse
 import re
+import statistics as stat
 
 from os.path import abspath
 from termcolor import colored
@@ -477,13 +478,35 @@ def gen_syn(input_dict,trace_dict):
 			[values.append(y[last_ind]) for y in temp]
 			enum_val[update_var.split(':')[0]] = list(np.unique(values))
 
-		if 'nil' in const_grammar:
-			value = []
+
+		if(const_grammar):
+			if 'nil' in const_grammar:
+				value = []
+			else:
+				value = []
+				for x in const_grammar:
+					value.append(int(x))
 		else:
-			value = []
-			for x in const_grammar:
-				value.append(int(x))
-				value = list(np.unique(value))
+			value = [1,2]
+			for x in range(last_ind):
+				if(data_type[x][1] == 'N'):
+					data = [round(float(y[x])) for y in temp if y[last_ind]!=i]
+					data, idx = np.unique(data,return_index=True)
+					data = list(data[np.argsort(idx)])
+
+					# intuition: for active learning, newly added trace
+					# contains important info for predicate generation
+					data.reverse()
+					value.append(data[0]) 
+
+					value.append(int(round(np.min(data))))
+					value.append(int(round(np.mean(data))))
+					value.append(int(round(np.max(data))))
+					if(len(data) > 1):
+						value.append(int(round(np.std(data))))
+
+		value, idx = np.unique(value, return_index=True)
+		value = list(value[np.argsort(idx)])
 
 		if(len(next_event) == 0):
 			continue
@@ -491,7 +514,7 @@ def gen_syn(input_dict,trace_dict):
 		j=0
 		found = True
 		while(j <= len(temp)):
-			predicates = {'1':0, '2':0, '3':0, '4':0, '5':0, '6':0, '7':0, '8':0, '9':0};
+			predicates = {'1':0, '2':0, '3':0, '4':0, '5':0, '6':0, '7':0, '8':0, '9':0, '10':0};
 			for window in range(2,10):
 				if not found and len(event_keys) == 1:
 					window = 1

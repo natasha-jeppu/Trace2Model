@@ -153,7 +153,8 @@ def gen_syn(input_dict,trace_dict):
 		
 		if not trace_set[i]:
 			continue
-		temp = np.unique(trace_set[i],axis=0)
+		temp, idx = np.unique(trace_set[i],axis=0, return_index=True)
+		temp = temp[np.argsort(idx)]
 		temp = [list(x) for x in temp]
 
 		last_ind = len(temp[0]) - 1
@@ -181,12 +182,23 @@ def gen_syn(input_dict,trace_dict):
 			value = [1,2]
 			for x in range(last_ind):
 				if(data_type[x][1] == 'N'):
-					data = [round(float(y[x])) for y in temp]
-					if(len(data) > 1):
-						value.append(int(round(stat.stdev([round(float(y[x])) for y in temp]))))
-					value.append(int(round(np.mean([round(float(y[x])) for y in temp]))))
+					data = [round(float(y[x])) for y in temp if y[last_ind]!=i]
+					data, idx = np.unique(data,return_index=True)
+					data = list(data[np.argsort(idx)])
 
-		value = list(np.unique(value))
+					# intuition: for active learning, newly added trace
+					# contains important info for predicate generation
+					data.reverse()
+					value.append(data[0]) 
+
+					value.append(int(round(np.min(data))))
+					value.append(int(round(np.mean(data))))
+					value.append(int(round(np.max(data))))
+					if(len(data) > 1):
+						value.append(int(round(np.std(data))))
+
+		value, idx = np.unique(value, return_index=True)
+		value = list(value[np.argsort(idx)])
 
 		if(len(next_event) == 0):
 			continue
@@ -205,7 +217,7 @@ def gen_syn(input_dict,trace_dict):
 				f.write("(declare-datatypes ((" + x[0] + "_t 0))\n")
 				f.write("	((")
 				for y in enum_val[x[0]]:
-					f.write("(" + y + ") ")
+					f.write("(" + x[0] + y + ") ")
 				f.write(")))\n")
 
 			f.write("(synth-fun next (")
@@ -259,7 +271,7 @@ def gen_syn(input_dict,trace_dict):
 				f.write("(EnumVar" + str(k) + " " + enum_type[k][0] + "_t (\n")
 				f.write("	" + enum_type[k][0] + "\n")
 				for y in enum_val[enum_type[k][0]]:
-					f.write(y + "\n")
+					f.write(enum_type[k][0] + y + "\n")
 				f.write("))\n\n") 
 
 
@@ -305,7 +317,7 @@ def gen_syn(input_dict,trace_dict):
 						else:
 							f.write("false ")
 					elif(data_type[x][1] == 'E'):
-						f.write(temp[count][x] + " ")
+						f.write(data_type[x][0] + temp[count][x] + " ")
 				if temp[count][last_ind] == j:
 					f.write(") 1))\n")
 				else:
@@ -356,6 +368,12 @@ def gen_syn(input_dict,trace_dict):
 			op_reg = op_reg + ') Int '
 			output = output.replace(op_reg,'').replace(')\\n','')
 			output = with_let(output)
+
+			for k in range(len(enum_type)):
+				for y in enum_val[enum_type[k][0]]:
+					reg_rep_str = enum_type[k][0] + y
+					output = output.replace(reg_rep_str,y)
+					
 			output = post_process(output,[0,1],data_type,trace_dict,enum_val)
 			trace_events[i][j] = output['1']
 			print(colored(j + ': ' + trace_events[i][j],'green'))
