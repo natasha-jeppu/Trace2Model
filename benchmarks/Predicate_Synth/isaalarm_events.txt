@@ -26,7 +26,7 @@ start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 RTN_UNACK
 RTN_UNACK
@@ -38,7 +38,7 @@ start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 RTN_UNACK
 RTN_UNACK
@@ -140,7 +140,7 @@ NORMAL
 ((inp.cmd == RESET) and !(out.snooze_timer > snooze_timeout)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 start
 NORMAL
@@ -152,7 +152,7 @@ NORMAL
 ((inp.cmd == RESET) and !(out.snooze_timer > snooze_timeout)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 OOS
 start
 NORMAL
@@ -164,7 +164,7 @@ UNACK
 ((inp.cmd == RESET) and !(out.snooze_timer > snooze_timeout)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 OOS
 start
 NORMAL
@@ -176,7 +176,7 @@ UNACK
 ((inp.cmd == RESET) and !(out.snooze_timer > snooze_timeout)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 start
 NORMAL
@@ -247,7 +247,7 @@ NORMAL
 (((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and (inp.val > high_thresh)) or ((inp.cmd == c_SUPR) and !(inp.val >= low_thresh))): s_SUPR
 ((prev_out.prev_s == UNACK) and (inp.cmd == UNSUPR)): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 RTN_UNACK
 start
@@ -259,7 +259,7 @@ UNACK
 (((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and (inp.val > high_thresh)) or ((inp.cmd == c_SUPR) and !(inp.val >= low_thresh))): s_SUPR
 ((prev_out.prev_s == UNACK) and (inp.cmd == UNSUPR)): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 OOS
 OOS
 start
@@ -271,19 +271,19 @@ UNACK
 (((inp.cmd == REMOVE) and (inp.val >= low_thresh) and (inp.val > high_thresh)) or ((inp.cmd == REMOVE) and !(inp.val >= low_thresh))): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == UNACK)): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 OOS
 OOS
 start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 s_SUPR
 s_SUPR
 s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 RTN_UNACK
 start
@@ -333,7 +333,7 @@ s_SHEL
 ((inp.cmd == REMOVE) and !(out.snooze_timer > snooze_timeout)): OOS
 OOS
 OOS
-((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == RTN_UNACK) and !(prev_out.prev_s == NORMAL)): s_ACK
+((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == NORMAL) and !(prev_out.prev_s == RTN_UNACK)): s_ACK
 start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
@@ -471,7 +471,7 @@ NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 UNACK
@@ -482,7 +482,7 @@ start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
@@ -494,9 +494,9 @@ start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 s_SUPR
 s_SUPR
 s_SUPR
@@ -506,7 +506,7 @@ start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
@@ -519,7 +519,7 @@ NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
 RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 UNACK
@@ -621,7 +621,7 @@ UNACK
 ((inp.cmd == UNSHEL) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.cmd == c_SHEL) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SHEL
 ((inp.cmd == UNSHEL) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 start
 NORMAL
 ((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
@@ -640,7 +640,7 @@ NORMAL
 UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
 RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 s_SUPR
 s_SUPR
 s_SUPR
@@ -677,18 +677,18 @@ NORMAL
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 OOS
 start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 OOS
 OOS
 OOS
@@ -739,7 +739,7 @@ s_ACK
 ((inp.cmd == RESET) and !(out.snooze_timer > snooze_timeout)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 start
@@ -821,7 +821,7 @@ NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 (inp.cmd == c_ACK): s_ACK
 ((inp.cmd == REMOVE) and !(out.snooze_timer > snooze_timeout)): OOS
-((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == RTN_UNACK) and !(prev_out.prev_s == NORMAL)): s_ACK
+((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == NORMAL) and !(prev_out.prev_s == RTN_UNACK)): s_ACK
 s_ACK
 s_ACK
 (out.snooze_timer > snooze_timeout): UNACK
@@ -860,7 +860,7 @@ s_SUPR
 s_ACK
 ((inp.cmd == REMOVE) and !(out.snooze_timer > snooze_timeout)): OOS
 OOS
-((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == RTN_UNACK) and !(prev_out.prev_s == NORMAL)): s_ACK
+((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == NORMAL) and !(prev_out.prev_s == RTN_UNACK)): s_ACK
 s_ACK
 start
 NORMAL
@@ -918,7 +918,7 @@ s_ACK
 ((inp.cmd == RESET) and !(out.snooze_timer > snooze_timeout)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.cmd == c_ACK) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): NORMAL
@@ -977,7 +977,7 @@ NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 (inp.cmd == c_ACK): s_ACK
 ((inp.cmd == REMOVE) and !(out.snooze_timer > snooze_timeout)): OOS
-((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == RTN_UNACK) and !(prev_out.prev_s == NORMAL)): s_ACK
+((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == NORMAL) and !(prev_out.prev_s == RTN_UNACK)): s_ACK
 s_ACK
 s_ACK
 (out.snooze_timer > snooze_timeout): UNACK
@@ -1017,7 +1017,7 @@ UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
 ((inp.cmd == c_SHEL) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SHEL
 ((inp.cmd == UNSHEL) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 start
 NORMAL
 ((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
@@ -1088,16 +1088,16 @@ NORMAL
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == NORMAL)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 OOS
 start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
 RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 RTN_UNACK
 ((inp.cmd == c_ACK) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): NORMAL
@@ -1108,7 +1108,7 @@ NORMAL
 (inp.cmd == c_ACK): s_ACK
 ((inp.cmd == REMOVE) and !(out.snooze_timer > snooze_timeout)): OOS
 OOS
-((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == RTN_UNACK) and !(prev_out.prev_s == NORMAL)): s_ACK
+((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == NORMAL) and !(prev_out.prev_s == RTN_UNACK)): s_ACK
 ((inp.cmd == c_SHEL) and !(out.snooze_timer > snooze_timeout)): s_SHEL
 s_SHEL
 s_SHEL
@@ -1118,7 +1118,7 @@ start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.cmd == c_SHEL) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SHEL
@@ -1147,7 +1147,7 @@ NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 (inp.cmd == c_ACK): s_ACK
 ((inp.cmd == REMOVE) and !(out.snooze_timer > snooze_timeout)): OOS
-((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == RTN_UNACK) and !(prev_out.prev_s == NORMAL)): s_ACK
+((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == NORMAL) and !(prev_out.prev_s == RTN_UNACK)): s_ACK
 ((inp.cmd == RESET) and !(out.snooze_timer > snooze_timeout)): NORMAL
 ((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 start
@@ -1243,9 +1243,9 @@ s_ACK
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 start
 NORMAL
 NORMAL
@@ -1257,7 +1257,7 @@ s_ACK
 ((inp.cmd == RESET) and !(out.snooze_timer > snooze_timeout)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 start
 NORMAL
 ((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
@@ -1265,7 +1265,7 @@ NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 (inp.cmd == c_ACK): s_ACK
 ((inp.cmd == REMOVE) and !(out.snooze_timer > snooze_timeout)): OOS
-((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == RTN_UNACK) and !(prev_out.prev_s == NORMAL)): s_ACK
+((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == NORMAL) and !(prev_out.prev_s == RTN_UNACK)): s_ACK
 s_ACK
 s_ACK
 (out.snooze_timer > snooze_timeout): UNACK
@@ -1275,12 +1275,12 @@ NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 (inp.cmd == c_ACK): s_ACK
 ((inp.cmd == REMOVE) and !(out.snooze_timer > snooze_timeout)): OOS
-((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == RTN_UNACK) and !(prev_out.prev_s == NORMAL)): s_ACK
+((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == NORMAL) and !(prev_out.prev_s == RTN_UNACK)): s_ACK
 ((inp.cmd == REMOVE) and !(out.snooze_timer > snooze_timeout)): OOS
 OOS
 OOS
 OOS
-((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == RTN_UNACK) and !(prev_out.prev_s == NORMAL)): s_ACK
+((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == NORMAL) and !(prev_out.prev_s == RTN_UNACK)): s_ACK
 ((inp.cmd == c_SUPR) and !(out.snooze_timer > snooze_timeout)): s_SUPR
 start
 NORMAL
@@ -1299,11 +1299,11 @@ NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.cmd == c_SHEL) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SHEL
 start
@@ -1316,7 +1316,7 @@ NORMAL
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == NORMAL)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 OOS
 start
 NORMAL
@@ -1324,7 +1324,7 @@ NORMAL
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == NORMAL)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 UNACK
@@ -1346,9 +1346,9 @@ start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
-((inp.cmd == REMOVE) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): OOS
+((inp.cmd == REMOVE) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): OOS
 ((inp.cmd == ADD) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 (inp.cmd == c_ACK): s_ACK
@@ -1382,7 +1382,7 @@ start
 NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 s_SUPR
 s_SUPR
 s_SUPR
@@ -1445,7 +1445,7 @@ NORMAL
 s_ACK
 ((inp.cmd == REMOVE) and !(out.snooze_timer > snooze_timeout)): OOS
 OOS
-((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == RTN_UNACK) and !(prev_out.prev_s == NORMAL)): s_ACK
+((inp.cmd == ADD) and !(prev_out.prev_s == UNACK) and !(prev_out.prev_s == NORMAL) and !(prev_out.prev_s == RTN_UNACK)): s_ACK
 s_ACK
 s_ACK
 (out.snooze_timer > snooze_timeout): UNACK
@@ -1480,7 +1480,7 @@ NORMAL
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == NORMAL)): NORMAL
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 ((inp.val >= low_thresh) and !(inp.val > high_thresh) and !(inp.cmd == c_ACK)): RTN_UNACK
-((inp.cmd == c_SUPR) and (inp.val >= low_thresh) and !(inp.val > high_thresh)): s_SUPR
+((inp.cmd == c_SUPR) and !(inp.val > high_thresh) and (inp.val >= low_thresh)): s_SUPR
 ((inp.cmd == UNSUPR) and (prev_out.prev_s == RTN_UNACK)): RTN_UNACK
 ((inp.val > high_thresh) or (!(inp.val > high_thresh) and !(inp.val >= low_thresh))): UNACK
 UNACK

@@ -21,7 +21,7 @@ SNOOZE
 SNOOZE
 SNOOZE
 (out.snooze_time > snooze_timeout): ALARMING
-(!(inp.cmd == ACK) and !(inp.cmd == DND) and !(inp.cmd == NO_CMD)): NORMAL
+(!(inp.cmd == NO_CMD) and !(inp.cmd == DND) and !(inp.cmd == ACK)): NORMAL
 start
 NORMAL
 NORMAL
@@ -76,7 +76,7 @@ NORMAL
 ALARMING
 ALARMING
 ALARMING
-(!(inp.cmd == ACK) and !(inp.cmd == DND) and !(inp.cmd == NO_CMD)): NORMAL
+(!(inp.cmd == NO_CMD) and !(inp.cmd == DND) and !(inp.cmd == ACK)): NORMAL
 (inp.val > thresh): ALARMING
 (inp.cmd == ACK): SNOOZE
 SNOOZE
@@ -121,7 +121,7 @@ SNOOZE
 start
 NORMAL
 (inp.val > thresh): ALARMING
-(!(inp.cmd == ACK) and !(inp.cmd == DND) and !(inp.cmd == NO_CMD)): NORMAL
+(!(inp.cmd == NO_CMD) and !(inp.cmd == DND) and !(inp.cmd == ACK)): NORMAL
 (inp.val > thresh): ALARMING
 ALARMING
 ALARMING
@@ -129,7 +129,7 @@ ALARMING
 SNOOZE
 ((inp.cmd == RESET) and !(out.snooze_time > snooze_timeout)): NORMAL
 (inp.val > thresh): ALARMING
-(!(inp.cmd == ACK) and !(inp.cmd == DND) and !(inp.cmd == NO_CMD)): NORMAL
+(!(inp.cmd == NO_CMD) and !(inp.cmd == DND) and !(inp.cmd == ACK)): NORMAL
 start
 NORMAL
 (inp.val > thresh): ALARMING
@@ -140,7 +140,7 @@ SNOOZE
 ALARMING
 ALARMING
 ALARMING
-(!(inp.cmd == ACK) and !(inp.cmd == DND) and !(inp.cmd == NO_CMD)): NORMAL
+(!(inp.cmd == NO_CMD) and !(inp.cmd == DND) and !(inp.cmd == ACK)): NORMAL
 NORMAL
 start
 NORMAL
@@ -164,7 +164,7 @@ SNOOZE
 (inp.val > thresh): ALARMING
 ALARMING
 ALARMING
-(!(inp.cmd == ACK) and !(inp.cmd == DND) and !(inp.cmd == NO_CMD)): NORMAL
+(!(inp.cmd == NO_CMD) and !(inp.cmd == DND) and !(inp.cmd == ACK)): NORMAL
 NORMAL
 start
 NORMAL
